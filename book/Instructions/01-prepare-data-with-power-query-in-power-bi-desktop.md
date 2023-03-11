@@ -230,7 +230,7 @@ lab:
 
     **Power BI Desktop에서 데이터 로드** 랩에서 이 쿼리에 변환을 추가할 때 **DimProductSubcategory** 열을 사용하여 테이블을 조인합니다.
 
-15. **쿼리** 창에서 **DimProduct** 쿼리를 선택합니다.
+15. **쿼리** 창에서 **DimReseller** 쿼리를 선택합니다.
 
     ![그림 49](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image29.png)
 
@@ -285,7 +285,7 @@ lab:
 
 3. **열기**를 클릭합니다.
 
-4. **ResellerSalesSalesTargets.csv** 창에서 미리 보기 데이터를 검토합니다.
+4. **ResellerSalesTargets.csv** 창에서 미리 보기 데이터를 검토합니다.
 
 5. **확인**을 클릭합니다.
 
