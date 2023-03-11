@@ -1,0 +1,16 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: Instructions/01-prepare-data-with-power-query-in-power-bi-desktop
+- file: Instructions/02-load-data-with-power-query-in-power-bi-desktop
+- file: Instructions/03-configure-data-model-in-power-bi-desktop
+- file: Instructions/04-create-dax-calculations-in-power-bi-desktop
+- file: Instructions/05-create-dax-calculations-in-power-bi-desktop-advanced
+- file: Instructions/06-design-report-in-power-bi-desktop
+- file: Instructions/07-design-report-in-power-bi-desktop-enhanced
+- file: Instructions/08-create-power-bi-dashboard
+- file: Instructions/09-perform-data-analysis-in-power-bi-desktop
+- file: Instructions/10-row-level-security

@@ -4,7 +4,7 @@ lab:
   module: '3 - Clean, Transform, and Load Data in Power BI'
 ---
 
-# <a name="load-data-in-power-bi-desktop"></a>Power BI Desktop에서 데이터 로드
+# Power BI Desktop에서 데이터 로드
 
 **이 랩의 예상 완료 시간은 45분입니다.**
 
@@ -16,7 +16,7 @@ lab:
 
 - 쿼리를 적용하여 데이터 모델에 로드
 
-## <a name="lab-story"></a>**랩 사례**
+## **랩 사례**
 
 이 랩은 데이터 준비부터 보고서 및 대시보드로 게시에 이르기까지 전체 사례로 고안된 랩 시리즈 중 하나입니다. 어떤 순서로든 랩을 완료할 수 있습니다. 그러나 여러 랩을 진행하려는 경우 다음 순서를 따르는 것이 좋습니다.
 
@@ -40,11 +40,11 @@ lab:
 
 10. 행 수준 보안 적용
 
-## <a name="exercise-1-load-data"></a>**연습 1: 데이터 로드**
+## **연습 1: 데이터 로드**
 
 이 연습에서는 이전 랩에서 만든 각 쿼리에 변환을 적용합니다.
 
-### <a name="task-1-get-started"></a>**작업 1: 시작하기**
+### **작업 1: 시작하기**
 
 이 작업에서는 랩용 환경을 설정합니다.
 
@@ -106,7 +106,7 @@ lab:
 
     ![그림 20](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image10.png)
 
-### <a name="task-2-configure-the-salesperson-query"></a>**작업 2: Salesperson 쿼리 구성**
+### **작업 2: Salesperson 쿼리 구성**
 
 이 작업에서는 **Salesperson** 쿼리를 구성합니다.
 
@@ -218,7 +218,7 @@ lab:
 
     *중요: 쿼리가 올바른 결과를 생성하지 않으면 나중에 랩을 진행할 수 없게 되므로 더 진행하지 않는 것이 중요합니다. 쿼리 열 또는 행이 일치하지 않는 경우 이 작업의 단계를 다시 참조하여 문제를 해결하세요.*
 
-### <a name="task-3-configure-the-salespersonregion-query"></a>**작업 3: SalespersonRegion 쿼리 구성**
+### **작업 3: SalespersonRegion 쿼리 구성**
 
 이 작업에서는 **SalespersonRegion** 쿼리를 구성합니다.
 
@@ -240,7 +240,7 @@ lab:
 
     ![그림 5641](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image29.png)
 
-### <a name="task-4-configure-the-product-query"></a>**작업 4: Product 쿼리 구성**
+### **작업 4: Product 쿼리 구성**
 
 이 작업에서는 **Product** 쿼리를 구성합니다.
 
@@ -308,7 +308,7 @@ lab:
 
     ![그림 5651](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image35.png)
 
-### <a name="task-5-configure-the-reseller-query"></a>**작업 5: Reseller 쿼리 구성**
+### **작업 5: Reseller 쿼리 구성**
 
 이 작업에서는 **Reseller** 쿼리를 구성합니다.
 
@@ -374,7 +374,7 @@ lab:
 
     ![그림 5657](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image42.png)
 
-### <a name="task-6-configure-the-region-query"></a>**작업 6: Region 쿼리 구성**
+### **작업 6: Region 쿼리 구성**
 
 이 작업에서는 **Region** 쿼리를 구성합니다.
 
@@ -406,7 +406,7 @@ lab:
 
     ![그림 5661](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image45.png)
 
-### <a name="task-7-configure-the-sales-query"></a>**작업 7: Sales 쿼리 구성**
+### **작업 7: Sales 쿼리 구성**
 
 이 작업에서는 **Sales** 쿼리를 구성합니다.
 
@@ -505,7 +505,7 @@ lab:
 
     *쿼리별 미리 보기 데이터에는 행이 1,000개까지 로드됩니다.*
 
-### <a name="task-8-configure-the-targets-query"></a>**작업 8: Targets 쿼리 구성**
+### **작업 8: Targets 쿼리 구성**
 
 이 작업에서는 **Targets** 쿼리를 구성합니다.
 
@@ -609,7 +609,7 @@ lab:
 
     ![그림 5685](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image66.png)
 
-### <a name="task-9-configure-the-colorformats-query"></a>**작업 9: ColorFormats 쿼리 구성**
+### **작업 9: ColorFormats 쿼리 구성**
 
 이 작업에서는 **ColorFormats** 쿼리를 구성합니다.
 
@@ -627,7 +627,7 @@ lab:
 
     ![그림 5689](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image69.png)
 
-### <a name="task-10-update-the-product-query"></a>**작업 10: Product 쿼리 업데이트**
+### **작업 10: Product 쿼리 업데이트**
 
 이 작업에서는 **ColorFormats** 쿼리를 병합하여 **Product** 쿼리를 업데이트합니다.
 
@@ -677,7 +677,7 @@ lab:
 
     ![그림 5695](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image78.png)
 
-### <a name="task-11-update-the-colorformats-query"></a>**작업 11: ColorFormats 쿼리 업데이트**
+### **작업 11: ColorFormats 쿼리 업데이트**
 
 이 작업에서는 **ColorFormats**를 업데이트하여 로드를 비활성화합니다.
 
@@ -699,7 +699,7 @@ lab:
 
     ![그림 324](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image82.png)
 
-### <a name="task-12-finish-up"></a>**작업 12: 완료**
+### **작업 12: 완료**
 
 이 작업에서는 랩을 완료합니다.
 

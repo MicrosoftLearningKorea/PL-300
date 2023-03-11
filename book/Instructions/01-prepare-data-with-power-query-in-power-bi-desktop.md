@@ -4,7 +4,7 @@ lab:
   module: 2 - Get Data in Power BI
 ---
 
-# <a name="prepare-data-in-power-bi-desktop"></a>Power BI Desktop에서 데이터 준비
+# Power BI Desktop에서 데이터 준비
 
 **이 랩의 예상 완료 시간은 45분입니다.**
 
@@ -22,7 +22,7 @@ lab:
 
 - 데이터 미리 보기 기법을 사용하여 데이터를 더 잘 파악
 
-## <a name="lab-story"></a>**랩 사례**
+## **랩 사례**
 
 이 랩은 데이터 준비부터 보고서 및 대시보드로 게시에 이르기까지 전체 사례로 고안된 랩 시리즈 중 하나입니다. 어떤 순서로든 랩을 완료할 수 있습니다. 그러나 여러 랩을 진행하려는 경우 다음 순서를 따르는 것이 좋습니다.
 
@@ -46,11 +46,11 @@ lab:
 
 10. 행 수준 보안 적용
 
-## <a name="exercise-1-prepare-data"></a>**연습 1: 데이터 준비**
+## **연습 1: 데이터 준비**
 
 이 연습에서는 8개의 Power BI Desktop 쿼리를 만듭니다. 6개의 쿼리는 SQL Server의 데이터를 원본으로 하며, 2개의 쿼리는 CSV 파일을 원본으로 합니다.
 
-### <a name="task-1-save-the-power-bi-desktop-file"></a>**작업 1: Power BI Desktop 파일 저장**
+### **작업 1: Power BI Desktop 파일 저장**
 
 이 작업에서는 먼저 Power BI Desktop 파일을 저장합니다.
 
@@ -82,7 +82,7 @@ lab:
 
     ![그림 18](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image6.png)
 
-### <a name="task-2-set-power-bi-desktop-options"></a>**작업 2: Power BI Desktop 옵션 설정**
+### **작업 2: Power BI Desktop 옵션 설정**
 
 이 작업에서는 Power BI Desktop 옵션을 설정합니다.
 
@@ -110,7 +110,7 @@ lab:
 
 1. Power BI Desktop 파일을 저장합니다.
 
-### <a name="task-3-get-data-from-sql-server"></a>**작업 3: SQL Server에서 데이터 가져오기**
+### **작업 3: SQL Server에서 데이터 가져오기**
 
 이 작업에서는 SQL Server 테이블을 기반으로 쿼리를 만듭니다.
 
@@ -164,7 +164,7 @@ lab:
 
     ![그림 30](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image19.png)
 
-### <a name="task-4-preview-sql-server-queries"></a>**작업 4: SQL Server 쿼리 미리 보기**
+### **작업 4: SQL Server 쿼리 미리 보기**
 
 이 작업에서는 SQL Server 쿼리의 데이터를 미리 봅니다. 먼저 데이터에 대한 관련 정보를 알아볼 것입니다. 또한 열 품질, 열 분포 및 열 프로필 도구를 사용하여 데이터를 이해하고 데이터 품질을 평가합니다.
 
@@ -273,7 +273,7 @@ lab:
     **TotalProductCost** 열 값이 없는 것은 데이터 품질 문제에 속합니다. 이 문제를 해결하기 위해 **Power BI Desktop에서 데이터 로드** 랩에서 **DimProduct** 테이블에 저장된 제품 표준 비용을 사용하여 누락된 값을 채우기 위해 변환을 적용합니다.
 
 
-### <a name="task-5-get-data-from-a-csv-file"></a>**작업 5: CSV 파일에서 데이터 가져오기**
+### **작업 5: CSV 파일에서 데이터 가져오기**
 
 이 작업에서는 CSV 파일을 기반으로 쿼리를 생성합니다.
 
@@ -290,7 +290,7 @@ lab:
 5. **확인**을 클릭합니다.
 
     ![그림 71](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image36.png)
- 
+
 
 6. **쿼리** 창에 **ResellerSalesTargets** 쿼리가 추가된 것을 확인합니다.
 
@@ -310,7 +310,7 @@ lab:
 
     **Power BI Desktop에서 데이터 로드** 랩에서 다양한 변환을 적용하여 **Date**, **EmployeeKey**, **TargetAmount**의 세 열로만 구성된 다른 모양의 결과를 얻습니다.
 
-### <a name="task-6-get-additional-data-from-a-csv-file"></a>**작업 6: CSV 파일에서 추가 데이터 가져오기**
+### **작업 6: CSV 파일에서 추가 데이터 가져오기**
 
 이 작업에서는 다른 CSV 파일을 기반으로 추가 쿼리를 만듭니다.
 
@@ -320,7 +320,7 @@ lab:
 
     **ColorFormats** CSV 파일에는 제품 색상당 한 개의 행이 포함됩니다. 각 행은 배경 및 글꼴 색상의 서식을 지정하는 16진수 코드를 기록합니다. **Power BI Desktop에서 데이터 로드** 랩에서 이 데이터를 **DimProduct** 쿼리 데이터와 통합합니다.
 
-### <a name="task-7-finish-up"></a>**작업 7: 완료**
+### **작업 7: 완료**
 
 이 작업에서는 랩을 완료합니다.
 

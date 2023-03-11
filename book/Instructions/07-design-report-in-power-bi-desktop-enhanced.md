@@ -5,7 +5,7 @@ lab:
 ---
 
 
-# <a name="design-a-report-in-power-bi-desktop-part-2"></a>Power BI Desktop에서 보고서 디자인, 2부
+# Power BI Desktop에서 보고서 디자인, 2부
 
 **이 랩의 예상 완료 시간은 45분입니다.**
 
@@ -21,7 +21,7 @@ lab:
 
 - 책갈피 만들기 및 사용
 
-### <a name="lab-story"></a>**랩 사례**
+### **랩 사례**
 
 이 랩은 데이터 준비부터 보고서 및 대시보드로 게시에 이르기까지 전체 사례로 고안된 랩 시리즈 중 하나입니다. 어떤 순서로든 랩을 완료할 수 있습니다. 그러나 여러 랩을 진행하려는 경우 다음 순서를 따르는 것이 좋습니다.
 
@@ -45,11 +45,11 @@ lab:
 
 10. 행 수준 보안 적용
 
-## <a name="exercise-1-configure-sync-slicers"></a>**연습 1: 슬라이서 동기화 구성**
+## **연습 1: 슬라이서 동기화 구성**
 
 이 연습에서는 보고서 페이지 슬라이서를 동기화합니다.
 
-### <a name="task-1-get-started--sign-in"></a>작업 1: 시작하기 – 로그인
+### 작업 1: 시작하기 – 로그인
 
 이 작업에서는 Power BI에 로그인하여 랩용 환경을 설정합니다.
 
@@ -77,7 +77,7 @@ lab:
 
 7. Microsoft Edge 브라우저 창을 열어 둡니다.
 
-### <a name="task-2-get-started--open-report"></a>작업 2: 시작하기 – 보고서 열기
+### 작업 2: 시작하기 – 보고서 열기
 
 이 작업에서는 시작 보고서를 열어 랩용 환경을 설정합니다.
 
@@ -133,7 +133,7 @@ lab:
 
     ![그림 2](Linked_image_Files/08-design-report-in-power-bi-desktop-enhanced_image12.png)
 
-### <a name="task-3-sync-slicers"></a>**작업 3: 슬라이서 동기화**
+### **작업 3: 슬라이서 동기화**
 
 이 작업에서는 **연도** 및 **지역** 슬라이서를 동기화합니다.
 
@@ -167,13 +167,13 @@ lab:
 
     ![그림 98](Linked_image_Files/08-design-report-in-power-bi-desktop-enhanced_image16.png)
 
-## <a name="exercise-2-configure-drill-through"></a>**연습 2: 드릴스루 구성**
+## **연습 2: 드릴스루 구성**
 
 이 연습에서는 새 페이지를 만들고 드릴스루 페이지로 구성합니다. 디자인을 완료하면 페이지는 다음과 같은 모습이 됩니다.
 
 ![카드 시각적 개체와 테이블 시각적 개체로 구성된 새 페이지의 이미지](Linked_image_Files/08-design-report-in-power-bi-desktop-enhanced_image17.png)
 
-### <a name="task-1-create-a-drill-through-page"></a>**작업 1: 드릴스루 페이지 만들기**
+### **작업 1: 드릴스루 페이지 만들기**
 
 이 작업에서는 새 페이지를 만들고 이것을 드릴스루 페이지로 구성합니다.
 
@@ -216,7 +216,7 @@ lab:
     ![그림 103](Linked_image_Files/07-design-report-in-power-bi-desktop_image36b.png)
 
 9. **효과 > 배경** 색상 속성을 연한 회색으로 설정합니다.
-    
+   
     ![그림 103](Linked_image_Files/07-design-report-in-power-bi-desktop_image36c.png)
 
 10. 페이지에 **테이블** 시각적 개체를 추가한 다음 크기를 조정하고 카드 시각적 개체 아래에 배치하여 페이지의 나머지 공간을 채웁니다.
@@ -241,13 +241,13 @@ lab:
 
     드릴스루 페이지의 디자인이 거의 완료되었습니다. 다음 연습에서 조건부 서식을 사용하여 페이지를 개선할 것입니다.
 
-## <a name="exercise-3-add-conditional-formatting"></a>**연습 3: 조건부 서식 추가**
+## **연습 3: 조건부 서식 추가**
 
 이 연습에서는 조건부 서식으로 드릴스루 페이지를 향상시킵니다. 디자인을 완료하면 페이지는 다음과 같은 모습이 됩니다.
 
 ![색 서식이 지정된 값과 아이콘이 표시되어 있는 업데이트된 페이지의 이미지](Linked_image_Files/08-design-report-in-power-bi-desktop-enhanced_image28.png)
 
-### <a name="task-1-add-conditional-formatting"></a>**작업 1: 조건부 서식 추가**
+### **작업 1: 조건부 서식 추가**
 
 이 작업에서는 조건부 서식을 사용하여 드릴스루 페이지를 향상시킵니다.
 
@@ -315,13 +315,13 @@ lab:
 
     배경색과 글꼴 색은 **Power BI Desktop에서 데이터 준비** 랩에서 사용했던 **ColorFormats.csv** 파일에서 가져온 다음, **Power BI Desktop에서 데이터 로드** 랩에서 만든 **제품** 쿼리와 통합한 것입니다.
 
-## <a name="exercise-4-add-bookmarks-and-buttons"></a>**연습 4: 책갈피 및 단추 추가**
+## **연습 4: 책갈피 및 단추 추가**
 
 이 연습에서는 단추를 사용하여 **실적** 페이지를 개선하여 보고서 사용자가 표시할 시각적 개체 유형을 선택할 수 있도록 합니다. 디자인을 완료하면 페이지는 다음과 같은 모습이 됩니다.
 
 ![이번에는 단추 2와 시각적 개체 2개로 구성되어 있는 업데이트된 3페이지의 이미지](Linked_image_Files/08-design-report-in-power-bi-desktop-enhanced_image38.png)
 
-### <a name="task-1-add-bookmarks"></a>**작업 1: 책갈피 추가**
+### **작업 1: 책갈피 추가**
 
 이 작업에서는 두 개의 책갈피를 추가하고 월별 판매량/대상 시각적 개체를 각각 표시합니다.
 
@@ -383,7 +383,7 @@ lab:
 
     *보고서 디자인의 다음 단계는 보고서 사용자가 책갈피를 선택하는 데 사용할 수 있는 단추 두 개를 페이지에 추가하는 것입니다.*
 
-### <a name="task-2-add-buttons"></a>**작업 2: 단추 추가**
+### **작업 2: 단추 추가**
 
 이 작업에서는 두 개의 단추를 추가하고 각 단추에 책갈피 작업을 할당합니다.
 
@@ -421,7 +421,7 @@ lab:
 
     *이제 판매 분석 보고서 디자인이 완료되었습니다.*
 
-### <a name="task-3-publish-the-report"></a>**작업 3: 보고서 게시**
+### **작업 3: 보고서 게시**
 
 이 작업에서는 보고서를 게시합니다.
 
@@ -455,11 +455,11 @@ lab:
 
     *다음 연습에서 Power BI 서비스에서 보고서를 살펴봅니다.*
 
-## <a name="exercise-5-explore-the-report"></a>**연습 5: 보고서 살펴보기**
+## **연습 5: 보고서 살펴보기**
 
 이 연습에서는 Power BI 서비스의 보고서를 살펴봅시다.
 
-### <a name="task-1-explore-the-report"></a>**작업 1: 보고서 살펴보기**
+### **작업 1: 보고서 살펴보기**
 
 이 작업에서는 Power BI 서비스의 보고서를 살펴봅시다.
 
@@ -477,7 +477,7 @@ lab:
 
 6. 각 단추를 클릭하면 다른 시각적 개체가 표시되는 것을 알 수 있습니다.
 
-### <a name="task-2-finish-up"></a>**작업 2: 완료**
+### **작업 2: 완료**
 
 이 작업에서는 랩을 완료합니다.
 
