@@ -5,7 +5,7 @@ lab:
 ---
 
 
-# **행 수준 보안 적용**
+# 행 수준 보안 적용
 
 **이 랩을 완료하는 데 걸리는 예상 완료 시간은 45분입니다.**
 
@@ -117,11 +117,11 @@ lab:
 
     ![그림 5702](Linked_image_Files/04-configure-data-model-in-power-bi-desktop-advanced_image22.png)
 
-7. 상자에서 선택한 텍스트를 역할 이름인**Salespeople**으로 바꿉니다. 그 다음 **입력**을 누릅니다.
+7. 상자에서 선택한 텍스트를 역할 이름인 **Salespeople**으로 바꿉니다. 그 다음 **입력**을 누릅니다.
 
     ![그림 5703](Linked_image_Files/04-configure-data-model-in-power-bi-desktop-advanced_image23.png)
 
-8. 필터를 할당하려면 **영업 직원(성과)** 테이블에서 줄임표(...) 문자를 클릭한 다음 **필터 추가 \| [UPN]** 을 선택합니다.
+8. 필터를 할당하려면 **Salesperson (Performance)** 테이블에서 줄임표(...) 문자를 클릭한 다음 **필터 추가 \| [UPN]** 을 선택합니다.
 
     ![그림 5704](Linked_image_Files/04-configure-data-model-in-power-bi-desktop-advanced_image24.png)
 
