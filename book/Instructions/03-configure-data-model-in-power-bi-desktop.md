@@ -124,9 +124,9 @@ lab:
 
     ![그림 329](Linked_image_Files/03-configure-data-model-in-power-bi-desktop_image12.png)
 
-    랩에서는 약식 표기법을 사용하여 필드를 참조합니다. 다음과 같이 표시됩니다. **제품 \| 범주**. 이 예에서 **제품**은 테이블 이름이고 **범주**는 필드 이름입니다.
+    랩에서는 약식 표기법을 사용하여 필드를 참조합니다. 다음과 같이 표시됩니다. **Product \| Category**. 이 예에서 **Product**은 테이블 이름이고 **Category**는 필드 이름입니다.
 
-6. 테이블에 열을 하나 더 추가하려면 **필드** 창에서 **판매 \| 판매** 필드를 선택합니다.
+6. 테이블에 열을 하나 더 추가하려면 **필드** 창에서 **Sales \| Sales** 필드를 선택합니다.
 
 7. 테이블 시각적 개체에 4개의 제품 범주가 나열되며 각 범주의 판매 금액이 동일하고 합계에의 금액도 동일한 것을 볼 수 있습니다.
 
@@ -158,11 +158,11 @@ lab:
 
 14. **카디널리티** 드롭다운 목록에서 **일대다(1:*)** 가 선택되어 있는 것을 볼 수 있습니다.
 
-    카디널리티는 자동으로 검색되었습니다. Power BI에서 **제품** 테이블의 **ProductKey** 열에 고유한 값이 포함된다는 것을 인식하기 때문입니다. 일대다 관계는 가장 일반적인 카디널리티이며, 이 랩에서 만드는 모든 관계가 이 유형입니다.
+    카디널리티는 자동으로 검색되었습니다. Power BI에서 **Product** 테이블의 **ProductKey** 열에 고유한 값이 포함된다는 것을 인식하기 때문입니다. 일대다 관계는 가장 일반적인 카디널리티이며, 이 랩에서 만드는 모든 관계가 이 유형입니다.
 
 15. **교차 필터 방향** 드롭다운 목록에서 **단일**이 선택되어 있는 것을 볼 수 있습니다.
 
-    단일 필터 방향은 필터가 “한 쪽”에서 “많은 쪽”으로 전파됨을 의미합니다. 이 경우 **제품** 테이블에 적용된 필터가 **판매** 테이블에 전파되지만 반대 방향으로는 전파되지 않음을 의미합니다.
+    단일 필터 방향은 필터가 “한 쪽”에서 “많은 쪽”으로 전파됨을 의미합니다. 이 경우 **Product** 테이블에 적용된 필터가 **Sales** 테이블에 전파되지만 반대 방향으로는 전파되지 않음을 의미합니다.
 
 16. **Mark This Relationship Active**가 선택되어 있습니다.
 
@@ -180,7 +180,7 @@ lab:
 
     ![그림 337](Linked_image_Files/03-configure-data-model-in-power-bi-desktop_image20.png)
 
-    **제품** 테이블에 적용된 필터가 이제 **판매** 테이블로 전파됩니다.
+    **Product** 테이블에 적용된 필터가 이제 **Sales** 테이블로 전파됩니다.
 
 20. 모델 뷰로 전환한 다음 이제 두 테이블 간에 커넥터가 있음을 확인합니다(두 테이블이 나란히 배치되어 있어도 관계없음).
 
@@ -202,9 +202,9 @@ lab:
 
 24. 새 기술을 사용하여 다음의 두 모델 관계를 만듭니다.
 
-    - **지역 \| SalesTerritoryKey**에서 **판매 \| SalesTerritoryKey**로
+    - **Region \| SalesTerritoryKey**에서 **Sales \| SalesTerritoryKey**로
 
-    - **영업 직원 \| EmployeeKey**에서 **판매 \| EmployeeKey**로
+    - **Salesperson \| EmployeeKey**에서 **Sales \| EmployeeKey**로
 
 25. 다이어그램에서 **Sales** 테이블이 다이어그램 가운데에 오고 관련 테이블이 근처에 정렬되어 있도록 테이블을 정렬합니다. 연결이 끊긴 테이블은 옆쪽에 배치합니다.
 
@@ -227,11 +227,11 @@ lab:
 
     ![그림 341](Linked_image_Files/03-configure-data-model-in-power-bi-desktop_image24.png)
 
-3. **필드** 창의 왼쪽에 있는 **속성** 창에서 **이름** 상자에 있는 텍스트를 **제품**으로 바꿉니다.
+3. **필드** 창의 왼쪽에 있는 **속성** 창에서 **이름** 상자에 있는 텍스트를 **Products**으로 바꿉니다.
 
     ![그림 344](Linked_image_Files/03-configure-data-model-in-power-bi-desktop_image25.png)
 
-4. 계층 구조에 두 번째 수준을 추가하려면 **속성** 창의 **계층 구조** 드롭다운 목록에서 **하위 범주**를 선택합니다(창 내에서 아래쪽으로 스크롤해야 할 수 있음).
+4. 계층 구조에 두 번째 수준을 추가하려면 **속성** 창의 **계층 구조** 드롭다운 목록에서 **Subcategory**를 선택합니다(창 내에서 아래쪽으로 스크롤해야 할 수 있음).
 
 5. 계층 구조에 두 번째 수준을 추가하려면 **계층 구조** 드롭다운 목록에서 **Product**를 선택합니다.
 
@@ -249,11 +249,11 @@ lab:
 
     ![그림 346](Linked_image_Files/03-configure-data-model-in-power-bi-desktop_image28.png)
 
-9. 열을 표시 폴더로 구성하려면 **필드** 창에서 먼저 **배경색 형식** 열을 선택합니다.
+9. 열을 표시 폴더로 구성하려면 **필드** 창에서 먼저 **Background Color Format** 열을 선택합니다.
 
-10. **Ctrl** 키를 누른 채로 **글꼴 색 형식** 열을 선택합니다.
+10. **Ctrl** 키를 누른 채로 **Font Color Format** 열을 선택합니다.
 
-11. **속성** 창의 **표시 폴더** 상자에 **서식**을 입력합니다.
+11. **속성** 창의 **표시 폴더** 상자에 **Formatting**을 입력합니다.
 
     ![그림 348](Linked_image_Files/03-configure-data-model-in-power-bi-desktop_image29.png)
 
@@ -269,11 +269,11 @@ lab:
 
 1. **Region** 테이블에서 다음과 같은 세 가지 수준으로 **Regions**라는 계층 구조를 만듭니다.
 
-    - 그룹
+    - Group
 
-    - 국가
+    - Country
 
-    - 지역
+    - Region
 
     ![그림 350](Linked_image_Files/03-configure-data-model-in-power-bi-desktop_image31.png)
 
@@ -291,25 +291,25 @@ lab:
 
 1. **Reseller** 테이블에서 다음과 같은 두 가지 수준으로 **Resellers**라는 계층 구조를 만듭니다.
 
-    - 비즈니스 유형
+    - Business Type
 
-    - 재판매인
+    - Reseller
 
     ![그림 351](Linked_image_Files/03-configure-data-model-in-power-bi-desktop_image33.png)
 
 2. 다음 네 가지 수준으로 **Geography**라는 두 번째 계층 구조를 만듭니다.
 
-    - 국가-지역
+    - Country-Region
 
     - State-Province
 
-    - 구/군/시
+    - City
 
-    - 재판매인
+    - Reseller
 
     ![그림 353](Linked_image_Files/03-configure-data-model-in-power-bi-desktop_image34.png)
 
-3. **국가-지역**, **시-도**, **도시** 열(계층 구조 수준 아님)에 대한 **데이터 범주**를 각각 **국가/지역**, **시/도** 및 **구/군/시**로 설정합니다. 
+3. **Country-Region**, **State-Province**, **City** 열(계층 구조 수준 아님)에 대한 **데이터 범주**를 각각 **국가/지역**, **시/도** 및 **구/군/시**로 설정합니다. 
 
 ### **작업 4: Sales 테이블 구성**
 
@@ -343,35 +343,35 @@ lab:
 
 이 작업에서는 단일 대량 업데이트를 사용하여 여러 열을 업데이트합니다. 대량 작업 방식으로 열을 숨기고 열 값의 서식을 지정합니다.
 
-1. **필드** 창에서 **제품 \| ProductKey** 열을 선택합니다.
+1. **필드** 창에서 **Product \| ProductKey** 열을 선택합니다.
 
 2. **Ctrl** 키를 누른 채로 다음 13개의 열을 선택합니다(여러 테이블에 분포됨).
 
-    - 지역 \| SalesTerritoryKey
+    - Region \| SalesTerritoryKey
 
-    - 재판매인 \| ResellerKey
+    - Reseller \| ResellerKey
 
-    - 판매 \| EmployeeKey
+    - Sales \| EmployeeKey
     
-    - 판매 \| ProductKey
+    - Sales \| ProductKey
 
-    - 판매 \| ResellerKey
+    - Sales \| ResellerKey
 
-    - 판매 \| SalesOrderNumber
+    - Sales \| SalesOrderNumber
 
-    - 판매 \| SalesTerritoryKey
+    - Sales \| SalesTerritoryKey
 
-    - 영업 직원 \| EmployeeID
+    - Salesperson \| EmployeeID
 
-    - 영업 직원 \| EmployeeKey
+    - Salesperson \| EmployeeKey
 
-    - 영업 직원 \| UPN
+    - Salesperson \| UPN
 
     - SalespersonRegion \| EmployeeKey
 
     - SalespersonRegion \| SalesTerritoryKey
 
-    - 목표 \| EmployeeID
+    - Targets \| EmployeeID
 
 3. **속성** 창에서 **숨김** 속성을 **켬**으로 밉니다.
 
@@ -383,11 +383,11 @@ lab:
 
 4. 다음 세 개의 열을 다중 선택합니다.
 
-    - 제품 \| 표준 비용
+    - Product \| Standard Cost
 
-    - 판매 \| 비용
+    - Sales \| Cost
 
-    - 판매 \| 판매
+    - Sales \| Sales
 
 5. **속성** 창의 **서식** 섹션 내에서 **소수 자릿수** 속성을 **0**(숫자 영)으로 설정합니다.
 
@@ -415,13 +415,13 @@ lab:
 
     - 시그마 기호(Ʃ)로 표시된 필드는 기본적으로 요약됩니다.
 
-    - **판매 \| 비용** 필드 위로 커서를 가져가면 도구 설명이 나타납니다.
+    - **Sales \| Cost** 필드 위로 커서를 가져가면 도구 설명이 나타납니다.
 
-3. **판매 \| OrderDate** 필드를 확장하면 날짜 계층 구조가 표시되는 것을 볼 수 있습니다.
+3. **Sales \| OrderDate** 필드를 확장하면 날짜 계층 구조가 표시되는 것을 볼 수 있습니다.
 
     ![그림 359](Linked_image_Files/03-configure-data-model-in-power-bi-desktop_image40.png)
 
-    **목표 \| TargetMonth** 필드도 비슷한 계층 구조를 제공합니다. 이러한 계층 구조는 분석가가 직접 만든 것이 아니라 자동으로 생성된 것입니다. 그러나 문제가 있습니다. Adventure Works의 회계 연도는 매년 7월 1일에 시작되지만 그러나 이러한 자동 생성 날짜 계층 구조에서 날짜 계층 구조 연도는 매년 1월 1일에 시작됩니다.
+    **Targets \| TargetMonth** 필드도 비슷한 계층 구조를 제공합니다. 이러한 계층 구조는 분석가가 직접 만든 것이 아니라 자동으로 생성된 것입니다. 그러나 문제가 있습니다. Adventure Works의 회계 연도는 매년 7월 1일에 시작되지만 그러나 이러한 자동 생성 날짜 계층 구조에서 날짜 계층 구조 연도는 매년 1월 1일에 시작됩니다.
 
     따라서 이 자동 동작을 비활성화하겠습니다. **Power BI Desktop에서 DAX 계산 만들기, 1부** 랩에서 DAX를 사용하여 날짜 테이블을 만든 다음, Adventure Works의 일정을 정의하도록 구성할 것입니다.
 
@@ -534,7 +534,7 @@ lab:
 
     - Salesperson \| Salesperson
 
-    - 판매 \| 판매
+    - Sales \| Sales
 
     랩에서는 약식 표기법을 사용하여 필드를 참조합니다. 다음과 같이 표시됩니다. **Salesperson \| Salesperson** . 이 예에서 **Salesperson**은 테이블 이름이고 **Salesperson**은 필드 이름입니다.
 
