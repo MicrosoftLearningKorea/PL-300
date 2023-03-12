@@ -1,11 +1,11 @@
 ---
 lab:
   title: Power BI 대시보드 만들기
-  module: Module 8 - Create Dashboards
+  module: Module 11 - Create Dashboards
 ---
 
 
-# **Power BI 대시보드 만들기**
+# Power BI 대시보드 만들기
 
 **이 랩을 완료하는 데 걸리는 예상 완료 시간은 45분입니다.**
 
@@ -22,24 +22,15 @@ lab:
 이 랩은 데이터 준비부터 보고서 및 대시보드로 게시에 이르기까지 전체 사례로 고안된 랩 시리즈 중 하나입니다. 어떤 순서로든 랩을 완료할 수 있습니다. 그러나 여러 랩을 진행하려는 경우 처음 10개 랩은 다음 순서를 따르는 것이 좋습니다.
 
 1. Power BI Desktop에서 데이터 준비
-
 2. Power BI Desktop에서 데이터 로드
-
 3. Power BI Desktop에서 데이터 모델링
-
-5. Power BI Desktop에서 DAX 계산 만들기 1부
-
-6. Power BI Desktop에서 DAX 계산 만들기, 2부
-
-7. Power BI Desktop에서 보고서 디자인, 1부
-
-8. Power BI Desktop에서 보고서 디자인, 2부
-
+4. Power BI Desktop에서 DAX 계산 만들기 1부
+5. Power BI Desktop에서 DAX 계산 만들기, 2부
+6. Power BI Desktop에서 보고서 디자인, 1부
+7. Power BI Desktop에서 보고서 디자인, 2부
+8. Power BI Desktop에서 데이터 분석 수행
 9. **Power BI 대시보드 만들기**
-
-10. Power BI Desktop에서 데이터 분석 수행
-
-11. 행 수준 보안 적용
+10. 행 수준 보안 적용
 
 ## **연습 1: 대시보드 만들기**
 

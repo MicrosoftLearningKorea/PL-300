@@ -1,11 +1,11 @@
 ---
 lab:
   title: Power BI Desktop에서 데이터 분석 수행
-  module: Module 10 - Perform Advanced Analytics
+  module: Module 10 - Perform Advanced/ Analytics
 ---
 
 
-# **Power BI Desktop에서 데이터 분석 수행**
+# Power BI Desktop에서 데이터 분석 수행
 
 **이 랩을 완료하는 데 걸리는 예상 완료 시간은 45분입니다.**
 
@@ -24,24 +24,15 @@ lab:
 이 랩은 데이터 준비부터 보고서 및 대시보드로 게시에 이르기까지 전체 사례로 고안된 랩 시리즈 중 하나입니다. 어떤 순서로든 랩을 완료할 수 있습니다. 그러나 여러 랩을 진행하려는 경우 처음 10개 랩은 다음 순서를 따르는 것이 좋습니다.
 
 1. Power BI Desktop에서 데이터 준비
-
 2. Power BI Desktop에서 데이터 로드
-
 3. Power BI Desktop에서 데이터 모델링
-
-5. Power BI Desktop에서 DAX 계산 만들기 1부
-
-6. Power BI Desktop에서 DAX 계산 만들기, 2부
-
-7. Power BI Desktop에서 보고서 디자인, 1부
-
-8. Power BI Desktop에서 보고서 디자인, 2부
-
+4. Power BI Desktop에서 DAX 계산 만들기 1부
+5. Power BI Desktop에서 DAX 계산 만들기, 2부
+6. Power BI Desktop에서 보고서 디자인, 1부
+7. Power BI Desktop에서 보고서 디자인, 2부
+8. **Power BI Desktop에서 데이터 분석 수행**
 9. Power BI 대시보드 만들기
-
-10. **Power BI Desktop에서 데이터 분석 수행**
-
-11. 행 수준 보안 적용
+10. 행 수준 보안 적용
 
 ## **연습 1: 보고서 만들기**
 
@@ -171,25 +162,25 @@ lab:
 
 3. 다음 필드를 시각적 개체 웰/영역에 추가합니다.
 
-    랩에서는 약식 표기법을 사용하여 필드를 참조합니다. 다음과 같이 표시됩니다. **재판매인** **\|** **비즈니스 유형**. 이 예에서 **Reseller**는 테이블 이름이고 **Business Type**은 필드 이름입니다.
+    랩에서는 약식 표기법을 사용하여 필드를 참조합니다. 다음과 같이 표시됩니다. **Reseller** **\|** **Business Type**. 이 예에서 **Reseller**는 테이블 이름이고 **Business Type**은 필드 이름입니다.
 
-    - 범례: **재판매인 \| 비즈니스 유형**
+    - 범례: **Reseller \| Business Type**
 
-    - X축: **판매 \| 판매** 
+    - X축: **Sales \| Sales** 
 
-    - Y축: **판매 \| 이익률**
+    - Y축: **Sales \| Profit Margin**
 
-    - 크기: **판매 \| 수량**
+    - 크기: **Sales \| Quantity**
 
-    - Play Axis: **날짜 \| 분기**
+    - Play Axis: **Date \| Quarter**
 
     ![그림 39](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image17.png)
 
     필드가 **재생 축** 웰/영역에 추가되면 차트를 애니메이션화할 수 있습니다.
 
-4. **필터** 창에서 **이 페이지의 필터** 웰/영역에 **제품 \| 범주** 필드를 추가합니다.
+4. **필터** 창에서 **이 페이지의 필터** 웰/영역에 **Product \| Category** 필드를 추가합니다.
 
-5. 필터 카드에서 **자전거**를 기준으로 필터링합니다.
+5. 필터 카드에서 **Bikes**를 기준으로 필터링합니다.
 
     ![그림 40](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image18.png)
 
@@ -207,7 +198,7 @@ lab:
 
 9. 해당 시점에서 재판매인 유형에 대한 측정값을 설명하는 도구 설명을 표시하려면 거품형 위에 커서를 놓습니다.
 
-10. **필터** 창에서 **의류**만을 기준으로 필터링하면 매우 다른 결과가 생성되는 것을 확인할 수 있습니다.
+10. **필터** 창에서 **Clothing**만을 기준으로 필터링하면 매우 다른 결과가 생성되는 것을 확인할 수 있습니다.
 
 11. Power BI Desktop 파일을 저장합니다.
 
@@ -233,13 +224,13 @@ lab:
 
 3. 다음 필드를 시각적 개체 웰/영역에 추가합니다.
 
-    - 축: **날짜 \| 날짜**
+    - 축: **Date \| Date**
 
-    - 값: **판매 \| 판매** 
+    - 값: **Sales \| Sales** 
 
     ![그림 46](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image23.png)
 
-4. **필터** 창에서 **이 페이지의 필터** 웰/영역에 **날짜 \| 연도** 필드를 추가합니다.
+4. **필터** 창에서 **이 페이지의 필터** 웰/영역에 **Date \| Year** 필드를 추가합니다.
 
 5. 필터 카드에서 2년을 기준으로 필터링합니다. **FY2019** 및 **FY2020**.
 
@@ -249,7 +240,7 @@ lab:
 
   
 
-6. **이 페이지의 필터** 웰/영역에 **제품 \| 범주** 필드도 추가한 다음, **자전거**를 기준으로 필터링합니다.
+6. **이 페이지의 필터** 웰/영역에 **Product \| Category** 필드도 추가한 다음, **Bikes**를 기준으로 필터링합니다.
 
     ![그림 48](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image25.png)
 
@@ -285,7 +276,7 @@ lab:
 
     주기의 길이(여기에서는 연간)를 알고 있으면 계절성 지점을 입력해야 합니다. 매주(7) 또는 매월(30)일 수도 있습니다.
 
-13. **필터** 창에서 **의류**만을 기준으로 필터링하면 다른 결과가 생성되는 것을 확인할 수 있습니다.
+13. **필터** 창에서 **Clothing**만을 기준으로 필터링하면 다른 결과가 생성되는 것을 확인할 수 있습니다.
 
 14. Power BI Desktop 파일을 저장합니다.
 
