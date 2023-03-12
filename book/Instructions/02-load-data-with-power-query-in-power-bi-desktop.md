@@ -292,7 +292,7 @@ lab:
 
 11. 변환 결과로 두 개의 열이 추가되고 두 **DimProductSubcategory** 열이 제거된 것을 알 수 있습니다.
 
-12. **DimProductCategory** 열을 확장하고 수강생들에게 **EnglishProductCategoryName** 열만 설명합니다.
+12. **DimProductCategory** 열을 확장하고 **EnglishProductCategoryName** 열만 선택합니다.
 
 13. 다음 네 가지 열의 이름을 바꿉니다.
 
@@ -338,13 +338,13 @@ lab:
 
     ![그림 5656](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image37.png)
 
-5. **비즈니스 유형** 열 머리글에서 아래쪽 화살표를 클릭한 다음 고유 열 값을 검토하여 'warehouse'의 오타를 확인합니다.
+5. **BusinessType** 열 머리글에서 아래쪽 화살표를 클릭한 다음 고유 열 값을 검토하여 'warehouse'의 오타를 확인합니다.
 
     ![그림 2](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image38.png)
 
   
 
-6. **비즈니스 유형** 열 헤더를 마우스 오른쪽 단추로 클릭한 다음 **값 바꾸기**를 선택합니다.
+6. **BusinessType** 열 헤더를 마우스 오른쪽 단추로 클릭한 다음 **값 바꾸기**를 선택합니다.
 
     ![그림 4](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image39.png)
 
@@ -448,7 +448,7 @@ lab:
 
     ![그림 5664](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image47.png)
 
-6. **새 열 이름** 상자의 **사용자 지정 열** 창에서 텍스트를 **비용**으로 바꿉니다.
+6. **새 열 이름** 상자의 **사용자 지정 열** 창에서 텍스트를 **Cost**으로 바꿉니다.
 
     ![그림 5665](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image48.png)
 
@@ -481,7 +481,7 @@ lab:
 
     - **SalesAmount**를 **Sales**로
 
-11. 열 데이터 형식을 수정하려면 열 이름 왼쪽에 있는 **수량** 열 헤더에서 **1.2** 아이콘을 클릭한 다음 **정수**를 선택합니다.
+11. 열 데이터 형식을 수정하려면 열 이름 왼쪽에 있는 **Quantity** 열 헤더에서 **1.2** 아이콘을 클릭한 다음 **정수**를 선택합니다.
 
     ![그림 5667](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image50.png)
 
@@ -491,9 +491,9 @@ lab:
 
     - Unit Price
 
-    - 매출
+    - Sales
 
-    - 비용
+    - Cost
 
     ![그림 5668](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image51.png)
 
@@ -515,7 +515,7 @@ lab:
 
 2. 쿼리 이름을 **Targets**로 바꿉니다.
 
-3. 12개월 열(**M01**-**M12**)을 피벗 해제하기 위해 먼저 **연도** 및 **EmployeeID** 열 머리글을 다중 선택합니다.
+3. 12개월 열(**M01**-**M12**)을 피벗 해제하기 위해 먼저 **Year** 및 **EmployeeID** 열 머리글을 다중 선택합니다.
 
     ![그림 5673](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image54.png)
 
@@ -533,7 +533,7 @@ lab:
 
     - **특성**에서 **MonthNumber**로(두 단어 사이에 공백 없음. 추후 제거 예정)
 
-    - **Value**를 **Target**으로
+    - **값**를 **Target**으로
 
     이제 변환을 적용하여 날짜 열을 생성합니다. 날짜는 **Year** 및 **MonthNumber** 열에서 파생됩니다. **예제의 열** 기능을 사용하여 열을 만들게 됩니다.
 
@@ -557,7 +557,7 @@ lab:
 
 13. 첫 번째 행은 **2017**년, 월 번호 **7**입니다.
 
-14. **Column1** 열의 첫 번째 그리드 셀에서 **07/01/2017**을 입력한 다음 **Enter**를 누릅니다.
+14. **Column1** 열의 첫 번째 그리드 셀에서 **7/1/2017**을 입력한 다음 **Enter**를 누릅니다.
 
     가상 머신은 미국 지역 설정을 사용하므로 이 날짜는 실제로 2017년 7월 1일입니다.
 
@@ -641,15 +641,15 @@ lab:
 
     쿼리를 병합하면 데이터를 통합할 수 있는데, 이 경우에는 다양한 데이터 원본(SQL Server 및 CSV 파일)의 데이터를 통합할 수 있습니다.
 
-3. **제품** 쿼리 표의 **병합** 창에서 **색상** 열 헤더를 선택합니다.
+3. **Product** 쿼리 표의 **병합** 창에서 **Color** 열 헤더를 선택합니다.
 
     ![그림 5655](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image72.png)
 
-4. **제품** 쿼리 표 아래의 드롭다운 목록에서 **ColorFormats** 쿼리를 선택합니다.
+4. **Product** 쿼리 표 아래의 드롭다운 목록에서 **ColorFormats** 쿼리를 선택합니다.
 
     ![그림 21](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image73.png)
 
-5. **ColorFormats** 쿼리 표에서 **색상** 열 헤더를 선택합니다.
+5. **ColorFormats** 쿼리 표에서 **Color** 열 헤더를 선택합니다.
 
 6. **개인 정보 수준** 창이 열리면 해당 드롭다운 목록에서 두 데이터 원본 각각에 대해 **조직**을 선택합니다.
 
@@ -667,9 +667,9 @@ lab:
 
 9. 다음 두 개의 열을 포함하도록 **ColorFormats** 열을 확장합니다.
 
-    - 배경색 형식
+    - Background Color Format
 
-    - 글꼴 색 형식
+    - Font Color Format
 
     ![그림 5694](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image77.png)
 
@@ -689,7 +689,7 @@ lab:
 
     ![그림 322](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image80.png)
 
-3. **쿼리 속성** 창에서 **보고하기 위해 로드 실행** 확인란을 선택 취소합니다.
+3. **쿼리 속성** 창에서 **보고서에 로드 사용** 확인란을 선택 취소합니다.
 
     ![그림 323](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image81.png)
 
@@ -715,9 +715,9 @@ lab:
 
     - Region
 
-    - 매출
+    - Sales
 
-    - 대상
+    - Target
 
     - ColorFormats(데이터 모델에 로드되지 않음)
 
