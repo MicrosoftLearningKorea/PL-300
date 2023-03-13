@@ -1,11 +1,10 @@
-# Welcome to your Jupyter Book
+# PL-300 랩 실습 가이드
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+본 실습 가이드는 MicrosoftLearning 깃헙 조직에서 관리 중인 [PL-300 실습 가이드의 한국어 번역본](https://github.com/MicrosoftLearning/PL-300-Microsoft-Power-BI-Data-Analyst.ko-kr)을 추가적으로 검수 및 수정 하여 제공하고 있습니다. 
 
-Check out the content pages bundled with this sample book to see more.
+최신 자료는 항상 [영문 레포지토리](https://github.com/MicrosoftLearning/PL-300-Microsoft-Power-BI-Data-Analyst)에서 관리 되고 있으니 참고 부탁드립니다. 
 
+## 목차
 ```{tableofcontents}
+
 ```
