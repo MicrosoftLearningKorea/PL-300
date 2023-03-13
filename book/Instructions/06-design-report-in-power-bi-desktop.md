@@ -1,11 +1,11 @@
 ---
 lab:
-  title: 'Power BI Desktop에서 보고서 디자인, 1부'
+  title: 'Power BI Desktop에서 보고서 디자인 1부'
   module: 7 - Create Reports
 ---
 
 
-# Power BI Desktop에서 보고서 디자인, 1부
+# Power BI Desktop에서 보고서 디자인 1부
 
 **이 랩의 예상 완료 시간은 45분입니다.**
 

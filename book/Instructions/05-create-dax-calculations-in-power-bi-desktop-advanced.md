@@ -1,11 +1,11 @@
 ---
 lab:
-  title: 'Power BI Desktop에서 DAX 계산 만들기, 2부'
+  title: 'Power BI Desktop에서 DAX 계산 만들기 2부'
   module: 5 - Create Model Calculations using DAX in Power BI
 ---
 
 
-# Power BI Desktop에서 DAX 계산 만들기, 2부
+# Power BI Desktop에서 DAX 계산 만들기 2부
 
 **이 랩의 예상 완료 시간은 45분입니다.**
 
