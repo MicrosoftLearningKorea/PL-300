@@ -11,6 +11,6 @@ chapters:
 - file: Instructions/05-create-dax-calculations-in-power-bi-desktop-advanced
 - file: Instructions/06-design-report-in-power-bi-desktop
 - file: Instructions/07-design-report-in-power-bi-desktop-enhanced
-- file: Instructions/08-create-power-bi-dashboard
-- file: Instructions/09-perform-data-analysis-in-power-bi-desktop
+- file: Instructions/08-perform-data-analysis-in-power-bi-desktop
+- file: Instructions/09-create-power-bi-dashboard
 - file: Instructions/10-row-level-security
