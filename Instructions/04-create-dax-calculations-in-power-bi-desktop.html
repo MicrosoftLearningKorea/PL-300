@@ -1,0 +1,914 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Power BI Desktop에서 DAX 계산 만들기 1부 &#8212; PL-300 Lab Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Instructions/04-create-dax-calculations-in-power-bi-desktop';</script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Power BI Desktop에서 DAX 계산 만들기 2부" href="05-create-dax-calculations-in-power-bi-desktop-advanced.html" />
+    <link rel="prev" title="Power BI에서 데이터 모델 디자인" href="03-configure-data-model-in-power-bi-desktop.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    PL-300 랩 실습 가이드
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-prepare-data-with-power-query-in-power-bi-desktop.html">Power BI Desktop에서 데이터 준비</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-load-data-with-power-query-in-power-bi-desktop.html">Power BI Desktop에서 데이터 로드</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-configure-data-model-in-power-bi-desktop.html">Power BI에서 데이터 모델 디자인</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Power BI Desktop에서 DAX 계산 만들기 1부</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-create-dax-calculations-in-power-bi-desktop-advanced.html">Power BI Desktop에서 DAX 계산 만들기 2부</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-design-report-in-power-bi-desktop.html">Power BI Desktop에서 보고서 디자인 1부</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-design-report-in-power-bi-desktop-enhanced.html">Power BI Desktop에서 보고서 디자인 2부</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-perform-data-analysis-in-power-bi-desktop.html">Power BI Desktop에서 데이터 분석 수행</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-create-power-bi-dashboard.html">Power BI 대시보드 만들기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-row-level-security.html">행 수준 보안 적용</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/MicrosoftLearningKorea/PL-300" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Instructions/04-create-dax-calculations-in-power-bi-desktop.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Power BI Desktop에서 DAX 계산 만들기 1부</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>랩 사례</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>연습 1: 계산된 테이블 만들기</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>작업 1: 시작하기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#salesperson"><strong>작업 2: Salesperson 테이블 만들기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>작업 3: 날짜 테이블 만들기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>작업 4:</strong> <strong>계산 열 만들기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>작업 5:</strong> <strong>날짜 테이블 완료</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>작업 6: 날짜 테이블 표시</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>연습 2: 측정값 만들기</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>작업 1: 단순 측정값 만들기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>작업 2: 추가 측정값 만들기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>작업 3: 완료</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="power-bi-desktop-dax-1">
+<h1>Power BI Desktop에서 DAX 계산 만들기 1부<a class="headerlink" href="#power-bi-desktop-dax-1" title="Permalink to this heading">#</a></h1>
+<p><strong>이 랩의 예상 완료 시간은 45분입니다.</strong></p>
+<p>이 랩에서는 DAX(Data Analysis Expressions)를 사용하여 계산된 테이블, 계산 열 및 단순 측정값을 만듭니다.</p>
+<p>이 랩에서는 다음 작업을 수행하는 방법을 알아봅니다.</p>
+<ul class="simple">
+<li><p>계산된 테이블 만들기</p></li>
+<li><p>계산 열 만들기</p></li>
+<li><p>측정값 만들기</p></li>
+</ul>
+<section id="id1">
+<h2><strong>랩 사례</strong><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>이 랩은 데이터 준비부터 보고서 및 대시보드로 게시에 이르기까지 전체 사례로 고안된 랩 시리즈 중 하나입니다. 어떤 순서로든 랩을 완료할 수 있습니다. 그러나 여러 랩을 진행하려는 경우 다음 순서를 따르는 것이 좋습니다.</p>
+<ol class="arabic simple">
+<li><p>Power BI Desktop에서 데이터 준비</p></li>
+<li><p>Power BI Desktop에서 데이터 로드</p></li>
+<li><p>Power BI에서 데이터 모델 디자인</p></li>
+<li><p><strong>Power BI Desktop에서 DAX 계산 만들기, 1부</strong></p></li>
+<li><p>Power BI Desktop에서 DAX 계산 만들기, 2부</p></li>
+<li><p>Power BI Desktop에서 보고서 디자인, 1부</p></li>
+<li><p>Power BI Desktop에서 보고서 디자인, 2부</p></li>
+<li><p>AI 시각적 개체를 사용하여 데이터 분석</p></li>
+<li><p>Power BI 대시보드 만들기</p></li>
+<li><p>행 수준 보안 적용</p></li>
+</ol>
+</section>
+<section id="id2">
+<h2><strong>연습 1: 계산된 테이블 만들기</strong><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>이 연습에서는 두 개의 계산된 테이블을 만듭니다. 첫 번째는 <strong>Salesperson</strong> 테이블입니다. 이 테이블을 사용하여 <strong>Sales</strong> 테이블과의 사이에 직접 관계를 지정할 수 있습니다. 두 번째는 <strong>Date</strong> 테이블입니다.</p>
+<section id="id3">
+<h3><strong>작업 1: 시작하기</strong><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 랩용 환경을 설정합니다.</p>
+<p><em>중요: 이전 랩에서 계속 진행해 온 경우(그리고 해당 랩을 성공적으로 완료한 경우) 이 작업을 완료하지 마세요. 대신, 다음 작업부터 진행하세요.</em></p>
+<ol class="arabic">
+<li><p>Power BI Desktop을 열려면 작업 표시줄에서 Microsoft Power BI Desktop 바로 가기를 클릭합니다.</p>
+<p><img alt="그림 50" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image1.png" /></p>
+</li>
+<li><p>시작 창을 닫으려면 창 왼쪽 위의 <strong>X</strong>를 클릭합니다.</p>
+<p><img alt="그림 49" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image2.png" /></p>
+</li>
+<li><p>시작 Power BI Desktop 파일을 열려면 <strong>파일</strong> 리본 탭을 클릭하여 Backstage 뷰를 엽니다.</p></li>
+<li><p><strong>보고서 열기</strong>를 선택합니다.</p>
+<p><img alt="그림 48" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image3.png" /></p>
+</li>
+<li><p><strong>보고서 찾아보기</strong>를 클릭합니다.</p>
+<p><img alt="그림 47" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image4.png" /></p>
+</li>
+<li><p><strong>열기</strong> 창에서 <strong>D:\PL300\Labs\04-create-dax-calculations-in-power-bi-desktop\Starter</strong> 폴더로 이동합니다.</p></li>
+<li><p><strong>판매 분석</strong> 파일을 선택합니다.</p></li>
+<li><p><strong>열기</strong>를 클릭합니다.</p>
+<p><img alt="그림 35" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image5.png" /></p>
+</li>
+<li><p>열려 있는 정보 창을 모두 닫습니다.</p></li>
+<li><p>파일 복사본을 만들려면 <strong>파일</strong> 리본 탭을 클릭하여 Backstage 뷰를 엽니다.</p></li>
+<li><p><strong>다른 이름으로 저장</strong>을 선택합니다.</p>
+<p><img alt="그림 34" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image6.png" /></p>
+</li>
+<li><p>변경 내용을 적용하라는 메시지가 표시되면 <strong>적용</strong>을 클릭합니다.</p>
+<p><img alt="그림 25" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image7.png" /></p>
+</li>
+<li><p><strong>다른 이름으로 저장</strong> 창에서 <strong>D:\PL300\MySolution</strong> 폴더로 이동합니다.</p></li>
+<li><p><strong>저장</strong>을 클릭합니다.</p>
+<p><img alt="그림 13" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image8.png" /></p>
+</li>
+</ol>
+</section>
+<section id="salesperson">
+<h3><strong>작업 2: Salesperson 테이블 만들기</strong><a class="headerlink" href="#salesperson" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 <strong>Salesperson</strong> 테이블(<strong>Sales</strong>와 직접적인 관계가 있음)을 만듭니다.</p>
+<ol class="arabic">
+<li><p>Power BI Desktop 보고서 뷰의 <strong>모델링</strong> 리본에 있는 <strong>계산</strong> 그룹에서 <strong>새 테이블</strong>을 클릭합니다.</p>
+<p><img alt="그림 1" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image9.png" /></p>
+</li>
+<li><p>계산을 만들거나 편집할 때 리본 바로 아래에 표시되는 수식 입력줄에서 <strong>Salesperson =</strong> 를 입력하고 <strong>Shift + Enter</strong> 키를 누르고, <strong>‘Salesperson (Performance)’</strong> 를 입력한 다음 <strong>Enter</strong> 키를 누릅니다.</p>
+<p><img alt="그림 4" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image10.png" /></p>
+<p>편의상 이 랩의 모든 DAX 정의를 <strong>D:\PL300\Labs\04-create-dax-calculations-in-power-bi-desktop\Assets\Snippets.txt</strong>에 위치한 코드 조각 파일에서 복사할 수 있습니다.</p>
+<p>먼저 테이블 이름을 입력하고, 그 뒤에 등호 기호(=)를 입력한 다음, 테이블을 반환하는 DAX 수식을 입력하여 계산된 테이블을 만듭니다. 테이블 이름이 데이터 모델에 이미 존재하면 안 됩니다.</p>
+<p>수식 입력줄은 유효한 DAX 수식을 입력하도록 지원합니다. 자동 완성, Intellisense, 색 구분과 같은 기능을 포함하여 신속하고 정확하게 수식을 입력할 수 있습니다.</p>
+<p>이 테이블 정의는 <strong>Salesperson (Performance)</strong> 테이블의 복사본을 만듭니다. 데이터는 복사할 수 있지만 표시 유형, 서식 지정 등과 같은 모델 속성은 복사할 수 없습니다.</p>
+<p><em>팁: “공백”(예: 캐리지 리턴 및 탭)을 입력하여 직관적이고 읽기 쉬운 형식으로 수식을 배치하는 것이 좋으며, 특히 수식이 길고 복잡할 때는 더욱 유용합니다. 캐리지 리턴을 입력하려면 <strong>Shift + Enter</strong> 키를 누릅니다. “공백”은 선택 사항입니다.</em></p>
+</li>
+<li><p><strong>필드</strong> 창에서 테이블 아이콘은 파란색 음영입니다(계산된 테이블을 나타냄).</p>
+<p><img alt="그림 10" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image11.png" /></p>
+<p>계산된 테이블은 테이블을 반환하는 DAX 수식을 사용하여 정의됩니다. 계산된 테이블은 값을 구체화하고 저장하기 때문에 데이터 모델의 크기가 증가된다는 점을 알고 있어야 합니다. 이 데이터 모델에서는 새(향후) 날짜 값이 테이블로 로드될 때와 마찬가지로 수식 종속성이 새로 고칠 때마다 다시 계산됩니다.</p>
+<p>Power Query 원본 테이블과는 달리, 계산된 테이블을 사용하여 외부 데이터 원본의 데이터를 로드할 수 없습니다. 데이터 모델에 이미 로드된 항목에 따라 데이터만 변환할 수 있습니다.</p>
+</li>
+<li><p>모델 뷰로 전환합니다.</p></li>
+<li><p>이제 <strong>Salesperson</strong> 테이블을 사용할 수 있습니다(이 테이블이 보기에는 숨겨져 있을 수 있으며, 이 경우 가로로 스크롤하여 찾으세요).</p></li>
+<li><p><strong>Salesperson | EmployeeKey</strong> 열에서 <strong>Sales | EmployeeKey</strong> 열로 관계를 만듭니다.</p></li>
+<li><p><strong>Salesperson (Performance)</strong> 테이블과 <strong>Sales</strong> 테이블 간의 비활성 관계를 마우스 오른쪽 단추로 클릭한 다음 <strong>삭제</strong>를 선택합니다.</p>
+<p><img alt="그림 2" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image12.png" /></p>
+</li>
+<li><p>삭제 확인 대화 상자가 나타나면 클릭 <strong>확인</strong>합니다.</p>
+<p><img alt="그림 3" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image13.png" /></p>
+</li>
+<li><p><strong>영업 직원</strong> 테이블에서 다음 열을 한꺼번에 선택하여 숨깁니다(<strong>숨김</strong> 속성을 <strong>예</strong>로 설정).</p>
+<ul class="simple">
+<li><p>EmployeeID</p></li>
+<li><p>EmployeeKey</p></li>
+<li><p>UPN</p></li>
+</ul>
+</li>
+<li><p>모델 다이어그램에서 <strong>Salesperson</strong> 테이블을 선택합니다.</p></li>
+<li><p><strong>속성</strong> 창의 <strong>설명</strong> 상자에 <strong>판매와 관련된 영업 직원</strong></p>
+<p>사용자가 테이블이나 필드에 커서를 가져가면 해당 설명이 <strong>필드</strong> 창에 도구 설명으로 나타납니다.</p>
+</li>
+<li><p><strong>Salesperson (Performance)</strong> 테이블에 대한 설명을 다음과 같이 설정합니다. <strong>지역과 관련된 영업 직원</strong></p>
+<p>이제 데이터 모델이 영업 직원을 분석할 때 두 가지 대안을 제공합니다. <strong>영업 직원</strong> 테이블에서는 영업 직원의 판매를 분석할 수 있으며, <strong>영업 직원(성과)</strong> 테이블에서는 영업 직원에게 할당된 판매 지역의 매출을 분석할 수 있습니다.</p>
+</li>
+</ol>
+</section>
+<section id="id4">
+<h3><strong>작업 3: 날짜 테이블 만들기</strong><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 <strong>날짜</strong> 테이블을 만듭니다.</p>
+<ol class="arabic">
+<li><p>데이터 뷰로 전환합니다.</p>
+<p><img alt="그림 29" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image14.png" /></p>
+</li>
+<li><p><strong>홈</strong> 리본 탭의 <strong>계산</strong> 그룹 내에서 <strong>새 테이블</strong>을 클릭합니다.</p>
+<p><img alt="그림 5" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image15.png" /></p>
+</li>
+<li><p>수식 표시줄에서 다음을 입력합니다.</p>
+<p><strong>DAX</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Date</span> <span class="o">=</span>  
+<span class="n">CALENDARAUTO</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="그림 6" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image16.png" /></p>
+</li>
+</ol>
+<p>​<br />
+​    CALENDARAUTO() 함수는 날짜 값으로 구성된 단일 열 테이블을 반환합니다. “Auto” 동작은 모든 데이터 모델 날짜 열을 검색하여 데이터 모델에 저장된 가장 빠른 날짜 값과 가장 늦은 날짜 값을 결정합니다. 그런 다음, 이 범위의 각 날짜에 대해 한 개의 행을 만들어 전체 연도의 데이터가 저장되도록 이 범위를 어느 방향으로든 확장합니다.
+​<br />
+이 함수에는 1년의 마지막 달 번호를 단일 선택적 인수로 사용할 수 있습니다. 생략할 경우 값은 12입니다. 즉, 12월이 연도의 마지막 달입니다. 이 경우 6을 입력합니다. 즉, 6월이 연도의 마지막 달입니다.</p>
+<ol class="arabic" start="4">
+<li><p>날짜 값의 열을 확인합니다.</p>
+<p><img alt="그림 7" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image17.png" /></p>
+<p><em>표시되는 날짜는 미국 국가별 설정(mm/dd/yyyy)을 사용하여 서식이 지정됩니다.</em></p>
+</li>
+<li><p>상태 표시줄의 왼쪽 아래 모서리에 있는 테이블 통계에서 5개 전체 연도의 데이터를 나타내는 1,826개 행의 데이터가 생성되었는지 확인합니다.</p>
+<p><img alt="그림 9" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image18.png" /></p>
+</li>
+</ol>
+</section>
+<section id="id5">
+<h3><strong>작업 4:</strong> <strong>계산 열 만들기</strong><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 다른 열을 추가하여 다른 기간별로 필터링 및 그룹화합니다. 또한 다른 열의 정렬 순서를 제어하는 계산 열을 만듭니다.</p>
+<p>편의상 이 랩의 모든 DAX 정의를 <strong>D:\PL300\Labs\04-create-dax-calculations-in-power-bi-desktop\Assets\Snippets.txt</strong>에 위치한 코드 조각 파일에서 복사할 수 있습니다.</p>
+<ol class="arabic">
+<li><p><strong>테이블 도구</strong> 상황별 리본에서 <strong>계산</strong> 그룹 내에 있는 <strong>새 열</strong>을 클릭합니다.</p>
+<p><img alt="그림 11" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image19.png" /></p>
+</li>
+<li><p>수식 표시줄에서 다음을 입력(하거나 코드 조각 파일에서 복사)한 후 <strong>Enter</strong> 키를 누릅니다.</p>
+<p><strong>DAX</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Year</span> <span class="o">=</span>
+<span class="s2">&quot;FY&quot;</span> <span class="o">&amp;</span> <span class="n">YEAR</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">[</span><span class="n">Date</span><span class="p">])</span> <span class="o">+</span> <span class="n">IF</span><span class="p">(</span><span class="n">MONTH</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">[</span><span class="n">Date</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>먼저 열 이름을 입력하고, 그 뒤에 등호 기호(=)를 입력한 다음, 단일 값 결과를 반환하는 DAX 수식을 입력하여 계산 열을 만듭니다. 열 이름은 테이블에 이미 존재하면 안 됩니다.</p>
+<p>이 수식에서는 날짜의 연도 값을 사용하지만 7월부터는 연도 값에 1을 더합니다. 이것은 Adventure Works의 회계 연도를 계산하는 방법입니다.</p>
+</li>
+<li><p>새 열이 추가되었는지 확인합니다.</p>
+<p><img alt="그림 12" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image20.png" /></p>
+</li>
+<li><p>코드 조각 파일 정의를 사용하여 <strong>Date</strong> 테이블에 대해 다음 두 개의 계산 열을 만들 수 있습니다.</p>
+<ul class="simple">
+<li><p>Quarter</p></li>
+<li><p>Month</p></li>
+</ul>
+<p><img alt="그림 14" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image21.png" /></p>
+</li>
+<li><p>계산의 유효성을 검사하려면 보고서 뷰로 전환합니다.</p></li>
+<li><p>새 보고서 페이지를 만들려면 왼쪽 아래에서 더하기 아이콘을 클릭합니다.</p>
+<p><img alt="그림 15" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image22.png" /></p>
+</li>
+<li><p>새 보고서 페이지에 행렬 시각적 개체를 추가하려면 <strong>시각화</strong> 창에서 행렬 시각적 개체 유형을 선택합니다.</p>
+<p><em>팁: 각 아이콘 위에 커서를 올려 놓으면 시각적 개체 유형을 설명하는 도구 설명을 표시할 수 있습니다.</em></p>
+<p><img alt="그림 51" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image23.png" /></p>
+</li>
+<li><p><strong>필드</strong> 창의 <strong>Date</strong> 테이블 내부에서 <strong>Year</strong> 필드를 <strong>행</strong> 웰/영역으로 끌어갑니다.</p>
+<p><img alt="그림 17" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image24.png" /></p>
+</li>
+<li><p><strong>Month</strong> 필드를 <strong>Year</strong> 필드 바로 아래 <strong>행</strong> 웰/영역으로 끌어갑니다.</p>
+<p><img alt="그림 18" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image25.png" /></p>
+</li>
+<li><p>행렬 시각적 개체의 오른쪽 위(또는 시각적 개체 위치에 따라 맨 아래)에서 이중으로 갈라진 화살표 아이콘(모든 연도를 한 수준 아래로 확장)을 클릭합니다.</p>
+<p><img alt="그림 19" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image26.png" /></p>
+</li>
+<li><p>연도가 월로 확장되고 월은 시간순이 아닌 알파벳 순으로 정렬됩니다.</p>
+<p><img alt="그림 20" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image27.png" /></p>
+<p><em>기본적으로 텍스트 값은 알파벳 순으로 정렬되고 숫자는 가장 작은 값에서 가장 큰 값으로 정렬되며 날짜는 가장 빠른 날짜에서 가장 늦은 날짜로 정렬됩니다.</em></p>
+</li>
+<li><p><strong>Month</strong> 필드 정렬 순서를 사용자 지정하려면 데이터 뷰로 전환합니다.</p></li>
+<li><p><strong>Date</strong> 테이블에 <strong>MonthKey</strong> 열을 추가합니다.</p>
+<p><strong>DAX</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MonthKey</span> <span class="o">=</span>
+<span class="p">(</span><span class="n">YEAR</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">[</span><span class="n">Date</span><span class="p">])</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="n">MONTH</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">[</span><span class="n">Date</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><em>이 수식은 각 연도/월 조합에 대해 숫자 값을 계산합니다.</em></p>
+</li>
+<li><p>데이터 뷰에서 새 열에 숫자 값이 포함되어 있는지 확인합니다(예: 2017년 7월의 경우 201707 등).</p>
+<p><img alt="그림 21" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image28.png" /></p>
+</li>
+<li><p>보고서 뷰로 다시 전환합니다.</p></li>
+<li><p><strong>필드</strong> 창에서 <strong>Month</strong> 필드가 선택되어 있는지 확인합니다(선택하면 진한 회색 배경이 표시됨).</p></li>
+<li><p><strong>열 도구</strong> 상황별 리본의 <strong>정렬</strong> 그룹에서 <strong>열 기준 정렬</strong>을 클릭한 다음 <strong>MonthKey</strong>를 선택합니다.</p>
+<p><img alt="그림 22" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image29.png" /></p>
+</li>
+<li><p>행렬 시각적 개체에서 월이 시간순으로 정렬되어 있습니다.</p>
+<p><img alt="그림 23" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image30.png" /></p>
+</li>
+</ol>
+</section>
+<section id="id6">
+<h3><strong>작업 5:</strong> <strong>날짜 테이블 완료</strong><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 열을 숨기고 계층 구조를 만들어서 <strong>Date</strong> 테이블의 디자인을 완료합니다. 그런 다음 <strong>Sales</strong> 열과 <strong>Targets</strong> 테이블 간의 관계를 만듭니다.</p>
+<ol class="arabic">
+<li><p>모델 뷰로 전환합니다.</p></li>
+<li><p><strong>Date</strong> 테이블에서 <strong>MonthKey</strong> 열을 숨깁니다(<strong>숨김</strong>을 <strong>예</strong>로 설정).</p></li>
+<li><p><strong>필드</strong> 우측 창에서 <strong>Date</strong> 테이블을 선택하고 <strong>Year</strong> 열을 마우스 오른쪽 단추를 클릭한 후 <strong>계층 구조 만들기</strong>를 선택합니다.</p></li>
+<li><p>마우스 오른쪽 단추를 클릭하고 <strong>이름 변경</strong>을 선택하여 새로 만들어진 계층 구조의 이름을 <strong>Fiscal</strong>로 변경합니다.</p></li>
+<li><p>필드 창에서 나머지 2개의 필드를 선택하고 마우스 오른쪽 단추를 클릭합니다. <strong>계층 구조에 추가</strong> -&gt; <strong>Fiscal</strong>를 선택하여 해당 필드를 Fiscal 계층 구조에 추가합니다.</p>
+<ul class="simple">
+<li><p>Quarter</p></li>
+<li><p>Month</p></li>
+</ul>
+<p><img alt="그림 24" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image31.png" /></p>
+</li>
+<li><p>다음 두 가지 모델 관계를 만듭니다.</p>
+<ul class="simple">
+<li><p><strong>Date | Date</strong>에서 <strong>Sales | OrderDate</strong>로</p></li>
+<li><p><strong>Date | Date</strong>에서 <strong>Targets | TargetMonth</strong>로</p></li>
+</ul>
+</li>
+<li><p>다음 두 열을 숨깁니다.</p>
+<ul class="simple">
+<li><p>Sales | OrderDate</p></li>
+<li><p>Targets | TargetMonth</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id7">
+<h3><strong>작업 6: 날짜 테이블 표시</strong><a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 <strong>Date</strong> 테이블을 날짜 테이블로 표시합니다.</p>
+<ol class="arabic">
+<li><p>보고서 뷰로 전환합니다.</p></li>
+<li><p><strong>필드</strong> 창에서 <strong>Date</strong> 테이블(<strong>Date</strong> 필드 아님)을 선택합니다.</p></li>
+<li><p><strong>테이블 도구</strong> 상황별 리본의 <strong>달력</strong> 그룹에서 <strong>날짜 테이블로 표시</strong>를 클릭한 다음 <strong>날짜 테이블로 표시</strong>를 선택합니다.</p>
+<p><img alt="그림 8" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image32.png" /></p>
+</li>
+<li><p><strong>날짜 테이블로 표시</strong> 창의 <strong>날짜 열</strong> 드롭다운 목록에서 <strong>날짜</strong>를 선택합니다.</p>
+<p><img alt="그림 37" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image33.png" /></p>
+</li>
+<li><p><strong>확인</strong>을 클릭합니다.</p>
+<p><img alt="그림 26" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image34.png" /></p>
+</li>
+<li><p>Power BI Desktop 파일을 저장합니다.</p>
+<p>Power BI Desktop은 이제 이 테이블이 날짜(시간)를 정의하고 있음을 이해합니다. 이는 시간 인텔리전스 계산을 사용할 때 중요합니다. <strong>Power BI Desktop에서 DAX 계산 만들기, 2부</strong> 랩에서 시간 인텔리전스 계산 작업을 합니다.</p>
+<p>데이터 원본에 날짜 테이블이 없을 때는 날짜 테이블에 대한 이 디자인 접근 방식이 적합합니다. 데이터 웨어하우스가 있는 경우 데이터 모델의 날짜 논리를 “재정의”하는 대신 날짜 차원 테이블에서 날짜 데이터를 로드하는 것이 좋습니다.</p>
+</li>
+</ol>
+</section>
+</section>
+<section id="id8">
+<h2><strong>연습 2: 측정값 만들기</strong><a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<p>이 연습에서는 여러 측정값을 만들고 형식을 지정합니다.</p>
+<section id="id9">
+<h3><strong>작업 1: 단순 측정값 만들기</strong><a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 간단한 측정값을 만듭니다. 간단한 측정값은 단일 열의 값을 집계하거나 테이블의 행 개수를 계산합니다.</p>
+<ol class="arabic">
+<li><p>보고서 뷰에서, <strong>2페이지</strong>의 <strong>필드</strong> 창에서 <strong>Sales | Unit Price</strong> 필드를 행렬 시각적 개체로 끌어옵니다.</p>
+<p>랩에서는 약식 표기법을 사용하여 필드를 참조합니다. 다음과 같이 표시됩니다. <strong>Sales | Unit Price</strong>. 이 예에서 <strong>Sales</strong>는 테이블 이름이고 <strong>Unit Price</strong>는 필드 이름입니다.</p>
+<p><img alt="그림 27" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image35.png" /></p>
+<p><em><strong>Power BI Desktop에서 데이터 모델링</strong> 랩에서 확인했던 것처럼, <strong>Average</strong>를 기준으로 내용이 요약되도록 <strong>Unit Price</strong> 열을 설정합니다. 행렬 시각적 개체에 표시되는 결과는 월평균 단가(단가 값의 합을 단가 개수로 나눈 값)입니다.</em></p>
+</li>
+<li><p>시각적 필드 창(<strong>시각화</strong> 창 아래에 있음)의 <strong>값</strong> 필드 웰/영역에 <strong>Unit Price</strong>가 나열됩니다.</p>
+<p><img alt="그림 28" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image36.png" /></p>
+</li>
+<li><p><strong>Unit Price</strong>의 아래쪽 화살표를 클릭한 다음 사용 가능한 메뉴 옵션을 확인합니다.</p>
+<p><img alt="그림 30" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image37.png" /></p>
+<p>시각적 숫자 열을 사용하면 보고서 작성자가 보고서 디자인 시 열 값이 요약되는(또는 요약되지 않는) 방식을 결정할 수 있습니다. 그러면 부적절한 보고가 발생할 수 있습니다. 그러나 일부 데이터 모델러는 운에 맡기는 것을 좋아하지 않아 이러한 열을 숨기고 대신 측정값에 의해 정의된 집계 논리를 노출하도록 선택합니다. 여러분이 이 랩에서 적용할 접근 방식입니다.</p>
+</li>
+<li><p>측정값을 만들려면 <strong>필드</strong> 창에서 <strong>Sales</strong> 테이블을 마우스 오른쪽 단추로 클릭한 다음 <strong>새 측정값</strong>을 선택합니다.</p>
+<p><img alt="그림 31" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image38.png" /></p>
+</li>
+<li><p>수식 입력줄에 다음 측정값 정의를 추가합니다.</p>
+<p><strong>DAX</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Avg Price =  
+‎AVERAGE(Sales[Unit Price])
+</pre></div>
+</div>
+</li>
+<li><p><strong>Avg Price</strong> 측정값을 행렬 시각적 개체에 추가합니다.</p></li>
+<li><p>그러면 <strong>Unit Price</strong> 열과 동일한 결과가 생성됩니다(그러나 서식 지정은 다름).</p></li>
+<li><p><strong>값</strong> 웰에서 <strong>Avg Price</strong> 필드의 상황에 맞는 메뉴를 열면 집계 기술을 변경할 수 없다는 것을 알 수 있습니다.</p>
+<p><img alt="그림 32" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image39.png" /></p>
+<p>측정값의 집계 동작을 수정할 수는 없습니다.</p>
+</li>
+<li><p>조각 파일 정의를 사용하여 <strong>Sales</strong> 테이블에 대해 다음 5개의 측정값을 만듭니다.</p>
+<ul class="simple">
+<li><p>Median Price</p></li>
+<li><p>Min Price</p></li>
+<li><p>Max Price</p></li>
+<li><p>Orders</p></li>
+<li><p>Order Lines</p></li>
+</ul>
+<p><strong>Orders</strong> 측정값에 사용되는 DISTINCTCOUNT() 함수는 주문을 한 번만 계수합니다(중복 항목은 무시함). <strong>Order Lines</strong> 측정값에 사용되는 COUNTROWS() 함수는 테이블만 계산합니다.</p>
+<p>이 경우 주문 수는 별개의 <strong>SalesOrderNumber</strong> 열 값을 계수하여 계산되고, 주문 줄 수는 단순히 테이블 행의 수입니다(각 행이 주문 한 줄임).</p>
+</li>
+<li><p>모델 뷰로 전환한 다음 4개의 가격 측정값을 다중 선택합니다. <strong>Avg Price</strong>, <strong>Max Price</strong>, <strong>Median Price</strong>, <strong>Min Price</strong>.</p></li>
+<li><p>측정값을 다중 선택하는 경우 다음 요구 사항을 구성합니다.</p>
+<ul class="simple">
+<li><p>소수점 이하 두 자리로 서식 지정</p></li>
+<li><p><strong>Pricing</strong>이라는 표시 폴더에 할당</p></li>
+</ul>
+<p><img alt="그림 33" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image40.png" /></p>
+</li>
+<li><p><strong>Unit Price</strong> 열을 숨깁니다.</p>
+<p>이제 보고서 작성자가 <strong>단가</strong> 열을 사용할 수 없습니다. 보고서 작성자는 모델에 추가된 가격 측정값을 사용해야 합니다. 이 디자인 방법을 사용하면 보고서 작성자가 예를 들어 합계를 계산하는 등 가격을 잘못 집계하는 것이 방지됩니다.</p>
+</li>
+<li><p><strong>Order Lines</strong> 및 <strong>Orders</strong> 측정값을 다중 선택하고 다음 요구 사항을 구성합니다.</p>
+<ul class="simple">
+<li><p>천 단위 구분 기호를 사용하도록 서식 지정</p></li>
+<li><p><strong>Counts</strong>라는 표시 폴더에 할당</p></li>
+</ul>
+<p><img alt="그림 36" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image41.png" /></p>
+</li>
+<li><p>보고서 뷰의 행렬 시각적 개체의 <strong>값</strong> 웰/영역에서 <strong>Unit Price</strong> 필드에 대해 X를 클릭하여 제거합니다.</p>
+<p><img alt="그림 38" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image42.png" /></p>
+</li>
+<li><p>행렬 시각적 개체의 크기를 늘려 페이지 너비와 높이를 채웁니다.</p></li>
+<li><p>다음의 다섯 가지 측정값을 행렬 시각적 개체에 추가합니다.</p>
+<ul class="simple">
+<li><p>Median Price</p></li>
+<li><p>Min Price</p></li>
+<li><p>Max Price</p></li>
+<li><p>Orders</p></li>
+<li><p>Order Lines</p></li>
+</ul>
+</li>
+<li><p>결과가 적절하게 표시되고 서식이 올바르게 지정되었는지 확인합니다.</p>
+<p><img alt="그림 39" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image43.png" /></p>
+</li>
+</ol>
+</section>
+<section id="id10">
+<h3><strong>작업 2: 추가 측정값 만들기</strong><a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 보다 복잡한 수식을 사용하는 추가 측정값을 만듭니다.</p>
+<ol class="arabic">
+<li><p>보고서 뷰에서 <strong>1페이지</strong>를 선택합니다.</p>
+<p><img alt="그림 40" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image44.png" /></p>
+</li>
+<li><p><strong>Target</strong> 열의 합계를 확인하여 테이블 시각적 개체를 검토합니다.</p>
+<p><img alt="그림 41" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image45.png" /></p>
+</li>
+<li><p>테이블 시각적 개체를 선택하고 <strong>시각화</strong> 창에서 <strong>Target</strong> 필드를 제거합니다.</p>
+<p><img alt="그림 42" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image46.png" /></p>
+</li>
+<li><p><strong>Targets | Target</strong> 열의 이름을 <strong>Targets | TargetAmount</strong>로 바꿉니다.</p>
+<p><em>팁: 보고서 뷰에서 열의 이름을 바꾸는 방법은 여러 가지가 있습니다. <strong>필드</strong> 창에서 열을 마우스 오른쪽 단추로 클릭한 다음, <strong>이름 바꾸기</strong>를 선택합니다. 또는 열을 두 번 클릭하거나 <strong>F2</strong> 키를 누릅니다.</em></p>
+<p><strong>Target</strong>이라는 측정값을 만들려고 합니다. 동일한 테이블에 동일한 이름의 열과 측정값을 포함할 수는 없습니다.</p>
+</li>
+<li><p><strong>Targets</strong> 테이블에 다음 측정값을 만듭니다.</p>
+<p><strong>DAX</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Target</span> <span class="o">=</span>
+
+<span class="n">IF</span><span class="p">(</span>
+
+<span class="n">HASONEVALUE</span><span class="p">(</span><span class="s1">&#39;Salesperson (Performance)&#39;</span><span class="p">[</span><span class="n">Salesperson</span><span class="p">]),</span>
+
+<span class="n">SUM</span><span class="p">(</span><span class="n">Targets</span><span class="p">[</span><span class="n">TargetAmount</span><span class="p">])</span>
+
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>HASONEVALUE() 함수는 <strong>Salesperson</strong> 열의 단일 값이 필터링되었는지 여부를 테스트합니다. True로 설정되면 식이 해당 판매 직원에 대해 목표 금액 합계를 반환합니다. False로 설정되면 빈 값이 반환됩니다.</p>
+</li>
+<li><p><strong>Target</strong> 측정값의 서식을 소수점 이하 0자리로 지정합니다.</p>
+<p><em>팁: <strong>측정값 도구</strong> 상황별 리본을 사용할 수 있습니다.</em></p>
+</li>
+<li><p><strong>TargetAmount</strong> 열을 숨깁니다.</p>
+<p><em>팁: <strong>필드</strong> 창에서 열을 마우스 오른쪽 단추로 클릭한 다음, <strong>숨기기</strong>를 선택할 수 있습니다.</em></p>
+</li>
+<li><p>테이블 시각적 개체에 <strong>Target</strong> 측정값을 추가합니다.</p></li>
+<li><p><strong>Target</strong> 열 합계는 이제 비어 있습니다.</p>
+<p><img alt="그림 43" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image47.png" /></p>
+</li>
+<li><p>조각 파일 정의를 사용하여 <strong>Targets</strong> 테이블에 대해 다음 2개의 측정값을 만듭니다.</p>
+<ul class="simple">
+<li><p>Variance</p></li>
+<li><p>Variance Margin</p></li>
+</ul>
+</li>
+<li><p><strong>Variance</strong> 측정값의 서식을 소수점 이하 0자리로 지정합니다.</p></li>
+<li><p><strong>Variance Margin</strong> 측정값의 서식을 소수점 이하 두 자리 백분율로 지정합니다.</p></li>
+<li><p><strong>Variance</strong> 및 <strong>Variance Margin</strong> 측정값을 테이블 시각적 개체에 추가합니다.</p></li>
+<li><p>모든 열과 행을 확인할 수 있도록 테이블 시각적 개체의 크기를 조정합니다.</p>
+<p><img alt="그림 44" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image48.png" /></p>
+<p>모든 영업 직원이 목표를 달성하지 못한 것처럼 보이는 이유는 테이블 시각적 개체를 아직 특정 기간별로 필터링하지 않았기 때문입니다. <strong>Power BI Desktop에서 보고서 디자인, 1부</strong> 랩에서 사용자가 선택한 기간을 기준으로 필터링하는 판매 성과 보고서를 생성합니다.</p>
+</li>
+<li><p><strong>필드</strong> 창의 오른쪽 위 모서리에서 창을 축소했다가 확장하여 엽니다.</p>
+<p><img alt="그림 45" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image49.png" /></p>
+<p>창을 축소했다가 다시 열면 내용이 다시 설정됩니다.</p>
+</li>
+<li><p>이제 <strong>Targets</strong> 테이블이 목록의 맨 위에 나타납니다.</p>
+<p><img alt="그림 46" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image50.png" /></p>
+<p><em>표시되는 측정값으로만 구성된 테이블은 자동으로 목록의 맨 위에 나열됩니다.</em></p>
+</li>
+</ol>
+</section>
+<section id="id11">
+<h3><strong>작업 3: 완료</strong><a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 랩을 완료합니다.</p>
+<ol class="arabic">
+<li><p>Power BI Desktop 파일을 저장합니다.</p></li>
+<li><p>다음 랩을 시작하려는 경우 Power BI Desktop을 열어 둡니다.</p>
+<p><strong>Power BI Desktop에서 DAX 계산 만들기, 2부</strong> 랩에서 DAX를 사용한 추가 고급 계산으로 데이터 모델을 향상합니다.</p>
+</li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Instructions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03-configure-data-model-in-power-bi-desktop.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Power BI에서 데이터 모델 디자인</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="05-create-dax-calculations-in-power-bi-desktop-advanced.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Power BI Desktop에서 DAX 계산 만들기 2부</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>랩 사례</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>연습 1: 계산된 테이블 만들기</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>작업 1: 시작하기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#salesperson"><strong>작업 2: Salesperson 테이블 만들기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>작업 3: 날짜 테이블 만들기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>작업 4:</strong> <strong>계산 열 만들기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>작업 5:</strong> <strong>날짜 테이블 완료</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>작업 6: 날짜 테이블 표시</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>연습 2: 측정값 만들기</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>작업 1: 단순 측정값 만들기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>작업 2: 추가 측정값 만들기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>작업 3: 완료</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tony (Sungjin) Ahn
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1000 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Power BI에서 데이터 모델 디자인 &#8212; PL-300 Lab Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Instructions/03-configure-data-model-in-power-bi-desktop';</script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Power BI Desktop에서 DAX 계산 만들기 1부" href="04-create-dax-calculations-in-power-bi-desktop.html" />
+    <link rel="prev" title="Power BI Desktop에서 데이터 로드" href="02-load-data-with-power-query-in-power-bi-desktop.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    PL-300 랩 실습 가이드
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-prepare-data-with-power-query-in-power-bi-desktop.html">Power BI Desktop에서 데이터 준비</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-load-data-with-power-query-in-power-bi-desktop.html">Power BI Desktop에서 데이터 로드</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Power BI에서 데이터 모델 디자인</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-create-dax-calculations-in-power-bi-desktop.html">Power BI Desktop에서 DAX 계산 만들기 1부</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-create-dax-calculations-in-power-bi-desktop-advanced.html">Power BI Desktop에서 DAX 계산 만들기 2부</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-design-report-in-power-bi-desktop.html">Power BI Desktop에서 보고서 디자인 1부</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-design-report-in-power-bi-desktop-enhanced.html">Power BI Desktop에서 보고서 디자인 2부</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-perform-data-analysis-in-power-bi-desktop.html">Power BI Desktop에서 데이터 분석 수행</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-create-power-bi-dashboard.html">Power BI 대시보드 만들기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-row-level-security.html">행 수준 보안 적용</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/MicrosoftLearningKorea/PL-300" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Instructions/03-configure-data-model-in-power-bi-desktop.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Power BI에서 데이터 모델 디자인</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>랩 사례</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>연습 1: 모델 관계 만들기</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>작업 1: 시작하기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>작업 2: 모델 관계 만들기</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>연습 2: 테이블 구성</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#product"><strong>작업 1: Product 테이블 구성</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#region"><strong>작업 2: Region 테이블 구성</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reseller"><strong>작업 3: Reseller 테이블 구성</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sales"><strong>작업 4: Sales 테이블 구성</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>작업 5: 속성 대량 업데이트</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>연습 3: 모델 인터페이스 검토</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>작업 1: 모델 인터페이스 검토</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>연습 4: 빠른 측정값 만들기</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>작업 1: 빠른 측정값 만들기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>작업 2: 다대다 관계 만들기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#targets"><strong>작업 3: Targets 테이블 관계</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><strong>작업 4: 완료</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="power-bi">
+<h1>Power BI에서 데이터 모델 디자인<a class="headerlink" href="#power-bi" title="Permalink to this heading">#</a></h1>
+<p><strong>이 랩의 예상 완료 시간은 45분입니다.</strong></p>
+<p>이 랩에서는 데이터 모델 개발을 시작합니다. 테이블 간의 관계를 만든 후 테이블 및 열 속성을 구성하여 데이터 모델의 친숙성과 유용성을 향상하는 과정을 거칩니다. 또한 계층 구조를 만들고 빠른 측정도 만듭니다.</p>
+<p>이 랩에서는 다음 작업을 수행하는 방법을 알아봅니다.</p>
+<ul class="simple">
+<li><p>모델 관계 만들기</p></li>
+<li><p>테이블 및 열 속성 구성</p></li>
+<li><p>계층 구조 만들기</p></li>
+</ul>
+<section id="id1">
+<h2><strong>랩 사례</strong><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>이 랩은 데이터 준비부터 보고서 및 대시보드로 게시에 이르기까지 전체 사례로 고안된 랩 시리즈 중 하나입니다. 어떤 순서로든 랩을 완료할 수 있습니다. 그러나 여러 랩을 진행하려는 경우 다음 순서를 따르는 것이 좋습니다.</p>
+<ol class="arabic simple">
+<li><p>Power BI Desktop에서 데이터 준비</p></li>
+<li><p>Power BI Desktop에서 데이터 로드</p></li>
+<li><p><strong>Power BI에서 데이터 모델 디자인</strong></p></li>
+<li><p>Power BI Desktop에서 DAX 계산 만들기 1부</p></li>
+<li><p>Power BI Desktop에서 DAX 계산 만들기, 2부</p></li>
+<li><p>Power BI Desktop에서 보고서 디자인, 1부</p></li>
+<li><p>Power BI Desktop에서 보고서 디자인, 2부</p></li>
+<li><p>AI 시각적 개체를 사용하여 데이터 분석</p></li>
+<li><p>Power BI 대시보드 만들기</p></li>
+<li><p>행 수준 보안 적용</p></li>
+</ol>
+</section>
+<section id="id2">
+<h2><strong>연습 1: 모델 관계 만들기</strong><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>이 연습에서는 모델 관계를 만듭니다.</p>
+<section id="id3">
+<h3><strong>작업 1: 시작하기</strong><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 랩용 환경을 설정합니다.</p>
+<p><em>중요: 이전 랩에서 계속 진행해 온 경우(그리고 해당 랩을 성공적으로 완료한 경우) 이 작업을 완료하지 마세요. 대신, 다음 작업부터 진행하세요.</em></p>
+<ol class="arabic">
+<li><p>Power BI Desktop을 열려면 작업 표시줄에서 Microsoft Power BI Desktop 바로 가기를 클릭합니다.</p>
+<p><img alt="그림 12" src="../_images/03-configure-data-model-in-power-bi-desktop_image1.png" /></p>
+</li>
+<li><p>시작 창을 닫으려면 창 왼쪽 위의 <strong>X</strong>를 클릭합니다.</p>
+<p><img alt="그림 11" src="../_images/03-configure-data-model-in-power-bi-desktop_image2.png" /></p>
+</li>
+<li><p>시작 Power BI Desktop 파일을 열려면 <strong>파일</strong> 리본 탭을 클릭하여 Backstage 뷰를 엽니다.</p></li>
+<li><p><strong>보고서 열기</strong>를 선택합니다.</p>
+<p><img alt="그림 10" src="../_images/03-configure-data-model-in-power-bi-desktop_image3.png" /></p>
+</li>
+<li><p><strong>보고서 찾아보기</strong>를 클릭합니다.</p>
+<p><img alt="그림 8" src="../_images/03-configure-data-model-in-power-bi-desktop_image4.png" /></p>
+</li>
+<li><p><strong>열기</strong> 창에서 <strong>D:\PL300\Labs\03-configure-data-model-in-power-bi-desktop\Starter</strong> 폴더로 이동합니다.</p></li>
+<li><p><strong>판매 분석</strong> 파일을 선택합니다.</p></li>
+<li><p><strong>열기</strong>를 클릭합니다.</p>
+<p><img alt="그림 7" src="../_images/03-configure-data-model-in-power-bi-desktop_image5.png" /></p>
+</li>
+<li><p>열려 있는 정보 창을 모두 닫습니다.</p></li>
+<li><p>파일 복사본을 만들려면 <strong>파일</strong> 리본 탭을 클릭하여 Backstage 뷰를 엽니다.</p></li>
+<li><p><strong>다른 이름으로 저장</strong>을 선택합니다.</p>
+<p><img alt="그림 5" src="../_images/03-configure-data-model-in-power-bi-desktop_image6.png" /></p>
+</li>
+<li><p>변경 내용을 적용하라는 메시지가 표시되면 <strong>적용</strong>을 클릭합니다.</p>
+<p><img alt="그림 15" src="../_images/03-configure-data-model-in-power-bi-desktop_image7.png" /></p>
+</li>
+<li><p><strong>다른 이름으로 저장</strong> 창에서 <strong>D:\PL300\MySolution</strong> 폴더로 이동합니다.</p></li>
+<li><p><strong>저장</strong>을 클릭합니다.</p>
+<p><img alt="그림 3" src="../_images/03-configure-data-model-in-power-bi-desktop_image8.png" /></p>
+</li>
+</ol>
+</section>
+<section id="id4">
+<h3><strong>작업 2: 모델 관계 만들기</strong><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 모델 관계를 만듭니다.</p>
+<ol class="arabic">
+<li><p>Power BI Desktop의 왼쪽에서 <strong>모델</strong> 뷰 아이콘을 클릭합니다.</p>
+<p><img alt="그림 1" src="../_images/03-configure-data-model-in-power-bi-desktop_image9.png" /></p>
+</li>
+<li><p>7개의 테이블이 모두 보이지 않으면 오른쪽 방향으로 가로 스크롤한 후 동시에 모두 볼 수 있도록 테이블을 더 가깝게 끌어서 정렬합니다.</p>
+<p><em>팁: 창 아래쪽에 있는 확대/축소 컨트롤을 사용할 수도 있습니다.</em></p>
+<p>모델 보기에서는 각 테이블 및 관계(테이블 간의 커넥터)를 볼 수 있습니다. 현재는 관계가 존재하지 않습니다. <strong>Power BI Desktop에서 데이터 준비</strong> 랩에서 데이터 로드 관계 옵션을 사용하지 않도록 설정했기 때문입니다.</p>
+</li>
+<li><p>보고서 뷰로 돌아가려면 왼쪽에서 <strong>보고서</strong> 뷰 아이콘을 클릭합니다.</p>
+<p><img alt="그림 327" src="../_images/03-configure-data-model-in-power-bi-desktop_image10.png" /></p>
+</li>
+<li><p>모든 테이블 필드를 보려면 <strong>필드</strong> 창에서 빈 영역을 마우스 오른쪽 단추로 클릭한 다음 <strong>모두 확장</strong>을 선택합니다.</p>
+<p><img alt="그림 328" src="../_images/03-configure-data-model-in-power-bi-desktop_image11.png" /></p>
+</li>
+<li><p>테이블 시각적 개체를 만들려면 <strong>필드</strong> 창에서 <strong>Product</strong> 테이블의 <strong>Category</strong> 필드를 선택합니다.</p>
+<p><img alt="그림 329" src="../_images/03-configure-data-model-in-power-bi-desktop_image12.png" /></p>
+<p>랩에서는 약식 표기법을 사용하여 필드를 참조합니다. 다음과 같이 표시됩니다. <strong>Product | Category</strong>. 이 예에서 <strong>Product</strong>은 테이블 이름이고 <strong>Category</strong>는 필드 이름입니다.</p>
+</li>
+<li><p>테이블에 열을 하나 더 추가하려면 <strong>필드</strong> 창에서 <strong>Sales | Sales</strong> 필드를 선택합니다.</p></li>
+<li><p>테이블 시각적 개체에 4개의 제품 범주가 나열되며 각 범주의 판매 금액이 동일하고 합계에의 금액도 동일한 것을 볼 수 있습니다.</p>
+<p><img alt="그림 330" src="../_images/03-configure-data-model-in-power-bi-desktop_image13.png" /></p>
+<p>문제는 이 테이블이 서로 다른 테이블에서 가져온 필드를 기반으로 한다는 점입니다. 각 제품 범주에 해당 범주에 대한 판매량이 표시되어야 합니다. 그러나 이러한 테이블 간에는 모델 관계가 없기 때문에 <strong>Sales</strong> 테이블은 필터링되지 않습니다. 이제 관계를 추가하여 테이블 간에 필터를 전파합니다.</p>
+</li>
+<li><p><strong>모델링</strong> 리본 탭의 <strong>관계</strong> 그룹에서 <strong>관계 관리</strong>를 클릭합니다.</p>
+<p><img alt="그림 331" src="../_images/03-configure-data-model-in-power-bi-desktop_image14.png" /></p>
+</li>
+<li><p><strong>관계 관리</strong> 창에서 관계가 아직 정의되지 않은 것을 볼 수 있습니다.</p></li>
+<li><p>관계를 만들려면 <strong>새로 만들기</strong>를 클릭합니다.</p>
+<p><img alt="그림 332" src="../_images/03-configure-data-model-in-power-bi-desktop_image15.png" /></p>
+</li>
+<li><p><strong>관계 만들기</strong> 창의 첫 번째 드롭다운 목록에서 <strong>Product</strong> 테이블을 선택합니다.</p>
+<p><img alt="그림 333" src="../_images/03-configure-data-model-in-power-bi-desktop_image16.png" /></p>
+</li>
+<li><p>두 번째 드롭다운 목록(<strong>Product</strong> 테이블 그리드 아래)에서 <strong>Sales</strong> 테이블을 선택합니다.</p>
+<p><img alt="그림 334" src="../_images/03-configure-data-model-in-power-bi-desktop_image17.png" /></p>
+</li>
+<li><p>각 테이블에서 <strong>ProductKey</strong> 열이 자동으로 선택되었음을 확인합니다.</p>
+<p>열은 동일한 이름 및 데이터 형식을 공유하기 때문에 선택되었습니다.</p>
+</li>
+<li><p><strong>카디널리티</strong> 드롭다운 목록에서 <strong>일대다(1:*)</strong> 가 선택되어 있는 것을 볼 수 있습니다.</p>
+<p>카디널리티는 자동으로 검색되었습니다. Power BI에서 <strong>Product</strong> 테이블의 <strong>ProductKey</strong> 열에 고유한 값이 포함된다는 것을 인식하기 때문입니다. 일대다 관계는 가장 일반적인 카디널리티이며, 이 랩에서 만드는 모든 관계가 이 유형입니다.</p>
+</li>
+<li><p><strong>교차 필터 방향</strong> 드롭다운 목록에서 <strong>단일</strong>이 선택되어 있는 것을 볼 수 있습니다.</p>
+<p>단일 필터 방향은 필터가 “한 쪽”에서 “많은 쪽”으로 전파됨을 의미합니다. 이 경우 <strong>Product</strong> 테이블에 적용된 필터가 <strong>Sales</strong> 테이블에 전파되지만 반대 방향으로는 전파되지 않음을 의미합니다.</p>
+</li>
+<li><p><strong>Mark This Relationship Active</strong>가 선택되어 있습니다.</p>
+<p>활성 관계는 필터를 전파합니다. 필터가 전파되지 않도록 관계를 비활성으로 표시할 수 있습니다. 테이블 간에 여러 관계 경로가 있는 경우 비활성 관계가 있을 수 있습니다. 이 경우 모델 계산은 특수 함수를 사용하여 활성화할 수 있습니다.</p>
+</li>
+<li><p><strong>확인</strong>을 클릭합니다.</p>
+<p><img alt="그림 335" src="../_images/03-configure-data-model-in-power-bi-desktop_image18.png" /></p>
+</li>
+<li><p><strong>관계 관리</strong> 창에서 새 관계가 나열된 것을 확인한 다음 <strong>닫기</strong>를 클릭합니다.</p>
+<p><img alt="그림 336" src="../_images/03-configure-data-model-in-power-bi-desktop_image19.png" /></p>
+</li>
+<li><p>보고서에서 테이블 시각적 개체가 업데이트되어 각 제품 범주에 대해 서로 다른 값을 표시합니다.</p>
+<p><img alt="그림 337" src="../_images/03-configure-data-model-in-power-bi-desktop_image20.png" /></p>
+<p><strong>Product</strong> 테이블에 적용된 필터가 이제 <strong>Sales</strong> 테이블로 전파됩니다.</p>
+</li>
+<li><p>모델 뷰로 전환한 다음 이제 두 테이블 간에 커넥터가 있음을 확인합니다(두 테이블이 나란히 배치되어 있어도 관계없음).</p>
+<p><img alt="그림 338" src="../_images/03-configure-data-model-in-power-bi-desktop_image21.png" /></p>
+</li>
+<li><p>다이어그램을 통해 <strong>1</strong> 및 ***** 지표로 표시되는 카디널리티를 쉽게 이해할 수 있습니다.</p>
+<p>필터 방향은 화살촉으로 표현됩니다. 실선은 활성 관계를 나타냅니다. 파선은 비활성 관계를 나타냅니다.</p>
+</li>
+<li><p>관계 위를 커서로 가리켜 관련 열을 강조 표시합니다.</p>
+<p>관계를 만드는 더 쉬운 방법이 있습니다. 모델 다이어그램에서 열을 끌어서 놓아 새 관계를 만들 수 있습니다.</p>
+</li>
+<li><p>다른 기술을 사용하여 새 관계를 만들려면 <strong>Reseller</strong> 테이블에서 <strong>ResellerKey</strong> 열을 <strong>Sales</strong> 테이블의 <strong>ResellerKey</strong> 열로 끕니다.</p>
+<p><img alt="그림 339" src="../_images/03-configure-data-model-in-power-bi-desktop_image22.png" /></p>
+<p><em>팁: 열을 끌려오지 않는 경우도 있습니다. 이 상황이 발생하면 다른 열을 선택한 다음 다시 드래그하려는 열을 선택한 후에 다시 시도합니다. 다이어그램에 추가한 새 관계가 표시되는지 확인하세요.</em></p>
+</li>
+<li><p>새 기술을 사용하여 다음의 두 모델 관계를 만듭니다.</p>
+<ul class="simple">
+<li><p><strong>Region | SalesTerritoryKey</strong>에서 <strong>Sales | SalesTerritoryKey</strong>로</p></li>
+<li><p><strong>Salesperson | EmployeeKey</strong>에서 <strong>Sales | EmployeeKey</strong>로</p></li>
+</ul>
+</li>
+<li><p>다이어그램에서 <strong>Sales</strong> 테이블이 다이어그램 가운데에 오고 관련 테이블이 근처에 정렬되어 있도록 테이블을 정렬합니다. 연결이 끊긴 테이블은 옆쪽에 배치합니다.</p>
+<p><img alt="그림 340" src="../_images/03-configure-data-model-in-power-bi-desktop_image23.png" /></p>
+</li>
+<li><p>Power BI Desktop 파일을 저장합니다.</p></li>
+</ol>
+</section>
+</section>
+<section id="id5">
+<h2><strong>연습 2: 테이블 구성</strong><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>이 연습에서는 계층 구조를 만들고 열을 숨기고 서식을 지정하고 분류하여 각 테이블을 구성합니다.</p>
+<section id="product">
+<h3><strong>작업 1: Product 테이블 구성</strong><a class="headerlink" href="#product" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 <strong>Product</strong> 테이블을 구성합니다.</p>
+<ol class="arabic">
+<li><p>필요한 경우, 모델 뷰의 <strong>필드</strong> 창에서 <strong>Product</strong> 테이블을 확장하여 모든 필드를 표시합니다.</p></li>
+<li><p>계층 구조를 만들려면 <strong>필드</strong> 창에서 <strong>Category</strong> 열을 마우스 오른쪽 단추로 클릭한 다음 <strong>계층 구조 만들기</strong>를 선택합니다.</p>
+<p><img alt="그림 341" src="../_images/03-configure-data-model-in-power-bi-desktop_image24.png" /></p>
+</li>
+<li><p><strong>필드</strong> 창의 왼쪽에 있는 <strong>속성</strong> 창에서 <strong>이름</strong> 상자에 있는 텍스트를 <strong>Products</strong>으로 바꿉니다.</p>
+<p><img alt="그림 344" src="../_images/03-configure-data-model-in-power-bi-desktop_image25.png" /></p>
+</li>
+<li><p>계층 구조에 두 번째 수준을 추가하려면 <strong>속성</strong> 창의 <strong>계층 구조</strong> 드롭다운 목록에서 <strong>Subcategory</strong>를 선택합니다(창 내에서 아래쪽으로 스크롤해야 할 수 있음).</p></li>
+<li><p>계층 구조에 두 번째 수준을 추가하려면 <strong>계층 구조</strong> 드롭다운 목록에서 <strong>Product</strong>를 선택합니다.</p></li>
+<li><p>계층 구조 디자인을 완료하려면 <strong>수준 변경 내용 적용</strong>을 클릭합니다.</p>
+<p><img alt="그림 343" src="../_images/03-configure-data-model-in-power-bi-desktop_image26.png" /></p>
+<p><em>팁: <strong>수준 변경 적용</strong>을 클릭하는 것을 기억하도록 합니다. 이 단계를 간과해서 자주 실수가 발생합니다.</em></p>
+</li>
+<li><p><strong>필드</strong> 창에서 <strong>Products</strong> 계층 구조를 볼 수 있습니다.</p>
+<p><img alt="그림 347" src="../_images/03-configure-data-model-in-power-bi-desktop_image27.png" /></p>
+</li>
+<li><p>계층 구조 수준을 표시하려면 <strong>Products</strong> 계층 구조를 확장합니다.</p>
+<p><img alt="그림 346" src="../_images/03-configure-data-model-in-power-bi-desktop_image28.png" /></p>
+</li>
+<li><p>열을 표시 폴더로 구성하려면 <strong>필드</strong> 창에서 먼저 <strong>Background Color Format</strong> 열을 선택합니다.</p></li>
+<li><p><strong>Ctrl</strong> 키를 누른 채로 <strong>Font Color Format</strong> 열을 선택합니다.</p></li>
+<li><p><strong>속성</strong> 창의 <strong>표시 폴더</strong> 상자에 <strong>Formatting</strong>을 입력합니다.</p>
+<p><img alt="그림 348" src="../_images/03-configure-data-model-in-power-bi-desktop_image29.png" /></p>
+</li>
+<li><p><strong>필드</strong> 창에서 두 개의 열이 이제 폴더 안에 있는 것을 볼 수 있습니다.</p>
+<p><img alt="그림 349" src="../_images/03-configure-data-model-in-power-bi-desktop_image30.png" /></p>
+<p>표시 폴더는 특히 많은 필드로 구성된 테이블을 정리할 수 있는 좋은 방법입니다.</p>
+</li>
+</ol>
+</section>
+<section id="region">
+<h3><strong>작업 2: Region 테이블 구성</strong><a class="headerlink" href="#region" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 <strong>Region</strong> 테이블을 구성합니다.</p>
+<ol class="arabic">
+<li><p><strong>Region</strong> 테이블에서 다음과 같은 세 가지 수준으로 <strong>Regions</strong>라는 계층 구조를 만듭니다.</p>
+<ul class="simple">
+<li><p>Group</p></li>
+<li><p>Country</p></li>
+<li><p>Region</p></li>
+</ul>
+<p><img alt="그림 350" src="../_images/03-configure-data-model-in-power-bi-desktop_image31.png" /></p>
+</li>
+<li><p><strong>Country</strong> 열을 선택합니다(<strong>Country</strong> 계층 구조 수준 아님).</p></li>
+<li><p><strong>속성</strong> 창에서 <strong>고급</strong> 섹션(창 아래쪽에 있음)을 확장한 다음 <strong>데이터 범주</strong> 드롭다운 목록에서 <strong>국가/지역</strong>을 선택합니다.</p>
+<p><img alt="그림 352" src="../_images/03-configure-data-model-in-power-bi-desktop_image32.png" /></p>
+<p>데이터 분류는 보고서 디자이너에게 힌트를 제공할 수 있습니다. 이 경우 열을 국가 또는 지역으로 분류하면 맵 시각화를 렌더링할 때 Power BI에 더 정확한 정보가 제공됩니다.</p>
+</li>
+</ol>
+</section>
+<section id="reseller">
+<h3><strong>작업 3: Reseller 테이블 구성</strong><a class="headerlink" href="#reseller" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 <strong>Reseller</strong> 테이블을 구성합니다.</p>
+<ol class="arabic">
+<li><p><strong>Reseller</strong> 테이블에서 다음과 같은 두 가지 수준으로 <strong>Resellers</strong>라는 계층 구조를 만듭니다.</p>
+<ul class="simple">
+<li><p>Business Type</p></li>
+<li><p>Reseller</p></li>
+</ul>
+<p><img alt="그림 351" src="../_images/03-configure-data-model-in-power-bi-desktop_image33.png" /></p>
+</li>
+<li><p>다음 네 가지 수준으로 <strong>Geography</strong>라는 두 번째 계층 구조를 만듭니다.</p>
+<ul class="simple">
+<li><p>Country-Region</p></li>
+<li><p>State-Province</p></li>
+<li><p>City</p></li>
+<li><p>Reseller</p></li>
+</ul>
+<p><img alt="그림 353" src="../_images/03-configure-data-model-in-power-bi-desktop_image34.png" /></p>
+</li>
+<li><p><strong>Country-Region</strong>, <strong>State-Province</strong>, <strong>City</strong> 열(계층 구조 수준 아님)에 대한 <strong>데이터 범주</strong>를 각각 <strong>국가/지역</strong>, <strong>시/도</strong> 및 <strong>구/군/시</strong>로 설정합니다.</p></li>
+</ol>
+</section>
+<section id="sales">
+<h3><strong>작업 4: Sales 테이블 구성</strong><a class="headerlink" href="#sales" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 <strong>Sales</strong> 테이블을 구성합니다.</p>
+<ol class="arabic">
+<li><p><strong>Sales</strong> 테이블에서 <strong>Cost</strong> 열을 선택합니다.</p></li>
+<li><p><strong>속성</strong> 창의 <strong>설명</strong> 상자에 <strong>Based on standard cost</strong>를 입력합니다.</p>
+<p><img alt="그림 358" src="../_images/03-configure-data-model-in-power-bi-desktop_image35.png" /></p>
+<p><em>설명은 테이블, 열, 계층 구조 또는 측정값에 적용할 수 있습니다. <strong>필드</strong> 창에서 보고서 작성자가 필드 위로 커서를 가져가면 도구 설명에 설명 텍스트가 표시됩니다.</em></p>
+</li>
+<li><p><strong>Quantity</strong> 열을 선택합니다.</p></li>
+<li><p><strong>속성</strong> 창의 <strong>서식</strong> 섹션 내에서 <strong>천 단위 구분 기호</strong> 속성을 <strong>예</strong>로 전환합니다.</p>
+<p><img alt="그림 357" src="../_images/03-configure-data-model-in-power-bi-desktop_image36.png" /></p>
+</li>
+<li><p><strong>Unit Price</strong> 열을 선택합니다.</p></li>
+<li><p><strong>속성</strong> 창의 <strong>서식</strong> 섹션 내에서 <strong>소수 자릿수</strong> 속성을 <strong>2</strong>로 설정합니다.</p></li>
+<li><p><strong>고급</strong> 그룹(아래로 스크롤하여 찾아야 할 수도 있음)에 있는 <strong>요약 기준</strong> 드롭다운 목록에서 <strong>평균</strong>을 선택합니다.</p>
+<p><img alt="그림 354" src="../_images/03-configure-data-model-in-power-bi-desktop_image37.png" /></p>
+<p>기본적으로 숫자 열은 값을 합산하여 요약합니다. 이 기본 동작은 가격을 나타내는 <strong>단가</strong> 같은 열에 적합하지 않습니다. 기본 요약을 평균으로 설정하면 의미 있는 결과가 생성됩니다.</p>
+</li>
+</ol>
+</section>
+<section id="id6">
+<h3><strong>작업 5: 속성 대량 업데이트</strong><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 단일 대량 업데이트를 사용하여 여러 열을 업데이트합니다. 대량 작업 방식으로 열을 숨기고 열 값의 서식을 지정합니다.</p>
+<ol class="arabic">
+<li><p><strong>필드</strong> 창에서 <strong>Product | ProductKey</strong> 열을 선택합니다.</p></li>
+<li><p><strong>Ctrl</strong> 키를 누른 채로 다음 13개의 열을 선택합니다(여러 테이블에 분포됨).</p>
+<ul class="simple">
+<li><p>Region | SalesTerritoryKey</p></li>
+<li><p>Reseller | ResellerKey</p></li>
+<li><p>Sales | EmployeeKey</p></li>
+<li><p>Sales | ProductKey</p></li>
+<li><p>Sales | ResellerKey</p></li>
+<li><p>Sales | SalesOrderNumber</p></li>
+<li><p>Sales | SalesTerritoryKey</p></li>
+<li><p>Salesperson | EmployeeID</p></li>
+<li><p>Salesperson | EmployeeKey</p></li>
+<li><p>Salesperson | UPN</p></li>
+<li><p>SalespersonRegion | EmployeeKey</p></li>
+<li><p>SalespersonRegion | SalesTerritoryKey</p></li>
+<li><p>Targets | EmployeeID</p></li>
+</ul>
+</li>
+<li><p><strong>속성</strong> 창에서 <strong>숨김</strong> 속성을 <strong>켬</strong>으로 밉니다.</p>
+<p><img alt="그림 355" src="../_images/03-configure-data-model-in-power-bi-desktop_image38.png" /></p>
+<p>열은 관계에서 사용되거나 행 수준 보안 구성 또는 계산 논리에 사용되기 때문에 숨겨져 있습니다.</p>
+<p><strong>Power BI Desktop에서 DAX 계산 만들기, 1부</strong> 랩에서 계산에 <strong>SalesOrderNumber</strong>를 사용합니다.</p>
+</li>
+<li><p>다음 세 개의 열을 다중 선택합니다.</p>
+<ul class="simple">
+<li><p>Product | Standard Cost</p></li>
+<li><p>Sales | Cost</p></li>
+<li><p>Sales | Sales</p></li>
+</ul>
+</li>
+<li><p><strong>속성</strong> 창의 <strong>서식</strong> 섹션 내에서 <strong>소수 자릿수</strong> 속성을 <strong>0</strong>(숫자 영)으로 설정합니다.</p>
+<p><img alt="그림 356" src="../_images/03-configure-data-model-in-power-bi-desktop_image39.png" /></p>
+</li>
+</ol>
+</section>
+</section>
+<section id="id7">
+<h2><strong>연습 3: 모델 인터페이스 검토</strong><a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<p>이 연습에서는 보고서 뷰로 전환해서 모델 인터페이스를 검토합니다.</p>
+<section id="id8">
+<h3><strong>작업 1: 모델 인터페이스 검토</strong><a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 보고서 뷰로 전환하고 모델 인터페이스를 검토합니다.</p>
+<ol class="arabic">
+<li><p>보고서 뷰로 전환합니다.</p></li>
+<li><p><strong>필드</strong> 창에서 다음을 볼 수 있습니다.</p>
+<ul class="simple">
+<li><p>열, 계층 구조 및 수준은 보고서의 시각적 개체를 구성하는 데 사용할 수 있는 필드입니다.</p></li>
+<li><p>보고서 작성과 관련된 필드만 표시됩니다.</p></li>
+<li><p>모든 필드가 숨겨져 있기 때문에 <strong>SalespersonRegion</strong> 테이블이 표시되지 않습니다.</p></li>
+<li><p><strong>Region</strong> 테이블과 <strong>Reseller</strong> 테이블의 공간 필드에 공간 아이콘이 함께 표시됩니다.</p></li>
+<li><p>시그마 기호(Ʃ)로 표시된 필드는 기본적으로 요약됩니다.</p></li>
+<li><p><strong>Sales | Cost</strong> 필드 위로 커서를 가져가면 도구 설명이 나타납니다.</p></li>
+</ul>
+</li>
+<li><p><strong>Sales | OrderDate</strong> 필드를 확장하면 날짜 계층 구조가 표시되는 것을 볼 수 있습니다.</p>
+<p><img alt="그림 359" src="../_images/03-configure-data-model-in-power-bi-desktop_image40.png" /></p>
+<p><strong>Targets | TargetMonth</strong> 필드도 비슷한 계층 구조를 제공합니다. 이러한 계층 구조는 분석가가 직접 만든 것이 아니라 자동으로 생성된 것입니다. 그러나 문제가 있습니다. Adventure Works의 회계 연도는 매년 7월 1일에 시작되지만 그러나 이러한 자동 생성 날짜 계층 구조에서 날짜 계층 구조 연도는 매년 1월 1일에 시작됩니다.</p>
+<p>따라서 이 자동 동작을 비활성화하겠습니다. <strong>Power BI Desktop에서 DAX 계산 만들기, 1부</strong> 랩에서 DAX를 사용하여 날짜 테이블을 만든 다음, Adventure Works의 일정을 정의하도록 구성할 것입니다.</p>
+</li>
+<li><p>자동 날짜/시간을 사용하지 않으려면 <strong>파일</strong> 리본 탭을 클릭하여 Backstage 뷰를 엽니다.</p></li>
+<li><p>왼쪽에서 <strong>옵션 및 설정</strong>을 선택한 다음, <strong>옵션</strong>을 선택합니다.</p>
+<p><img alt="그림 360" src="../_images/03-configure-data-model-in-power-bi-desktop_image41.png" /></p>
+</li>
+<li><p><strong>옵션</strong> 창의 왼쪽에 있는 <strong>현재 파일</strong> 그룹에서 <strong>데이터 로드</strong>를 선택합니다.</p>
+<p><img alt="그림 361" src="../_images/03-configure-data-model-in-power-bi-desktop_image42.png" /></p>
+</li>
+<li><p><strong>시간 인텔리전스</strong> 섹션에서 <strong>자동 날짜/시간</strong>을 선택 취소합니다.</p>
+<p><img alt="그림 362" src="../_images/03-configure-data-model-in-power-bi-desktop_image43.png" /></p>
+</li>
+<li><p><strong>확인</strong>을 클릭합니다.</p>
+<p><img alt="그림 9" src="../_images/03-configure-data-model-in-power-bi-desktop_image44.png" /></p>
+</li>
+<li><p><strong>필드</strong> 창에서 날짜 계층 구조를 더 이상 사용할 수 없다는 것을 알 수 있습니다.</p>
+<p><img alt="그림 363" src="../_images/03-configure-data-model-in-power-bi-desktop_image45.png" /></p>
+</li>
+</ol>
+</section>
+</section>
+<section id="id9">
+<h2><strong>연습 4: 빠른 측정값 만들기</strong><a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<p>이 연습에서는 두 개의 빠른 측정값을 만듭니다.</p>
+<section id="id10">
+<h3><strong>작업 1: 빠른 측정값 만들기</strong><a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 수익과 수익률을 계산하는 두 가지 빠른 측정을 만들겠습니다.</p>
+<ol class="arabic">
+<li><p><strong>필드</strong> 창에서 <strong>Sales</strong> 테이블을 마우스 오른쪽 단추로 클릭한 다음 <strong>새 빠른 측정</strong>을 선택합니다.</p>
+<p><img alt="그림 366" src="../_images/03-configure-data-model-in-power-bi-desktop_image46.png" /></p>
+</li>
+<li><p><strong>빠른 측정</strong> 창에서 <strong>계산</strong> 드롭다운 목록의 <strong>수학 연산</strong> 그룹 내에서 <strong>빼기</strong>를 선택합니다.</p>
+<p><img alt="그림 367" src="../_images/03-configure-data-model-in-power-bi-desktop_image47.png" /></p>
+</li>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   **빠른 측정** 창의 **필드** 창에서 **Sales** 테이블을 확장합니다.
+</pre></div>
+</div>
+</li>
+<li><p><strong>Sales</strong> 필드를 <strong>기준 값</strong> 상자로 끕니다.</p></li>
+<li><p><strong>Cost</strong> 필드를 <strong>비용</strong> 상자로 끕니다.</p>
+<p><img alt="그림 368" src="../_images/03-configure-data-model-in-power-bi-desktop_image48.png" /></p>
+</li>
+<li><p><strong>확인</strong>을 클릭합니다.</p>
+<p><img alt="그림 369" src="../_images/03-configure-data-model-in-power-bi-desktop_image49.png" /></p>
+<p>빠른 측정값에서 계산 수식이 자동으로 작성됩니다. 간단하고 일반적인 계산을 쉽고 빠르게 만들 수 있습니다. <strong>Power BI Desktop에서 DAX 계산 만들기, 1부</strong> 랩에서 이 도구를 사용하지 않고 측정값을 만듭니다.</p>
+</li>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   **필드** 창의 **Sales** 테이블에서 새 측정값을 알 수 있습니다.
+</pre></div>
+</div>
+<p><img alt="그림 370" src="../_images/03-configure-data-model-in-power-bi-desktop_image50.png" /></p>
+<p>측정에는 계산기 아이콘이 표시됩니다.</p>
+</li>
+<li><p>측정의 이름을 바꾸려면 측정을 마우스 오른쪽 단추로 클릭한 다음 <strong>이름 바꾸기</strong>를 선택합니다.</p>
+<p><img alt="그림 371" src="../_images/03-configure-data-model-in-power-bi-desktop_image51.png" /></p>
+<p><em>팁: 필드의 이름을 바꾸려면 필드를 두 번 클릭하거나 선택한 후 <strong>F2</strong> 키를 누릅니다.</em></p>
+</li>
+<li><p>측정의 이름을 <strong>Profit</strong>으로 바꾼 다음 <strong>Enter</strong>.키를 누릅니다.</p></li>
+<li><p><strong>Sales</strong> 테이블에서 다음 요구 사항에 따라 두 번째 빠른 측정을 추가합니다.</p>
+<ul class="simple">
+<li><p><strong>나누기</strong> 수학 연산 사용</p></li>
+<li><p><strong>Numerator</strong>를 <strong>Sales | Profit</strong> 필드로 설정</p></li>
+<li><p><strong>Denominator</strong>를 <strong>Sales | Sales</strong> 필드로 설정</p></li>
+<li><p>측정의 이름을 <strong>Profit Margin</strong>으로 바꾸기</p></li>
+</ul>
+<p><img alt="그림 372" src="../_images/03-configure-data-model-in-power-bi-desktop_image52.png" /></p>
+<p><img alt="그림 373" src="../_images/03-configure-data-model-in-power-bi-desktop_image53.png" /></p>
+</li>
+<li><p><strong>Profit Margin</strong> 측정이 선택되었는지 확인한 다음 <strong>측정 도구</strong> 상황별 리본에서 형식을 <strong>백분율</strong>(소수 자릿수 2개 사용)로 설정합니다.</p>
+<p><img alt="그림 374" src="../_images/03-configure-data-model-in-power-bi-desktop_image54.png" /></p>
+</li>
+<li><p>두 측정을 테스트하려면 먼저 보고서 페이지에서 테이블 시각적 개체를 선택합니다.</p></li>
+<li><p><strong>필드</strong> 창에서 두 측정을 확인합니다.</p>
+<p><img alt="그림 375" src="../_images/03-configure-data-model-in-power-bi-desktop_image55.png" /></p>
+</li>
+<li><p>오른쪽 안내선을 클릭한 후 끌어서 테이블 시각적 개체의 너비를 늘립니다.</p>
+<p><img alt="그림 376" src="../_images/03-configure-data-model-in-power-bi-desktop_image56.png" /></p>
+</li>
+<li><p>측정이 올바른 형식으로 합당한 결과를 산출하는지 확인합니다.</p>
+<p><img alt="그림 378" src="../_images/03-configure-data-model-in-power-bi-desktop_image57.png" /></p>
+</li>
+</ol>
+</section>
+<section id="id11">
+<h3><strong>작업 2: 다대다 관계 만들기</strong><a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 <strong>Salesperson</strong> 테이블과 <strong>Sales</strong> 테이블 간에 다대다 관계를 만듭니다.</p>
+<ol class="arabic">
+<li><p>Power BI Desktop에서 보고서 뷰의 <strong>필드</strong> 창에서 다음 두 필드를 선택하여 테이블 시각적 개체를 만듭니다.</p>
+<ul class="simple">
+<li><p>Salesperson | Salesperson</p></li>
+<li><p>Sales | Sales</p></li>
+</ul>
+<p>랩에서는 약식 표기법을 사용하여 필드를 참조합니다. 다음과 같이 표시됩니다. <strong>Salesperson | Salesperson</strong> . 이 예에서 <strong>Salesperson</strong>은 테이블 이름이고 <strong>Salesperson</strong>은 필드 이름입니다.</p>
+<p><img alt="그림 1" src="../_images/04-configure-data-model-in-power-bi-desktop-advanced_image9.png" /></p>
+<p>테이블에는 각 판매원이 달성한 판매량이 표시됩니다. 그러나 영업 직원과 판매 간에는 또 다른 관계가 있습니다. 일부 판매원은 한 개, 두 개 또는 그 이상의 판매 지역에 속합니다. 또한 판매 지역에는 여러 판매원이 할당될 수 있습니다.</p>
+<p>성과 관리 측면에서 영업 직원의 판매량(할당된 지역을 기준으로 함)을 분석하고 판매 목표와 비교해야 합니다. 다음 연습에서 이 분석을 지원하는 관계를 만듭니다.</p>
+</li>
+<li><p>Michael Blythe의 판매 금액이 거의 900만 달러인 것을 확인합니다.</p></li>
+<li><p>모델 뷰로 전환합니다.</p>
+<p><img alt="그림 10" src="../_images/04-configure-data-model-in-power-bi-desktop-advanced_image10.png" /></p>
+</li>
+<li><p><strong>SalespersonRegion</strong> 테이블을 끌어 <strong>Region</strong> 테이블과 <strong>Salesperson</strong> 테이블 사이에 배치합니다.</p></li>
+<li><p>끌어서 놓기 방식을 사용하여 다음 두 가지 모델 관계를 만듭니다.</p>
+<ul class="simple">
+<li><p><strong>Salesperson | EmployeeKey</strong>와 <strong>SalespersonRegion | EmployeeKey</strong></p></li>
+<li><p><strong>Region | SalesTerritoryKey</strong>와 <strong>SalespersonRegion | SalesTerritoryKey</strong></p></li>
+</ul>
+<p><strong>SalespersonRegion</strong> 테이블을 브리징 테이블로 간주할 수 있습니다.</p>
+</li>
+<li><p>보고서 뷰로 전환하면 시각적 개체가 업데이트되지 않은 것을 볼 수 있습니다. 즉, Michael Blythe의 판매량이 변경되지 않았습니다.</p></li>
+<li><p>다시 모델 뷰로 전환한 다음 <strong>Salesperson</strong> 테이블에서 관계 필터 방향(화살촉)을 따릅니다.</p>
+<p>고려 사항: <strong>Salesperson</strong> 테이블은 <strong>Sales</strong> 테이블을 필터링합니다. Salesperson 테이블은 <strong>SalespersonRegion</strong> 테이블도 필터링하지만 <strong>Region</strong> 테이블로 필터를 전파하여 필터링을 계속 진행하지는 않습니다(화살촉이 잘못된 방향을 가리키고 있음).</p>
+<p><img alt="그림 380" src="../_images/04-configure-data-model-in-power-bi-desktop-advanced_image11.png" /></p>
+</li>
+<li><p><strong>Region</strong> 테이블과 <strong>SalespersonRegion</strong> 테이블 간의 관계를 편집하려면 관계를 두 번 클릭합니다.</p></li>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   **관계 편집** 창의 **교차 필터 방향** 드롭다운 목록에서 **모두**를 선택합니다.
+</pre></div>
+</div>
+</li>
+<li><p><strong>보안 필터를 양방향으로 적용</strong> 확인란을 선택합니다.</p>
+<p><img alt="그림 381" src="../_images/04-configure-data-model-in-power-bi-desktop-advanced_image12.png" /></p>
+</li>
+<li><p><strong>확인</strong>을 클릭합니다.</p>
+<p><img alt="그림 335" src="../_images/04-configure-data-model-in-power-bi-desktop-advanced_image13.png" /></p>
+</li>
+<li><p>관계에 이중 화살촉이 있는 것을 볼 수 있습니다.</p>
+<p><img alt="그림 382" src="../_images/04-configure-data-model-in-power-bi-desktop-advanced_image14.png" /></p>
+</li>
+<li><p>보고서 뷰로 전환한 다음 판매 값이 아직 변경되지 않은 것을 확인합니다.</p>
+<p>이제 문제는 <strong>Salesperson</strong> 테이블과 <strong>Sales</strong> 테이블 간에 가능한 두 가지 필터 전파 경로가 있다는 사실과 관련이 있습니다. 이러한 모호성은 내부적으로 “최소 테이블 수” 평가를 기반으로 해결됩니다. 필터링을 명확하게 적용하려면 이러한 유형의 모호성이 있는 모델을 디자인해서는 안 됩니다. 이 문제는 이 랩의 뒷부분에서 <strong>Power BI Desktop에서 DAX 계산 만들기, 1부</strong> 랩을 완료하면 일부 해결됩니다.</p>
+</li>
+<li><p>모델 뷰로 전환합니다.</p></li>
+<li><p>브리징 테이블을 통해 필터 전파를 강제로 적용하려면 <strong>Salesperson</strong> 및 <strong>Sales</strong> 테이블 간의 관계를 편집(두 번 클릭)합니다.</p></li>
+<li><p><strong>관계 편집</strong> 창에서 <strong>이 관계를 활성으로 만들기</strong> 확인란을 선택 취소합니다.</p>
+<p><img alt="그림 383" src="../_images/04-configure-data-model-in-power-bi-desktop-advanced_image15.png" /></p>
+</li>
+<li><p><strong>확인</strong>을 클릭합니다.</p>
+<p><img alt="그림 5696" src="../_images/04-configure-data-model-in-power-bi-desktop-advanced_image16.png" /></p>
+<p>이제는 활성 경로로만 필터가 전파됩니다.</p>
+</li>
+<li><p>다이어그램에서 비활성 관계가 파선으로 표현되는 것을 볼 수 있습니다.</p>
+<p><img alt="그림 5697" src="../_images/04-configure-data-model-in-power-bi-desktop-advanced_image17.png" /></p>
+</li>
+<li><p>보고서 뷰로 전환하면 Michael Blythe의 판매량이 거의 2200만 달러인 것을 볼 수 있습니다.</p>
+<p><img alt="그림 5698" src="../_images/04-configure-data-model-in-power-bi-desktop-advanced_image18.png" /></p>
+</li>
+<li><p>또한 각 영업 사원의 판매액(추가 된 경우)이 테이블 총액을 초과합니다.</p>
+<p>이 경우는 지역 판매 결과의 두 배, 세 배 등으로 계산되므로 일반적으로 다대다 관계입니다. 목록에 두 번째로 나온 영업 직원인 Brian Welcker를 보면, 판매 금액이 총 판매 금액과 같습니다. 맞는 결과입니다. Brian Welcker는 판매 담당 이사이고 이 사람의 판매량은 모든 지역의 판매량으로 측정되기 때문입니다.</p>
+<p>다대다 관계가 작동하는 동안에는 이제 영업 직원이 달성한 판매량을 분석할 수 없습니다(관계가 비활성 상태이므로). <strong>Power BI Desktop에서 DAX 계산 만들기, 1부</strong> 랩에서 계산된 테이블을 도입하면 (성과 분석을 위해) 영업 직원에게 할당된 판매 지역의 판매량을 분석할 수 있는 관계를 다시 활성화할 수 있습니다.</p>
+</li>
+<li><p>모델링 뷰로 전환한 후 다이어그램에서 <strong>Salesperson</strong> 테이블을 선택합니다.</p></li>
+<li><p><strong>속성</strong> 창의 <strong>이름</strong> 상자에서 텍스트를 <strong>Salesperson(Performance)</strong> 으로 바꿉니다.</p>
+<p>이제 이름이 변경된 테이블은 할당된 판매 지역의 판매량을 기반으로 영업 사원의 실적을 보고하고 분석하는 데 사용됩니다.</p>
+</li>
+</ol>
+</section>
+<section id="targets">
+<h3><strong>작업 3: Targets 테이블 관계</strong><a class="headerlink" href="#targets" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 <strong>Targets</strong> 테이블에 대한 관계를 만듭니다.</p>
+<ol class="arabic">
+<li><p><strong>Salesperson (Performance) | EmployeeID</strong> 열 및 <strong>Targets | EmployeeID</strong> 열에서 관계를 만듭니다.</p></li>
+<li><p>보고서 뷰에서 테이블 시각적 개체에 <strong>Targets | Target</strong> 필드를 추가합니다.</p></li>
+<li><p>모든 열이 표시되도록 테이블 시각적 개체의 크기를 조정합니다.</p>
+<p><img alt="그림 5699" src="../_images/04-configure-data-model-in-power-bi-desktop-advanced_image19.png" /></p>
+<p>이제 판매와 목표를 시각화할 수 있지만 주의해야 할 부분이 두 가지 있습니다. 첫째, 기간을 기준으로 한 필터가 없으므로 목표(향후 목표 금액 포함)를 기준으로 한 필터도 없습니다. 둘째, 목표는 가산되지 않으므로, 합계가 표시되지 않습니다. 목표는 시각적 개체의 서식을 지정하여 사용하지 않도록 설정하거나 계산 논리를 사용하여 제거할 수 있습니다. <strong>Power BI Desktop에서 DAX 계산 만들기, 2부</strong> 랩에서는 둘 이상의 영업 직원이 필터링될 때 공백을 반환하는 목표 측정값을 만들어 두 번째 접근 방식을 따릅니다.</p>
+</li>
+</ol>
+</section>
+<section id="id12">
+<h3><strong>작업 4: 완료</strong><a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<p>이 작업에서는 랩을 완료합니다.</p>
+<ol class="arabic simple">
+<li><p>Power BI Desktop 파일을 저장합니다.</p></li>
+<li><p>쿼리를 적용할지 묻는 프롬프트가 표시되면 <strong>나중에 적용</strong>을 클릭합니다.</p></li>
+<li><p>다음 랩을 시작하려는 경우 Power BI Desktop을 열어 둡니다.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Instructions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02-load-data-with-power-query-in-power-bi-desktop.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Power BI Desktop에서 데이터 로드</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="04-create-dax-calculations-in-power-bi-desktop.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Power BI Desktop에서 DAX 계산 만들기 1부</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>랩 사례</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>연습 1: 모델 관계 만들기</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>작업 1: 시작하기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>작업 2: 모델 관계 만들기</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>연습 2: 테이블 구성</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#product"><strong>작업 1: Product 테이블 구성</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#region"><strong>작업 2: Region 테이블 구성</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reseller"><strong>작업 3: Reseller 테이블 구성</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sales"><strong>작업 4: Sales 테이블 구성</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>작업 5: 속성 대량 업데이트</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>연습 3: 모델 인터페이스 검토</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>작업 1: 모델 인터페이스 검토</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>연습 4: 빠른 측정값 만들기</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>작업 1: 빠른 측정값 만들기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>작업 2: 다대다 관계 만들기</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#targets"><strong>작업 3: Targets 테이블 관계</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><strong>작업 4: 완료</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tony (Sungjin) Ahn
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
