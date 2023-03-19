@@ -384,7 +384,9 @@ lab:
 
 2. 쿼리 이름을 **Region**으로 바꿉니다.
 
-3. 다음을 제외한 모든 열을 제거합니다.
+3. **SalesTerritoryAlternateKey**에 필터를 적용하여 0 으로 된 값을 제거합니다. 
+
+4. 다음을 제외한 모든 열을 제거합니다.
 
     - SalesTerritoryKey
 
@@ -394,7 +396,7 @@ lab:
 
     - SalesTerritoryGroup
 
-4. 다음 세 가지 열의 이름을 바꿉니다.
+5. 다음 세 가지 열의 이름을 바꿉니다.
 
     - **SalesTerritoryRegion**을 **Region**으로
 
@@ -402,7 +404,7 @@ lab:
 
     - **SalesTerritoryGroup**을 **Group**으로
 
-5. 상태 표시줄에서 쿼리에 열이 4개, 행이 10개 있는지 확인합니다.
+6. 상태 표시줄에서 쿼리에 열이 4개, 행이 10개 있는지 확인합니다.
 
     ![그림 5661](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image45.png)
 
