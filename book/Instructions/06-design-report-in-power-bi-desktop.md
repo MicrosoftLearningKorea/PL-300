@@ -73,7 +73,7 @@ lab:
 
 이 작업에서는 Power BI Desktop의 전역 설정 및 Power BI 관리 포털의 통합 설정을 업데이트하여 랩 환경에서 지도 및 등치 지역도 시각적 개체를 사용하도록 설정합니다.
 
-1. Power BI Desktop에서 **옵션 > 옵션 및 설정 > 전역**으로 이동하고 **지도 및 등치 지역도 시각적 개체 사용** 확인란을 선택합니다.
+1. Power BI Desktop에서 **옵션 및 설정 > 옵션 > 보안**으로 이동하고 **맵 및 등치 지역도 시각적 개체 사용** 확인란을 선택합니다.
 
 ![사진103b](Linked_image_Files/07-design-report-in-power-bi-desktop_image103b.png)
 
