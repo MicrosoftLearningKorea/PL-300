@@ -66,7 +66,7 @@ lab:
 
 7. Microsoft Edge에서 로그인 상태를 유지하라는 메시지가 표시되면 **예**를 클릭합니다.
 
-8. Microsoft Edge 브라우저 창의 Power BI 서비스 **탐색** 창에서 **내 작업 영역**을 확장합니다.
+8. Microsoft Edge 브라우저 창의 Power BI 서비스 **탐색** 창에서 **내 작업 영역**으로 접속합니다.
 
     ![그림 40](Linked_image_Files/09-create-power-bi-dashboard_image4.png)
 
@@ -132,25 +132,12 @@ lab:
 
 이 작업에서는 데이터 세트를 만들어 랩용 환경을 설정합니다.
 
-*중요: **Power BI Desktop에서 보고서 디자인, 2부** 랩에서 보고서를 이미 게시했다면 다음 작업부터 진행하세요.*
+*중요: 이전 랩에서 보고서를 이미 게시했다면 다음 작업부터 진행하세요.*
 
-1. Microsoft Edge 브라우저 창의 Power BI 서비스 내 **탐색** 창 아래쪽에서 **데이터 가져오기**를 클릭합니다.
-
-    ![그림 8](Linked_image_Files/09-create-power-bi-dashboard_image14.png)
-
-2. **파일** 타일에서 **가져오기**를 클릭합니다.
-
-    ![그림 2](Linked_image_Files/09-create-power-bi-dashboard_image15.png)
-
-3. **파일 찾기** 타일을 클릭합니다.
-
-    ![그림 5](Linked_image_Files/09-create-power-bi-dashboard_image16.png)
-
-4. **열기** 창에서 **D:\PL300\Labs\08-design-report-in-power-bi-desktop-enhanced\Solution** 폴더로 이동합니다.
-
-5. **Sales Analysis.pbix** 파일을 선택한 다음 **열기**를 클릭합니다.
-
-6. 데이터 세트를 바꾸라는 메시지가 표시되면 **바꾸기**를 클릭합니다.
+1. **내 작업 영역**에서 업로드 버튼을 클릭한 뒤, 찾아보기 버튼을 누릅니다. 
+2. **열기** 창에서 **D:\PL300\Labs\09-create-power-bi-dashboard\Starter** 폴더로 이동합니다.
+3. **Sales Analysis.pbix** 파일을 선택한 다음 **열기**를 클릭합니다.
+4. 데이터 세트를 바꾸라는 메시지가 표시되면 **바꾸기**를 클릭합니다.
 
 ### **작업 4: 대시보드 만들기**
 

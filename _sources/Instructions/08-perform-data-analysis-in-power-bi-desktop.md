@@ -66,7 +66,7 @@ lab:
 
 1. Microsoft Edge에서 로그인 상태를 유지하라는 메시지가 표시되면 **예**를 클릭합니다.
 
-1. Microsoft Edge 브라우저 창의 Power BI 서비스 **탐색** 창에서 **내 작업 영역**을 확장합니다.
+1. Microsoft Edge 브라우저 창의 Power BI 서비스 **탐색** 창에서 **내 작업 영역**으로 접속합니다.
 
     ![그림 4](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image3.png)
 
@@ -76,21 +76,11 @@ lab:
 
 이 작업에서는 데이터 세트를 만들어 랩용 환경을 설정합니다.
 
-*중요: **Power BI 대시보드 만들기** 랩에서 데이터 세트를 이미 게시했다면 다음 작업부터 진행하세요.*
+*중요: 이전 랩에서 데이터 세트를 이미 게시했다면 다음 작업부터 진행하세요.*
 
-1. Microsoft Edge 브라우저 창의 Power BI 서비스 내 **탐색** 창 아래쪽에서 **데이터 가져오기**를 클릭합니다.
+1. **내 작업 영역**에서 업로드 버튼을 클릭한 뒤, 찾아보기 버튼을 누릅니다. 
 
-    ![그림 8](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image4.png)
-
-2. **파일** 타일에서 **가져오기**를 클릭합니다.
-
-    ![그림 10](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image5.png)
-
-3. **파일 찾기** 타일을 클릭합니다.
-
-    ![그림 11](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image6.png)
-
-4. **열기** 창에서 **D:\PL300\Labs\09-create-power-bi-dashboard\Solution** 폴더로 이동합니다.
+2. **D:\PL300\Labs\08-perform-data-analysis-in-power-bi-desktop\Starter** 폴더로 이동합니다.
 
 5. **Sales Analysis.pbix** 파일을 선택한 다음 **열기**를 클릭합니다.
 
@@ -98,7 +88,7 @@ lab:
 
 ### **작업 3: 보고서 만들기**
 
-이 작업에서는 **판매 탐색** 보고서를 만듭니다.
+이 작업에서는 **Sales Exploration** 보고서를 만듭니다.
 
 1. Power BI Desktop을 열려면 작업 표시줄에서 Microsoft Power BI Desktop 바로 가기를 클릭합니다.
 
@@ -124,15 +114,15 @@ lab:
 
 7. **다른 이름으로 저장** 창에서 **D:\PL300\MySolution** 폴더로 이동합니다.
 
-8. **파일 이름** 상자에 **판매 탐색**을 입력합니다.
+8. **파일 이름** 상자에 **Sales Exploration**을 입력합니다.
 
     ![그림 1](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image11.png)
 
-9. **판매 분석** 데이터 세트에 대한 라이브 연결을 만들려면 **홈** 리본 탭의 **데이터** 그룹 내부에서 **Power BI 데이터 세트**를 클릭합니다.
+9. **Sales Analysis** 데이터 세트에 대한 라이브 연결을 만들려면 **홈** 리본 탭의 **데이터** 그룹 내부에서 **Power BI 데이터 세트**를 클릭합니다.
 
     ![그림 15](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image12.png)
 
-10. **보고서를 만들 데이터 세트 선택** 창에서 **판매 보고서** 데이터 세트를 선택합니다.
+10. **보고서를 만들 데이터 세트 선택** 창에서 **Sales Analysis** 데이터 세트를 선택합니다.
 
 11. **만들기**를 클릭합니다.
 
@@ -140,7 +130,7 @@ lab:
 
 12. Power BI Desktop 파일을 저장합니다.
 
-    이제 4개의 보고서 페이지를 만들고 각 페이지에서 다른 시각적 개체를 사용하여 데이터를 분석하고 탐색할 수 있습니다.
+    이제 2개의 보고서 페이지를 만들고 각 페이지에서 다른 시각적 개체를 사용하여 데이터를 분석하고 탐색할 수 있습니다.
 
 ## **연습 2: 분산형 차트 만들기**
 
