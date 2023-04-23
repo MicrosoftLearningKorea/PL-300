@@ -74,7 +74,7 @@ lab:
 
 1. **열기** 창에서 **D:\PL300\Labs\03-configure-data-model-in-power-bi-desktop\Starter** 폴더로 이동합니다.
 
-1. **판매 분석** 파일을 선택합니다.
+1. **Sales Analysis** 파일을 선택합니다.
 
 1. **열기**를 클릭합니다.
 
@@ -186,7 +186,7 @@ lab:
 
     ![그림 338](Linked_image_Files/03-configure-data-model-in-power-bi-desktop_image21.png)
 
-21. 다이어그램을 통해 **1** 및 ***** 지표로 표시되는 카디널리티를 쉽게 이해할 수 있습니다.
+21. 다이어그램을 통해 **1** 및 * 지표로 표시되는 카디널리티를 쉽게 이해할 수 있습니다.
 
     필터 방향은 화살촉으로 표현됩니다. 실선은 활성 관계를 나타냅니다. 파선은 비활성 관계를 나타냅니다.
 
@@ -464,12 +464,11 @@ lab:
 
     ![그림 367](Linked_image_Files/03-configure-data-model-in-power-bi-desktop_image47.png)
 
-3. 
-          **빠른 측정** 창의 **필드** 창에서 **Sales** 테이블을 확장합니다.
+3. **빠른 측정** 창의 **필드** 창에서 **Sales** 테이블을 확장합니다.
 
-4. **Sales** 필드를 **기준 값** 상자로 끕니다.
+4. **Sales** 필드를 **기준 값** 상자에 drag-and-drop 시킵니다.
 
-5. **Cost** 필드를 **비용** 상자로 끕니다.
+5. **Cost** 필드를 **비용** 상자로 drag-and-drop 시킵니다.
 
     ![그림 368](Linked_image_Files/03-configure-data-model-in-power-bi-desktop_image48.png)
 
@@ -479,8 +478,7 @@ lab:
 
     빠른 측정값에서 계산 수식이 자동으로 작성됩니다. 간단하고 일반적인 계산을 쉽고 빠르게 만들 수 있습니다. **Power BI Desktop에서 DAX 계산 만들기, 1부** 랩에서 이 도구를 사용하지 않고 측정값을 만듭니다.
 
-7. 
-          **필드** 창의 **Sales** 테이블에서 새 측정값을 알 수 있습니다.
+7. **필드** 창의 **Sales** 테이블에서 새 측정값을 알 수 있습니다.
 
     ![그림 370](Linked_image_Files/03-configure-data-model-in-power-bi-desktop_image50.png)
 
@@ -570,8 +568,7 @@ lab:
 
 8. **Region** 테이블과 **SalespersonRegion** 테이블 간의 관계를 편집하려면 관계를 두 번 클릭합니다.
 
-9. 
-          **관계 편집** 창의 **교차 필터 방향** 드롭다운 목록에서 **모두**를 선택합니다.
+9. **관계 편집** 창의 **교차 필터 방향** 드롭다운 목록에서 **모두**를 선택합니다.
 
 10. **보안 필터를 양방향으로 적용** 확인란을 선택합니다.
 
