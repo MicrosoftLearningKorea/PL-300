@@ -70,7 +70,7 @@ lab:
 
 1. **열기** 창에서 **D:\PL300\Labs\02-load-data-with-power-query-in-power-bi-desktop\Starter** 폴더로 이동합니다.
 
-1. **판매 분석** 파일을 선택합니다.
+1. **Sales Analysis** 파일을 선택합니다.
 
 1. **열기**를 클릭합니다.
 
@@ -446,7 +446,7 @@ lab:
 
 4. **DimProduct** 열을 확장한 다음 모든 열을 선택 취소하고 **StandardCost** 열만 포함합니다.
 
-5. 사용자 지정 열을 만들려면 **일반** 그룹 내의 **열 추가** 리본 탭에서 **사용자 지정 열**을 클릭합니다.
+5. 사용자 지정 열을 만들려면 **열 추가** 리본 탭 내의 **일반** 그룹에서 **사용자 지정 열**을 클릭합니다.
 
     ![그림 5664](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image47.png)
 
@@ -553,7 +553,7 @@ lab:
 
     ![그림 5678](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image58.png)
 
-12. **일반** 그룹 내부의 **열 추가** 리본 탭에서 **예제에서 열 생성** 아이콘을 클릭합니다.
+12. **열 추가** 리본 탭 내부의 **일반** 그룹에서 **예제에서 열 생성** 아이콘을 클릭합니다.
 
     ![그림 5675](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image59.png)
 
@@ -593,7 +593,7 @@ lab:
 
     - **TargetMonth**를 날짜로
 
-22. **Target** 값을 1000으로 곱하려면 **Target** 열 헤더를 선택한 다음 **숫자 열** 그룹 내부의 **변환** 리본 탭에서 **표준**을 클릭한 다음 **곱하기**를 선택합니다.
+22. **Target** 값을 1000으로 곱하려면 **Target** 열 헤더를 선택한 다음 **변환** 리본 탭 내부의 **숫자 열** 그룹에서 **표준**을 클릭한 다음 **곱하기**를 선택합니다.
 
     *목표 값이 수천 단위로 저장된 것을 기억하실 수 있습니다.*
 
@@ -621,7 +621,7 @@ lab:
 
 2. 첫 번째 행에 열 이름이 포함되어 있습니다.
 
-3. **변환** 그룹 내의 **홈** 리본 탭에서 **첫 행을 머리글로 사용**을 클릭합니다.
+3. **홈** 리본 탭 내의 **변환** 그룹에서 **첫 행을 머리글로 사용**을 클릭합니다.
 
     ![그림 5688](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image68.png)
 

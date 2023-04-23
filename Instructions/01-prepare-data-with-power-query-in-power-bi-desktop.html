@@ -490,17 +490,17 @@ document.write(`
 <li><p>마지막 5개의 열에는 <strong>테이블</strong> 또는 <strong>값</strong> 링크가 포함되어 있습니다.</p>
 <p>이러한 5개의 열은 데이터베이스에 있는 다른 테이블과의 관계를 나타냅니다. 이 열들은 테이블을 서로 결합하는 데 사용할 수 있습니다. <strong>Power BI Desktop에서 데이터 로드</strong> 랩에서 테이블을 조인할 것입니다.</p>
 </li>
-<li><p>열 품질을 평가하려면 <strong>데이터 미리 보기</strong> 그룹 안에 있는 <strong>보기</strong>  리본 탭에서 <strong>열 품질</strong>을 체크합니다.</p>
+<li><p>열 품질을 평가하려면 <strong>보기</strong> 리본 탭 안에 있는 <strong>데이터 미리 보기</strong> 그룹에서 <strong>열 품질</strong>을 체크합니다.</p>
 <p><img alt="그림 35" src="../_images/01-prepare-data-with-power-query-in-power-bi-desktop_image23.png" /></p>
 <p>열 품질 기능을 사용하면 열에서 발견된 유효한 값, 오류 또는 빈 값의 비율을 쉽게 확인할 수 있습니다.</p>
 </li>
-<li><p><strong>위치</strong> 열(여섯 번째 마지막 열)의 경우, 행의 94%가 비어 있습니다(null).</p>
+<li><p><strong>Position</strong> 열(여섯 번째 마지막 열)의 경우, 행의 94%가 비어 있습니다(null).</p>
 <p><img alt="그림 38" src="../_images/01-prepare-data-with-power-query-in-power-bi-desktop_image24.png" /></p>
 </li>
 <li><p>열 분포를 평가하려면 <strong>보기</strong> 리본 탭의 <strong>데이터 미리 보기</strong> 그룹 내에서 <strong>열 분포</strong>를 선택합니다.</p>
 <p><img alt="그림 40" src="../_images/01-prepare-data-with-power-query-in-power-bi-desktop_image25.png" /></p>
 </li>
-<li><p><strong>위치</strong> 열을 다시 검토하고 4개의 Distinct 값과 하나의 고유 값이 있는지 확인합니다.</p></li>
+<li><p><strong>Position</strong> 열을 다시 검토하고 4개의 상이 값과 하나의 고유 값이 있는지 확인합니다.</p></li>
 <li><p><strong>EmployeeKey</strong>(첫 번째) 열에 대한 열 분포를 검토 합니다. 여기에는 296개의 상이 값과 296개의 고유 값이 있습니다.</p>
 <p><img alt="그림 43" src="../_images/01-prepare-data-with-power-query-in-power-bi-desktop_image26.png" /></p>
 <p>Distinct 개수와 고유 개수가 동일할 때 이는 해당 열에 고유 값들이 포함되어 있음을 의미합니다. 모델링 시에는 일부 모델 테이블에 고유한 열을 포함해야 합니다. 이러한 고유 열을 사용하여 일대다 관계를 만들 수 있습니다. <strong>Power BI Desktop에서 데이터 모델링</strong> 랩에서 이러한 관계를 만듭니다.</p>
@@ -551,7 +551,7 @@ document.write(`
 <h3><strong>작업 5: CSV 파일에서 데이터 가져오기</strong><a class="headerlink" href="#csv" title="Permalink to this heading">#</a></h3>
 <p>이 작업에서는 CSV 파일을 기반으로 쿼리를 생성합니다.</p>
 <ol class="arabic">
-<li><p>새 쿼리를 추가하려면 <strong>파워 쿼리 편집기</strong> 창에서 <strong>새 쿼리</strong> 그룹 내에 있는 <strong>홈</strong> 리본 탭에서 <strong>새 원본</strong> 아래쪽 화살표를 클릭한 다음, <strong>텍스트/CSV</strong>를 선택합니다.</p>
+<li><p>새 쿼리를 추가하려면 <strong>파워 쿼리 편집기</strong> 창에서 <strong>홈</strong> 리본 탭 내에 있는 <strong>새 쿼리</strong> 그룹 에서 <strong>새 원본</strong> 아래쪽 화살표를 클릭한 다음, <strong>텍스트/CSV</strong>를 선택합니다.</p>
 <p><img alt="그림 70" src="../_images/01-prepare-data-with-power-query-in-power-bi-desktop_image35.png" /></p>
 </li>
 <li><p><strong>열기</strong> 창에서 <strong>D:\PL300\Resources</strong> 폴더로 이동하고 <strong>ResellerSalesTargets.csv</strong> 파일을 선택합니다.</p></li>
