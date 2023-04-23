@@ -204,7 +204,7 @@ lab:
 
     ![그림 40](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image25.png)
 
-9. **Position** 열을 다시 검토하고 4개의 상 값과 하나의 고유 값이 있는지 확인합니다.
+9. **Position** 열을 다시 검토하고 4개의 상이 값과 하나의 고유 값이 있는지 확인합니다.
 
 10. **EmployeeKey**(첫 번째) 열에 대한 열 분포를 검토 합니다. 여기에는 296개의 상이 값과 296개의 고유 값이 있습니다.
 
