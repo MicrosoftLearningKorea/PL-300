@@ -71,7 +71,7 @@ lab:
 
 1. **열기** 창에서 **D:\PL300\Labs\05-create-dax-calculations-in-power-bi-desktop-advanced\Starter** 폴더로 이동합니다.
 
-1. **판매 분석** 파일을 선택합니다.
+1. **Sales Analysis** 파일을 선택합니다.
 
 1. **열기**를 클릭합니다.
 
@@ -425,7 +425,7 @@ lab:
 
     ![그림 62](Linked_image_Files/06-create-dax-calculations-in-power-bi-desktop-advanced_image23.png)
 
-    즉, 2018년 7월 매출($2,411,559)이 전년도 동일 기간에 달성한 매출($489,328)에 비해 거의 400%(거의 4배) 향상되었음을 의미합니다.
+    즉, 2018년 7월 매출(\$2,411,559)이 전년도 동일 기간에 달성한 매출(\$489,328)에 비해 거의 400%(거의 4배) 향상되었음을 의미합니다.
 
 8. 모델 뷰에서 두 개의 새 측정값을 **Time Intelligence**라는 표시 폴더에 넣습니다.
 
