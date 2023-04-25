@@ -69,7 +69,7 @@ lab:
 
 1. **열기** 창에서 **D:\PL300\Labs\10-row-level-security\Starter** 폴더로 이동합니다.
 
-1. **판매 분석** 파일을 선택합니다.
+1. **Sales Analysis** 파일을 선택합니다.
 
 1. **열기**를 클릭합니다.
 
