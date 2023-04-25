@@ -104,7 +104,7 @@ lab:
 
 8. **열기** 창에서 **D:\PL300\Labs\09-create-power-bi-dashboard\Starter** 폴더로 이동합니다.
 
-9. **판매 분석** 파일을 선택합니다.
+9. **Sales Analysis** 파일을 선택합니다.
 
 10. **열기**를 클릭합니다.
 
