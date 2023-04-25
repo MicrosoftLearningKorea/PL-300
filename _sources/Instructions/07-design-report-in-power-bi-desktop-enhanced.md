@@ -109,7 +109,7 @@ lab:
 
 8. **열기** 창에서 **D:\PL300\Labs\07-design-report-in-power-bi-desktop-enhanced\Starter** 폴더로 이동합니다.
 
-9. **판매 분석** 파일을 선택합니다.
+9. **Sales Analysis** 파일을 선택합니다.
 
 10. **열기**를 클릭합니다.
 
@@ -155,7 +155,7 @@ lab:
 
     ![그림 93](Linked_image_Files/08-design-report-in-power-bi-desktop-enhanced_image14.png)
 
-6. **Overview** 페이지에서 **지역** 슬라이서를 선택합니다.
+6. **Overview** 페이지에서 **Region** 슬라이서를 선택합니다.
 
 7. 슬라이서를 **Overview** 페이지 및 **Profit** 페이지와 동기화합니다.
 
