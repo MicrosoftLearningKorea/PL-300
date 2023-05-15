@@ -199,7 +199,7 @@ lab:
 
     ![그림 49](Linked_image_Files/07-design-report-in-power-bi-desktop_image18.png)
 
-11. 슬라이서를 목록에서 드롭다운으로 변환하려면 슬라이서 오른쪽 위에 있는 아래쪽 화살표를 클릭한 다음, **드롭다운**을 선택합니다.
+11. 슬라이서를 목록에서 드롭다운으로 변환하려면 서식 > 슬라이서 설정 > 옵션 > 스타일로 이동해 **드롭다운**을 선택합니다.
 
     ![그림 18](Linked_image_Files/07-design-report-in-power-bi-desktop_image19.png)
 
@@ -238,13 +238,13 @@ lab:
 
     - Sales \| Sales
 
-25. 시각적 개체 필드 창(**필드** 창이 아니며 **시각화** 창 아래에 있음)에서 필드가 **x-축** 및 **열 y-축** 웰/영역에 할당되었는지 확인합니다.
+25. 시각적 개체 필드 창(**필드** 창이 아니며 **시각화** 창 아래에 있음)에서 필드가 **X축** 및 **열 y축** 웰/영역에 할당되었는지 확인합니다.
 
     ![그림 27](Linked_image_Files/07-design-report-in-power-bi-desktop_image28_N.png)
 
     필드를 시각적 개체로 드래그하면 기본 웰/영역에 추가됩니다. 정밀도를 위해 필드를 웰/영역으로 직접 끌어올 수 있습니다. 다음 작업에서 이와 같이 필드를 끌어올 것입니다.
 
-26. **필드** 창에서 **Sales \| Profit Margin** 필드를 **꺾은선형 y-축** 웰/영역으로 끌어 옵니다.
+26. **필드** 창에서 **Sales \| Profit Margin** 필드를 **선 y축** 웰/영역으로 끌어 옵니다.
 
     ![그림 28](Linked_image_Files/07-design-report-in-power-bi-desktop_image29.png)
 
