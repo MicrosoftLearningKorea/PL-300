@@ -23,6 +23,6 @@
 
 ## 커뮤니티 사이트
 - [Power BI 커뮤니티](https://community.powerbi.com/)
- -  [갤러리](https://community.powerbi.com/t5/Galleries/ct-p/PBI_Comm_Galleries)
-  -   [테마 갤러리](https://community.powerbi.com/t5/Themes-Gallery/bd-p/ThemesGallery)
-  -   [데이터 스토리 갤러리](https://community.powerbi.com/t5/Data-Stories-Gallery/bd-p/DataStoriesGallery)
+   - [갤러리](https://community.powerbi.com/t5/Galleries/ct-p/PBI_Comm_Galleries)
+       -   [테마 갤러리](https://community.powerbi.com/t5/Themes-Gallery/bd-p/ThemesGallery)
+       -   [데이터 스토리 갤러리](https://community.powerbi.com/t5/Data-Stories-Gallery/bd-p/DataStoriesGallery)
