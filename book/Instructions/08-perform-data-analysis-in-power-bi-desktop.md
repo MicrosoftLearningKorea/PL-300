@@ -68,7 +68,7 @@ lab:
 
 1. Microsoft Edge 브라우저 창의 Power BI 서비스 **탐색** 창에서 **내 작업 영역**으로 접속합니다.
 
-    ![그림 4](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image3.png)
+    ![그림 4](Linked_image_Files/07-my-workspace-new.png)
 
 1. Microsoft Edge 브라우저 창을 열어 둡니다.
 
@@ -118,19 +118,19 @@ lab:
 
     ![그림 1](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image11.png)
 
-9. **Sales Analysis** 데이터 세트에 대한 라이브 연결을 만들려면 **홈** 리본 탭의 **데이터** 그룹 내부에서 **Power BI 데이터 세트**를 클릭합니다.
+9. **Sales Analysis** 데이터 세트에 대한 라이브 연결을 만들려면 **홈** 리본 탭의 **데이터 가져오기**에서 **Power BI 데이터 세트**를 클릭합니다.
 
     ![그림 15](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image12.png)
 
-10. **보고서를 만들 데이터 세트 선택** 창에서 **Sales Analysis** 데이터 세트를 선택합니다.
+10. **데이터 허브** 창에서 **Sales Analysis** 데이터 세트를 선택합니다.
 
-11. **만들기**를 클릭합니다.
+11. **연결**를 클릭합니다.
 
     ![그림 17](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image13.png)
 
 12. Power BI Desktop 파일을 저장합니다.
 
-    이제 2개의 보고서 페이지를 만들고 각 페이지에서 다른 시각적 개체를 사용하여 데이터를 분석하고 탐색할 수 있습니다.
+     이제 2개의 보고서 페이지를 만들고 각 페이지에서 다른 시각적 개체를 사용하여 데이터를 분석하고 탐색할 수 있습니다.
 
 ## **연습 2: 분산형 차트 만들기**
 
@@ -162,7 +162,7 @@ lab:
 
     - 크기: **Sales \| Quantity**
 
-    - Play Axis: **Date \| Quarter**
+    - 재생 축: **Date \| Quarter**
 
     ![그림 39](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image17.png)
 
@@ -214,9 +214,9 @@ lab:
 
 3. 다음 필드를 시각적 개체 웰/영역에 추가합니다.
 
-    - 축: **Date \| Date**
+    - X축: **Date \| Date**
 
-    - 값: **Sales \| Sales** 
+    - Y축: **Sales \| Sales** 
 
     ![그림 46](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image23.png)
 
@@ -238,24 +238,19 @@ lab:
 
     ![그림 20](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image26.png)
 
-8. **예측** 섹션을 확장합니다.
+8. **예측** 섹션을 확장하고 활성화합니다.
 
     ![그림 50](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image27.png)
 
     **예측** 섹션을 사용할 수 없는 경우 시각적 개체를 올바르게 구성하지 않았기 때문일 수 있습니다. 예측은 두 가지 조건이 충족되는 경우에만 사용할 수 있습니다. 축에는 날짜 형식의 단일 필드가 있고 값 필드가 하나만 있어야 합니다.
 
-9. **추가**를 클릭합니다.
-
-    ![그림 51](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image28.png)
-
 10. 다음 예측 속성을 구성합니다.
 
-    - 예측 범위: 1개월
-
-    - 신뢰도 간격: 80%
-
+    - 단위: 개월
+- 예측 범위: 1
     - 계절성: 365
-
+- 신뢰 구간: 80%
+    
 11. **적용**을 클릭합니다.
 
     ![그림 52](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image29.png)
