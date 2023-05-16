@@ -406,7 +406,7 @@ document.write(`
 <li><p>로그인 프로세스를 완료합니다.</p></li>
 <li><p>Microsoft Edge에서 로그인 상태를 유지하라는 메시지가 표시되면 <strong>예</strong>를 클릭합니다.</p></li>
 <li><p>Microsoft Edge 브라우저 창의 Power BI 서비스 <strong>탐색</strong> 창에서 <strong>내 작업 영역</strong>으로 접속합니다.</p>
-<p><img alt="그림 4" src="../_images/10-perform-data-analysis-in-power-bi-desktop_image3.png" /></p>
+<p><img alt="그림 4" src="../_images/07-my-workspace-new.png" /></p>
 </li>
 <li><p>Microsoft Edge 브라우저 창을 열어 둡니다.</p></li>
 </ol>
@@ -445,11 +445,11 @@ document.write(`
 <li><p><strong>파일 이름</strong> 상자에 <strong>Sales Exploration</strong>을 입력합니다.</p>
 <p><img alt="그림 1" src="../_images/10-perform-data-analysis-in-power-bi-desktop_image11.png" /></p>
 </li>
-<li><p><strong>Sales Analysis</strong> 데이터 세트에 대한 라이브 연결을 만들려면 <strong>홈</strong> 리본 탭의 <strong>데이터</strong> 그룹 내부에서 <strong>Power BI 데이터 세트</strong>를 클릭합니다.</p>
+<li><p><strong>Sales Analysis</strong> 데이터 세트에 대한 라이브 연결을 만들려면 <strong>홈</strong> 리본 탭의 <strong>데이터 가져오기</strong>에서 <strong>Power BI 데이터 세트</strong>를 클릭합니다.</p>
 <p><img alt="그림 15" src="../_images/10-perform-data-analysis-in-power-bi-desktop_image12.png" /></p>
 </li>
-<li><p><strong>보고서를 만들 데이터 세트 선택</strong> 창에서 <strong>Sales Analysis</strong> 데이터 세트를 선택합니다.</p></li>
-<li><p><strong>만들기</strong>를 클릭합니다.</p>
+<li><p><strong>데이터 허브</strong> 창에서 <strong>Sales Analysis</strong> 데이터 세트를 선택합니다.</p></li>
+<li><p><strong>연결</strong>를 클릭합니다.</p>
 <p><img alt="그림 17" src="../_images/10-perform-data-analysis-in-power-bi-desktop_image13.png" /></p>
 </li>
 <li><p>Power BI Desktop 파일을 저장합니다.</p>
@@ -479,7 +479,7 @@ document.write(`
 <li><p>X축: <strong>Sales | Sales</strong></p></li>
 <li><p>Y축: <strong>Sales | Profit Margin</strong></p></li>
 <li><p>크기: <strong>Sales | Quantity</strong></p></li>
-<li><p>Play Axis: <strong>Date | Quarter</strong></p></li>
+<li><p>재생 축: <strong>Date | Quarter</strong></p></li>
 </ul>
 <p><img alt="그림 39" src="../_images/10-perform-data-analysis-in-power-bi-desktop_image17.png" /></p>
 <p>필드가 <strong>재생 축</strong> 웰/영역에 추가되면 차트를 애니메이션화할 수 있습니다.</p>
@@ -518,8 +518,8 @@ document.write(`
 </li>
 <li><p>다음 필드를 시각적 개체 웰/영역에 추가합니다.</p>
 <ul class="simple">
-<li><p>축: <strong>Date | Date</strong></p></li>
-<li><p>값: <strong>Sales | Sales</strong></p></li>
+<li><p>X축: <strong>Date | Date</strong></p></li>
+<li><p>Y축: <strong>Sales | Sales</strong></p></li>
 </ul>
 <p><img alt="그림 46" src="../_images/10-perform-data-analysis-in-power-bi-desktop_image23.png" /></p>
 </li>
@@ -534,20 +534,25 @@ document.write(`
 <li><p>예측을 추가하려면 <strong>시각화</strong> 창 아래에서 <strong>Analytics</strong> 창을 선택합니다.</p>
 <p><img alt="그림 20" src="../_images/10-perform-data-analysis-in-power-bi-desktop_image26.png" /></p>
 </li>
-<li><p><strong>예측</strong> 섹션을 확장합니다.</p>
+<li><p><strong>예측</strong> 섹션을 확장하고 활성화합니다.</p>
 <p><img alt="그림 50" src="../_images/10-perform-data-analysis-in-power-bi-desktop_image27.png" /></p>
 <p><strong>예측</strong> 섹션을 사용할 수 없는 경우 시각적 개체를 올바르게 구성하지 않았기 때문일 수 있습니다. 예측은 두 가지 조건이 충족되는 경우에만 사용할 수 있습니다. 축에는 날짜 형식의 단일 필드가 있고 값 필드가 하나만 있어야 합니다.</p>
 </li>
-<li><p><strong>추가</strong>를 클릭합니다.</p>
-<p><img alt="그림 51" src="../_images/10-perform-data-analysis-in-power-bi-desktop_image28.png" /></p>
-</li>
 <li><p>다음 예측 속성을 구성합니다.</p>
 <ul class="simple">
-<li><p>예측 범위: 1개월</p></li>
-<li><p>신뢰도 간격: 80%</p></li>
+<li><p>단위: 개월</p></li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
+<li><p>예측 범위: 1</p>
+<ul>
 <li><p>계절성: 365</p></li>
 </ul>
 </li>
+<li><p>신뢰 구간: 80%</p></li>
+</ul>
+<ol class="arabic" start="11">
 <li><p><strong>적용</strong>을 클릭합니다.</p>
 <p><img alt="그림 52" src="../_images/10-perform-data-analysis-in-power-bi-desktop_image29.png" /></p>
 </li>

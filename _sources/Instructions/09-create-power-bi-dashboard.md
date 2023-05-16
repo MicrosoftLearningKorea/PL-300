@@ -68,7 +68,7 @@ lab:
 
 8. Microsoft Edge 브라우저 창의 Power BI 서비스 **탐색** 창에서 **내 작업 영역**으로 접속합니다.
 
-    ![그림 40](Linked_image_Files/09-create-power-bi-dashboard_image4.png)
+    ![그림 40](Linked_image_Files/07-my-workspace-new.png)
 
 9. Microsoft Edge 브라우저 창을 열어 둡니다.
 
@@ -149,7 +149,7 @@ lab:
 
     ![그림 4](Linked_image_Files/09-create-power-bi-dashboard_image17.png)
 
-3. **Year** 슬라이서를 **모두 선택**으로 설정합니다.
+3. **Region** 슬라이서를 **모두 선택**으로 설정합니다.
 
     ‘시각적 개체를 대시보드에 고정하면 시각적 개체가 현재 필터 컨텍스트를 사용합니다. 고정되고 나면 필터 컨텍스트를 변경할 수 없습니다. 시간 기반 필터의 경우 상대 날짜 슬라이서를 사용하는 것이 좋습니다(또는 상대 시간 기반 질문을 사용하는 질문 및 답변).
 
@@ -167,7 +167,7 @@ lab:
 
     ![그림 1](Linked_image_Files/09-create-power-bi-dashboard_image20.png)
 
-8. **탐색** 창을 연 다음, **Sales Monitoring** 대시보드를 엽니다.
+8. **내 작업 영역** 으로 접속 후, **Sales Monitoring** 대시보드를 엽니다.
 
     ![그림 44](Linked_image_Files/09-create-power-bi-dashboard_image21.png)
 
@@ -325,15 +325,15 @@ lab:
 
 ## **연습 3: 대시보드 검토**
 
-이 연습에서는 대시보드를 검토하여 업데이트된 판매량을 확인하고 경고가 트리거되었음을 확인합니다.
+이 연습에서는 대시보드를 검토하여 업데이트된 판매량을 확인합니다.
 
 ### **작업 1: 대시보드 검토**
 
-이 작업에서는 대시보드를 검토하여 업데이트된 판매량을 확인하고 경고가 트리거되었음을 확인합니다.
+이 작업에서는 대시보드를 검토하여 업데이트된 판매량을 확인합니다.
 
 1. Microsoft Edge 브라우저 창의 Power BI 서비스에서 **Sales Monitoring** 대시보드를 검토합니다.
 
-2. **Sales, Profit Margin** 타일의 부제목에서 **이제** 데이터가 새로 고쳐졌습니다.
+2. **Sales, Profit Margin** 타일의 부제목을 보시면 **지금** 데이터가 새로 고쳐졌습니다.
 
 3. 또한 이제 **2020년 6월**에 해당하는 열이 있습니다.
 
@@ -341,22 +341,3 @@ lab:
 
     ![그림 33](Linked_image_Files/09-create-power-bi-dashboard_image50.png)
 
-    **Sales YTD** 타일에 대한 경고도 트리거되었습니다. 잠시 후, 판매가 구성된 임계값을 초과한다는 경고가 표시됩니다.
-
-4. **Sales YTD** 타일이 **$37M**으로 업데이트되었습니다.
-
-5. **Sales YTD** 타일에 경고 알림 아이콘이 표시되는지 확인합니다.
-
-    알림이 표시되지 않으면 **F5** 키를 눌러 브라우저를 다시 로드해야 할 수 있습니다. 그래도 알림이 표시되지 않으면 몇 분 정도 더 기다립니다.
-
-    ![그림 35](Linked_image_Files/09-create-power-bi-dashboard_image51.png)
-
-    *경고 알림은 대시보드 타일에 표시되며, 메일 및 푸시 알림을 통해 Apple Watch를 포함한 모바일 앱에 배달할 수 있습니다.*
-
-6. 웹 페이지 오른쪽 상단에서 **알림** 아이콘을 클릭합니다.
-
-    ![그림 58](Linked_image_Files/09-create-power-bi-dashboard_image52.png)
-
-7. **모든 알림** 창에서 경고 알림의 세부 정보를 검토합니다.
-
-8. 창을 닫으려면 **닫기**를 클릭합니다.
