@@ -9,7 +9,7 @@ lab:
 
 **이 랩을 완료하는 데 걸리는 예상 완료 시간은 45분입니다.**
 
-이 랩에서는 판매원이 할당된 지역에 대한 판매 데이터만 분석할 수 있도록 행 수준 보안을 적용합니다.
+이 랩에서는 영업 직원이 할당된 지역에 대한 판매 데이터만 분석할 수 있도록 행 수준 보안을 적용합니다.
 
 이 랩에서는 다음 작업을 수행하는 방법을 알아봅니다.
 
@@ -17,7 +17,7 @@ lab:
 
 ### **랩 사례**
 
-이 랩은 데이터 준비부터 보고서 및 대시보드로 게시에 이르기까지 전체 사례로 고안된 랩 시리즈 중 하나입니다. 어떤 순서로든 랩을 완료할 수 있습니다. 그러나 여러 랩을 진행하려는 경우 다음 순서를 따르는 것이 좋습니다.
+이 랩은 데이터 준비부터 보고서 및 대시보드로 게시에 이르기까지 배우기 위해 고안된 랩 시리즈 중 하나입니다. 어떤 순서로든 랩을 완료할 수 있습니다. 그러나 여러 랩을 진행하려는 경우 다음 순서를 따르는 것이 좋습니다.
 
 1. Power BI Desktop에서 데이터 준비
 
@@ -105,11 +105,11 @@ lab:
 
 3. 데이터를 검토하면 Michael Blythe(EmployeeKey 281)의 UPN 값이 **michael-blythe@adventureworks.com** 임을 확인할 수 있습니다.
 
-    *Michael Blythe는 미국 북동부, 미국 중부, 미국 남동부의 세 가지 판매 지역에 할당되었습니다.*
+    *Michael Blythe는 미국 북동부, 미국 중부, 미국 남동부의 세 가지 판매 지역을 관할 중에 있습니다.*
 
 4. 보고서 뷰로 전환합니다.
 
-5. **보안** 그룹 내부의 **모델링** 리본 탭에서 **역할 관리**를 클릭합니다.
+5. **모델링** 리본 탭에서 **보안** 그룹 내부의 **역할 관리**를 클릭합니다.
 
     ![그림 5700](Linked_image_Files/04-configure-data-model-in-power-bi-desktop-advanced_image21.png)
 
@@ -129,13 +129,13 @@ lab:
 
     ![그림 11](Linked_image_Files/04-configure-data-model-in-power-bi-desktop-advanced_image25.png)
 
-    USERPRINCIPALNAME()은 인증된 사용자의 이름을 반환하는 DAX(Data Analysis Expressions) 함수입니다. 즉, **영업 직원(성과)** 테이블이 모델을 쿼리하는 사용자의 UPN(사용자 계정 이름)을 기준으로 필터링됩니다.
+    USERPRINCIPALNAME()은 인증된 사용자의 이름을 반환하는 DAX(Data Analysis Expressions) 함수입니다. 즉, **Salesperson (Performance)** 테이블이 모델을 쿼리하는 사용자의 UPN(사용자 계정 이름)을 기준으로 필터링됩니다.
 
 10. **저장**을 클릭합니다.
 
     ![그림 5706](Linked_image_Files/04-configure-data-model-in-power-bi-desktop-advanced_image26.png)
 
-11. 보안 역할을 테스트하려면 **보안** 그룹 내부의 **모델링** 리본 탭에서 **View As**를 클릭합니다.
+11. 보안 역할을 테스트하려면 **모델링** 리본 탭에서 **보안** 그룹 내부의 **표시 방법**를 클릭합니다.
 
     ![그림 5708](Linked_image_Files/04-configure-data-model-in-power-bi-desktop-advanced_image27.png)
 
@@ -145,7 +145,7 @@ lab:
 
     ![그림 5709](Linked_image_Files/04-configure-data-model-in-power-bi-desktop-advanced_image28.png)
 
-    이렇게 구성하면 **영업 직원** 역할을 사용하고 Michael Blythe의 이름으로 사용자를 가장하게 됩니다.
+    이렇게 구성하면 **Salespeople** 역할을 사용하고 Michael Blythe의 이름으로 사용자를 가장하게 됩니다.
 
 14. **확인**을 클릭합니다.
 
@@ -163,7 +163,7 @@ lab:
 
     ![그림 5712](Linked_image_Files/04-configure-data-model-in-power-bi-desktop-advanced_image32.png)
 
-    Power BI Desktop 파일이 Power BI 서비스에 게시될 경우에는 게시 후 작업을 완료하여 보안 주체를 **영업 직원** 역할에 매핑해야 합니다. 이 랩에서는 해당 작업을 수행하지 않습니다.
+    Power BI Desktop 파일이 Power BI 서비스에 게시될 경우에는 게시 후 작업을 완료하여 보안 주체를 **Salespeople** 역할에 매핑해야 합니다. 이 랩에서는 해당 작업을 수행하지 않습니다.
 
 18. 역할을 삭제하려면 **모델링** 리본 탭의 **보안** 그룹 내에서 **역할 관리**를 클릭합니다.
 
