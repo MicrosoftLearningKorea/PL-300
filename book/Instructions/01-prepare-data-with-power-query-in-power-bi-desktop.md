@@ -58,7 +58,7 @@ lab:
 
     ![그림 2](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image1.png)
 
-1. 시작 창을 닫으려면 창 오른쪽 위의 **X**를 클릭합니다.
+1. 팝업 창을 닫으려면 창 오른쪽 위의 **X**를 클릭합니다.
 
     ![그림 3](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image2.png)
 
@@ -70,7 +70,7 @@ lab:
 
 1. **다른 이름으로 저장** 창에서 **D:\PL300\MySolution** 폴더로 이동합니다.
 
-1. **파일 이름** 상자에 **판매 분석**을 입력합니다.
+1. **파일 이름** 상자에 **Sales Analysis**을 입력합니다.
 
     ![그림 14](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image4.png)
 
@@ -96,13 +96,13 @@ lab:
 
     ![그림 5](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image8.png)
 
-    현재 파일에 대한 **데이터 로드** 설정은 모델링할 때 기본 동작을 결정하는 설정 옵션을 허용합니다.
+    현재 파일에 대한 **데이터 로드** 설정은 모델링할 때 기본 동작을 결정합니다.
 
 1. **관계** 그룹에서는 이미 선택되어 있는 두 옵션의 선택을 취소합니다.
 
     ![그림 7](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image9.png)
 
-    이 두 가지 옵션을 활성화하는 것은 데이터 모델을 개발할 때 유용할 수 있지만, 앞서 랩 환경을 지원하기 위해 비활성화되었습니다. **Power BI Desktop에서 데이터 로드** 랩에서 관계를 만들 때 각 옵션을 추가하는 이유를 알아볼 것입니다.
+    이 두 가지 옵션을 활성화하는 것은 데이터 모델을 개발할 때 유용할 수 있지만, 추후 랩 환경을 지원하기 위해 비활성화되었습니다. **Power BI Desktop에서 데이터 로드** 랩에서 관계를 만들 때 각 옵션을 추가하는 이유를 알아볼 예정입니다.
 
 1. **확인**을 클릭합니다.
 
@@ -132,11 +132,11 @@ lab:
 
 4. **탐색기** 창의 왼쪽에서 **AdventureWorksDW2020** 데이터베이스를 확장합니다.
 
-    **AdventureWorksDW2020** 데이터베이스는 **AdventureWorksDW2017** 샘플 데이터베이스를 기반으로 합니다. 그 내용은 과정 랩의 학습 목표를 지원하도록 수정되었습니다.
+    **AdventureWorksDW2020** 데이터베이스는 **AdventureWorksDW2017** 샘플 데이터베이스를 기반으로 합니다. 해당 데이터는 랩의 학습 목표를 달성하기 위해 일부 수정되었습니다.
 
     ![그림 28](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image17.png)
 
-5. **DimEmployee** 테이블을 선택하지만 체크하지 마십시오.
+5. **DimEmployee** 테이블을 선택해보고 체크하지는 마십시오.
 
     ![그림 29](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image18.png)
 
@@ -172,13 +172,13 @@ lab:
 
     ![그림 31](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image20.png)
 
-    **쿼리** 창에는 선택한 각 테이블에 대한 쿼리가 하나 있습니다.
+    **쿼리** 창에는 선택한 각 테이블에 대한 쿼리가 하나씩 있습니다.
 
 2. 첫 번째 쿼리인 **DimEmployee**를 선택합니다.
 
     ![그림 33](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image21.png)
 
-    SQL Server 데이터베이스의 **DimEmployee** 테이블에는 각 직원에 대해 하나의 행이 저장됩니다. 이 테이블의 행 하위 집합은 판매 직원을 나타내며, 이는 사용자가 개발할 모델과 관련됩니다.
+    SQL Server 데이터베이스의 **DimEmployee** 테이블에는 각 직원에 대해 하나의 행이 저장됩니다. 이 테이블의 행 일부는 영업직원을 나타내며, 이는 추후 랩에서 구축할 데이터 모델과 관련됩니다.
 
 3. 왼쪽 아래의 상태 표시줄에는 테이블 통계에 33개의 열과 296개의 행이 있습니다.
 
@@ -188,7 +188,7 @@ lab:
 
 5. 마지막 5개의 열에는 **테이블** 또는 **값** 링크가 포함되어 있습니다.
 
-    이러한 5개의 열은 데이터베이스에 있는 다른 테이블과의 관계를 나타냅니다. 이 열들은 테이블을 서로 결합하는 데 사용할 수 있습니다. **Power BI Desktop에서 데이터 로드** 랩에서 테이블을 조인할 것입니다.
+    이러한 5개의 열은 데이터베이스에 있는 다른 테이블과의 관계를 나타냅니다. 이 열들은 테이블을 서로 결합하는 데 사용할 수 있습니다. 추후 **Power BI Desktop에서 데이터 로드** 랩에서 테이블을 조인할 예정입니다.
 
 6. 열 품질을 평가하려면 **보기** 리본 탭 안에 있는 **데이터 미리 보기** 그룹에서 **열 품질**을 체크합니다.
 
@@ -196,7 +196,7 @@ lab:
 
     열 품질 기능을 사용하면 열에서 발견된 유효한 값, 오류 또는 빈 값의 비율을 쉽게 확인할 수 있습니다.
 
-7. **Position** 열(여섯 번째 마지막 열)의 경우, 행의 94%가 비어 있습니다(null).
+7. **Position** 열(마지막에서 여섯 번째 열)의 경우, 행의 94%가 비어 있습니다(null).
 
     ![그림 38](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image24.png)
 
@@ -210,55 +210,55 @@ lab:
 
     ![그림 43](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image26.png)
 
-    Distinct 개수와 고유 개수가 동일할 때 이는 해당 열에 고유 값들이 포함되어 있음을 의미합니다. 모델링 시에는 일부 모델 테이블에 고유한 열을 포함해야 합니다. 이러한 고유 열을 사용하여 일대다 관계를 만들 수 있습니다. **Power BI Desktop에서 데이터 모델링** 랩에서 이러한 관계를 만듭니다.
+    상이값의 개수와 고유값의 개수가 동일할 때 이는 해당 열은 고유한 값들만 포함되어 있음을 의미합니다. 모델링 시에는 일부 모델 테이블에 고유한 열을 포함해야 합니다. 이러한 고유 열을 사용하여 일대다 관계를 만들 수 있습니다. 추후 **Power BI Desktop에서 데이터 모델링** 랩에서 이러한 관계를 만들 예정입니다.
 
 11. **쿼리** 창에서 **DimEmployeeSalesTerritory** 쿼리를 선택합니다.
 
     ![그림 44](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image27.png)
 
-    **DimEmployeeSalesTerritory** 테이블에는 각 직원에 대한 하나의 행과 직원들이 관리하는 영업 지역이 저장됩니다. 테이블은 한 명의 직원을 대상으로 많은 지역과 관련된 지원을 합니다. 일부 직원들은 1개, 2개 또는 그 이상의 많은 지역을 관리합니다. 이 데이터를 모델링하는 경우, 다대다 관계를 정의해야 합니다.
+    **DimEmployeeSalesTerritory** 테이블의 각 행에는 직원과 그들이 관리하는 영업 지역이 저장됩니다. 한 명의 직원은 여러 개의 영업 지역을 가지고 있을 수 있습니다. 일부 직원들은 1개, 2개 또는 그 이상의 많은 지역을 관리합니다. 이 데이터를 추후 모델링하는 경우, 다대다 관계를 정의해야 할 것입니다.
 
 12. **쿼리** 창에서 **DimProduct** 쿼리를 선택합니다.
 
     ![그림 46](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image28.png)
 
-    **DimProduct** 테이블에는 회사에서 판매하는 제품당 하나의 행이 포함되어 있습니다.
+    **DimProduct** 테이블에는 회사에서 판매하는 제품이 각각의 행에 포함되어 있습니다.
 
 13. 마지막 열을 표시하려면 가로로 스크롤합니다.
 
 14. **DimProductSubcategory** 열을 확인하세요.
 
-    **Power BI Desktop에서 데이터 로드** 랩에서 이 쿼리에 변환을 추가할 때 **DimProductSubcategory** 열을 사용하여 테이블을 조인합니다.
+    추후 **Power BI Desktop에서 데이터 로드** 랩에서 이 쿼리에 변환을 추가할 때 **DimProductSubcategory** 열을 사용하여 테이블을 조인할 예정입니다.
 
 15. **쿼리** 창에서 **DimReseller** 쿼리를 선택합니다.
 
     ![그림 49](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image29.png)
 
-    **DimReseller** 테이블에는 재판매인당 하나의 행이 포함되어 있습니다. 재판매인은 Adventure Works에 제품을 판매 및 배포하거나 부가가치 서비스를 제공합니다.
+    **DimReseller** 테이블에는 reseller당 하나의 행이 포함되어 있습니다. Reseller은 Adventure Works에 제품을 판매 및 배포하거나 부가가치 서비스를 제공합니다.
 
 16. 열 값을 보려면 **보기** 리본 탭의 **데이터 미리 보기** 그룹 내에서 **열 프로필**을 선택합니다.
 
     ![그림 41](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image30.png)
 
-17. **BusinessType** 열 머리글을 선택합니다.
+17. **BusinessType** 열을 선택합니다.
 
 18. 데이터 미리 보기 창 아래에 새 창이 표시됩니다.
 
 19. 데이터 미리 보기 창에서 열 통계 및 값 분포를 검토합니다.
 
-20. 데이터 품질 문제 확인: 웨어하우스에는 2개의 레이블 (**Warehouse**및 철자가 잘못된 **Ware House**)이 있습니다.
+20. 데이터 품질 문제 확인: 웨어하우스에는 2개의 레이블 (**Warehouse**및 띄어쓰기가 잘못된 **Ware House**)이 있습니다.
 
     ![그림 51](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image31.png)
 
 21. **Ware House** 표시줄 위에 커서를 놓은 다음, 이 값을 가진 5개의 행이 있는지 확인합니다.
 
-    **Power BI Desktop에서 데이터 로드** 랩에서 변환을 적용하여 이 5개 행의 레이블을 재지정합니다.
+*추후 **Power BI Desktop에서 데이터 로드** 랩에서 변환을 적용하여 이 5개 행의 레이블을 재지정할 예정입니다.*
 
 22. **쿼리** 창에서 **DimEmployeeSalesTerritory** 쿼리를 선택합니다.
 
     ![그림 52](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image32.png)
 
-    **DimSalesTerritory** 테이블에는 **본사**를 포함해 판매 지역당 하나의 행이 포함되어 있습니다. 하나의 국가에 여러 지역이 할당되며, 여러 국가가 그룹에 할당됩니다. **Power BI Desktop에서 데이터 모델링** 랩에서 지역, 국가 또는 그룹 수준에서 분석을 지원하는 계층 구조를 만듭니다.
+**DimSalesTerritory** 테이블에는 **본사**를 포함해 판매 지역당 하나의 행이 포함되어 있습니다. 하나의 국가에 여러 지역이 할당되며, 여러 국가는 그룹에 할당됩니다. 추후 **Power BI Desktop에서 데이터 모델링** 랩에서 지역, 국가 또는 그룹 수준에서 분석을 지원하는 계층 구조를 만들 예정입니다.
 
 23. **쿼리** 창에서 **FactResellerSales** 쿼리를 선택합니다.
 
@@ -270,7 +270,7 @@ lab:
 
     ![그림 63](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image34.png)
 
-    **TotalProductCost** 열 값이 없는 것은 데이터 품질 문제에 속합니다. 이 문제를 해결하기 위해 **Power BI Desktop에서 데이터 로드** 랩에서 **DimProduct** 테이블에 저장된 제품 표준 비용을 사용하여 누락된 값을 채우기 위해 변환을 적용합니다.
+    **TotalProductCost** 열 값이 없는 것은 데이터 품질 문제에 속합니다. 이 문제를 해결하기 위해 추후 **Power BI Desktop에서 데이터 로드** 랩에서 **DimProduct** 테이블에 저장된 제품 표준 비용을 사용하여 누락된 값을 채우기 위해 변환을 적용할 예정입니다.
 
 
 ### **작업 5: CSV 파일에서 데이터 가져오기**
@@ -296,7 +296,7 @@ lab:
 
     ![그림 72](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image37.png)
 
-    **ResellerSalesTargets** CSV 파일에는 매년 영업 직원당 하나의 행이 포함됩니다. 각 행은 12개의 월별 목표 판매량(천 단위로 표시)을 기록합니다. Adventure Works 회사의 회계 연도가 7월 1일에 시작됩니다.
+    **ResellerSalesTargets** CSV 파일에는 각 행에는 영업 직원이 저장되어 있습니다. 각 행은 12개의 월별 목표 판매량(천 단위로 표시)이 기록되어 있습니다. Adventure Works 회사의 회계 연도는 7월 1일 부터 시작됩니다.
 
 7. 빈 값이 포함된 열이 없습니다.
 
@@ -308,7 +308,7 @@ lab:
 
     아이콘은 열 데이터 형식을 나타냅니다. **123**은 정수이며 **ABC**는 텍스트입니다.
 
-    **Power BI Desktop에서 데이터 로드** 랩에서 다양한 변환을 적용하여 **Date**, **EmployeeKey**, **TargetAmount**의 세 열로만 구성된 다른 모양의 결과를 얻습니다.
+    추후 **Power BI Desktop에서 데이터 로드** 랩에서 다양한 변환을 적용하여 **Date**, **EmployeeKey**, **TargetAmount**의 세 열로만 구성된 다른 모양의 결과를 얻을 예정입니다.
 
 ### **작업 6: CSV 파일에서 추가 데이터 가져오기**
 
@@ -318,7 +318,7 @@ lab:
 
     ![그림 75](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image39.png)
 
-    **ColorFormats** CSV 파일에는 제품 색상당 한 개의 행이 포함됩니다. 각 행은 배경 및 글꼴 색상의 서식을 지정하는 16진수 코드를 기록합니다. **Power BI Desktop에서 데이터 로드** 랩에서 이 데이터를 **DimProduct** 쿼리 데이터와 통합합니다.
+    **ColorFormats** CSV 파일에는 제품 색상당 한 개의 행이 포함됩니다. 각 행은 배경 및 글꼴 색상의 서식을 지정하는 16진수 코드를 기록합니다. 추후 **Power BI Desktop에서 데이터 로드** 랩에서 이 데이터를 **DimProduct** 쿼리 데이터와 통합할 예정입니다.
 
 ### **작업 7: 완료**
 
@@ -346,4 +346,4 @@ lab:
 
 4. 다음 랩을 시작하려는 경우 Power BI Desktop을 열어 둡니다.
 
-    **Power BI Desktop에서 데이터 로드** 랩에서 쿼리에 다양한 변환을 적용한 다음 해당 쿼리를 적용하여 데이터 모델에 로드할 것입니다.
+    다음 **Power BI Desktop에서 데이터 로드** 랩에서 쿼리에 다양한 변환을 적용한 다음 해당 쿼리를 적용하여 데이터 모델에 로드할 것입니다.
