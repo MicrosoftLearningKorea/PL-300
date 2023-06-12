@@ -364,7 +364,7 @@ document.write(`
 <p>이 랩에서는 다음 작업을 수행하는 방법을 알아봅니다.</p>
 <ul class="simple">
 <li><p>계산된 테이블 만들기</p></li>
-<li><p>계산 열 만들기</p></li>
+<li><p>계산된 열 만들기</p></li>
 <li><p>측정값 만들기</p></li>
 </ul>
 <section id="id1">
@@ -385,7 +385,7 @@ document.write(`
 </section>
 <section id="id2">
 <h2><strong>연습 1: 계산된 테이블 만들기</strong><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>이 연습에서는 두 개의 계산된 테이블을 만듭니다. 첫 번째는 <strong>Salesperson</strong> 테이블입니다. 이 테이블을 사용하여 <strong>Sales</strong> 테이블과의 사이에 직접 관계를 지정할 수 있습니다. 두 번째는 <strong>Date</strong> 테이블입니다.</p>
+<p>이 연습에서는 두 개의 계산된 테이블을 만듭니다. 첫 번째는 <strong>Salesperson</strong> 테이블입니다. 이 테이블을 사용하여 <strong>Sales</strong> 테이블과의 사이에 직접적인 관계를 지정할 수 있습니다. 두 번째는 <strong>Date</strong> 테이블입니다.</p>
 <section id="id3">
 <h3><strong>작업 1: 시작하기</strong><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>이 작업에서는 랩용 환경을 설정합니다.</p>
@@ -394,7 +394,7 @@ document.write(`
 <li><p>Power BI Desktop을 열려면 작업 표시줄에서 Microsoft Power BI Desktop 바로 가기를 클릭합니다.</p>
 <p><img alt="그림 50" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image1.png" /></p>
 </li>
-<li><p>시작 창을 닫으려면 창 왼쪽 위의 <strong>X</strong>를 클릭합니다.</p>
+<li><p>팝업 창을 닫으려면 창 왼쪽 위의 <strong>X</strong>를 클릭합니다.</p>
 <p><img alt="그림 49" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image2.png" /></p>
 </li>
 <li><p>시작 Power BI Desktop 파일을 열려면 <strong>파일</strong> 리본 탭을 클릭하여 Backstage 뷰를 엽니다.</p></li>
@@ -425,7 +425,7 @@ document.write(`
 </section>
 <section id="salesperson">
 <h3><strong>작업 2: Salesperson 테이블 만들기</strong><a class="headerlink" href="#salesperson" title="Permalink to this heading">#</a></h3>
-<p>이 작업에서는 <strong>Salesperson</strong> 테이블(<strong>Sales</strong>와 직접적인 관계가 있음)을 만듭니다.</p>
+<p>이 작업에서는 <strong>Salesperson</strong> 테이블(<strong>Sales</strong> 테이블과 직접적인 관계 설정할 예정)을 만듭니다.</p>
 <ol class="arabic">
 <li><p>Power BI Desktop 보고서 뷰의 <strong>모델링</strong> 리본에 있는 <strong>계산</strong> 그룹에서 <strong>새 테이블</strong>을 클릭합니다.</p>
 <p><img alt="그림 1" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image9.png" /></p>
@@ -435,16 +435,18 @@ document.write(`
 <p>편의상 이 랩의 모든 DAX 정의를 <strong>D:\PL300\Labs\04-create-dax-calculations-in-power-bi-desktop\Assets\Snippets.txt</strong>에 위치한 코드 조각 파일에서 복사할 수 있습니다.</p>
 <p>먼저 테이블 이름을 입력하고, 그 뒤에 등호 기호(=)를 입력한 다음, 테이블을 반환하는 DAX 수식을 입력하여 계산된 테이블을 만듭니다. 테이블 이름이 데이터 모델에 이미 존재하면 안 됩니다.</p>
 <p>수식 입력줄은 유효한 DAX 수식을 입력하도록 지원합니다. 자동 완성, Intellisense, 색 구분과 같은 기능을 포함하여 신속하고 정확하게 수식을 입력할 수 있습니다.</p>
-<p>이 테이블 정의는 <strong>Salesperson (Performance)</strong> 테이블의 복사본을 만듭니다. 데이터는 복사할 수 있지만 표시 유형, 서식 지정 등과 같은 모델 속성은 복사할 수 없습니다.</p>
-<p><em>팁: “공백”(예: 캐리지 리턴 및 탭)을 입력하여 직관적이고 읽기 쉬운 형식으로 수식을 배치하는 것이 좋으며, 특히 수식이 길고 복잡할 때는 더욱 유용합니다. 캐리지 리턴을 입력하려면 <strong>Shift + Enter</strong> 키를 누릅니다. “공백”은 선택 사항입니다.</em></p>
+<p>이 테이블 정의를 통해 <strong>Salesperson (Performance)</strong> 테이블의 복사본을 만들게 됩니다. 데이터는 복사할 수 있지만 표시 유형, 서식 지정 등과 같은 모델 속성은 복사할 수 없습니다.</p>
+<p><em>팁: “공백”(예: 캐리지 리턴 및 탭)을 입력하여 직관적이고 읽기 쉬운 형식으로 수식을 배치하는 것이 좋으며, 특히 수식이 길고 복잡할 때는 공백을 사용하는 것이 더욱 유용합니다. 캐리지 리턴을 입력하려면 <strong>Shift + Enter</strong> 키를 누릅니다. “공백”은 선택 사항입니다.</em></p>
 </li>
-<li><p><strong>필드</strong> 창에서 테이블 아이콘은 파란색 음영입니다(계산된 테이블을 나타냄).</p>
+<li><p><strong>필드</strong> 창에서 테이블 아이콘은 아래와 같은 아이콘을 하고 있습니다.(계산된 테이블을 나타냄).</p>
 <p><img alt="그림 10" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image11.png" /></p>
-<p>계산된 테이블은 테이블을 반환하는 DAX 수식을 사용하여 정의됩니다. 계산된 테이블은 값을 구체화하고 저장하기 때문에 데이터 모델의 크기가 증가된다는 점을 알고 있어야 합니다. 이 데이터 모델에서는 새(향후) 날짜 값이 테이블로 로드될 때와 마찬가지로 수식 종속성이 새로 고칠 때마다 다시 계산됩니다.</p>
-<p>Power Query 원본 테이블과는 달리, 계산된 테이블을 사용하여 외부 데이터 원본의 데이터를 로드할 수 없습니다. 데이터 모델에 이미 로드된 항목에 따라 데이터만 변환할 수 있습니다.</p>
 </li>
+</ol>
+<p><em>계산된 테이블은 테이블을 반환하는 DAX 수식을 사용하여 정의됩니다. 계산된 테이블은 값을 구체화하고 저장하기 때문에 데이터 모델의 크기가 증가된다는 점을 알고 있어야 합니다. 이 데이터 모델에서는 향후에 새로운 날짜 값이 테이블로 로드될 때 처럼, 수식에 종속 되어져 있는 테이블이 새로 고쳐 질 때 마다 다시 계산됩니다.</em></p>
+<p><em>Power Query에서의 테이블과 달리, 계산된 테이블을 사용해서는 외부 데이터 원본의 데이터를 로드할 수 없습니다. Power BI Desktop 데이터 모델에 이미 로드된 항목에 대해서만 데이터를 변환할 수 있습니다.</em></p>
+<ol class="arabic" start="4">
 <li><p>모델 뷰로 전환합니다.</p></li>
-<li><p>이제 <strong>Salesperson</strong> 테이블을 사용할 수 있습니다(이 테이블이 보기에는 숨겨져 있을 수 있으며, 이 경우 가로로 스크롤하여 찾으세요).</p></li>
+<li><p>이제 <strong>Salesperson</strong> 테이블을 사용할 수 있습니다(이 테이블이 안 보인다면, 가로로 스크롤하여 찾으세요).</p></li>
 <li><p><strong>Salesperson | EmployeeKey</strong> 열에서 <strong>Sales | EmployeeKey</strong> 열로 관계를 만듭니다.</p></li>
 <li><p><strong>Salesperson (Performance)</strong> 테이블과 <strong>Sales</strong> 테이블 간의 비활성 관계를 마우스 오른쪽 단추로 클릭한 다음 <strong>삭제</strong>를 선택합니다.</p>
 <p><img alt="그림 2" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image12.png" /></p>
@@ -460,7 +462,7 @@ document.write(`
 </ul>
 </li>
 <li><p>모델 다이어그램에서 <strong>Salesperson</strong> 테이블을 선택합니다.</p></li>
-<li><p><strong>속성</strong> 창의 <strong>설명</strong> 상자에 <strong>판매와 관련된 영업 직원</strong></p>
+<li><p><strong>속성</strong> 창의 <strong>설명</strong> 상자에 <strong>판매와 연관된 영업 직원</strong>을 입력합니다.</p>
 <p>사용자가 테이블이나 필드에 커서를 가져가면 해당 설명이 <strong>필드</strong> 창에 도구 설명으로 나타납니다.</p>
 </li>
 <li><p><strong>Salesperson (Performance)</strong> 테이블에 대한 설명을 다음과 같이 설정합니다. <strong>지역과 관련된 영업 직원</strong></p>
@@ -487,10 +489,9 @@ document.write(`
 <p><img alt="그림 6" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image16.png" /></p>
 </li>
 </ol>
-<p>​<br />
-​    CALENDARAUTO() 함수는 날짜 값으로 구성된 단일 열 테이블을 반환합니다. “Auto” 동작은 모든 데이터 모델 날짜 열을 검색하여 데이터 모델에 저장된 가장 빠른 날짜 값과 가장 늦은 날짜 값을 결정합니다. 그런 다음, 이 범위의 각 날짜에 대해 한 개의 행을 만들어 전체 연도의 데이터가 저장되도록 이 범위를 어느 방향으로든 확장합니다.
+<p>​    CALENDARAUTO() 함수는 날짜 값으로 구성된 단일 열을 지닌 테이블을 반환합니다. “Auto” 동작은 데이터 모델에 있는 모든 날짜 열을 검색하여 데이터 모델에 저장된 가장 빠른 날짜 값과 가장 늦은 날짜 값을 확인합니다. 그런 다음, 이 범위의 각 날짜에 대해 한 개의 행을 만들어 전체 연도의 데이터가 저장되도록 이 범위를 어느 방향으로든 확장합니다.
 ​<br />
-​    이 함수에는 1년의 마지막 달 번호를 단일 선택적 인수로 사용할 수 있습니다. 생략할 경우 값은 12입니다. 즉, 12월이 연도의 마지막 달입니다. 이 경우 6을 입력합니다. 즉, 6월이 연도의 마지막 달입니다.</p>
+​    이 함수에는 1년의 마지막 달을 뜻하는 숫자를 선택적으로 인자로 받아 사용할 수 있습니다. 생략할 경우 값은 12입니다. 즉, 12월이 연도의 마지막 달입니다. 랩 시나리오를 위해 6을 입력합니다. 즉, 6월이 연도의 마지막 달입니다.</p>
 <ol class="arabic" start="4">
 <li><p>날짜 값의 열을 확인합니다.</p>
 <p><img alt="그림 7" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image17.png" /></p>
@@ -503,7 +504,7 @@ document.write(`
 </section>
 <section id="id5">
 <h3><strong>작업 4:</strong> <strong>계산 열 만들기</strong><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
-<p>이 작업에서는 다른 열을 추가하여 다른 기간별로 필터링 및 그룹화합니다. 또한 다른 열의 정렬 순서를 제어하는 계산 열을 만듭니다.</p>
+<p>이 작업에서는 다른 열을 추가하여 다른 시간 단위 별로 필터링 및 그룹화를 가능하게 합니다. 또한 다른 열의 정렬 순서를 제어하는 계산된 열을 만듭니다.</p>
 <p>편의상 이 랩의 모든 DAX 정의를 <strong>D:\PL300\Labs\04-create-dax-calculations-in-power-bi-desktop\Assets\Snippets.txt</strong>에 위치한 코드 조각 파일에서 복사할 수 있습니다.</p>
 <ol class="arabic">
 <li><p><strong>테이블 도구</strong> 상황별 리본에서 <strong>계산</strong> 그룹 내에 있는 <strong>새 열</strong>을 클릭합니다.</p>
@@ -515,13 +516,13 @@ document.write(`
 <span class="s2">&quot;FY&quot;</span> <span class="o">&amp;</span> <span class="n">YEAR</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">[</span><span class="n">Date</span><span class="p">])</span> <span class="o">+</span> <span class="n">IF</span><span class="p">(</span><span class="n">MONTH</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">[</span><span class="n">Date</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>먼저 열 이름을 입력하고, 그 뒤에 등호 기호(=)를 입력한 다음, 단일 값 결과를 반환하는 DAX 수식을 입력하여 계산 열을 만듭니다. 열 이름은 테이블에 이미 존재하면 안 됩니다.</p>
+<p>먼저 열 이름을 입력하고, 그 뒤에 등호 기호(=)를 입력한 다음, 단일 값 결과를 반환하는 DAX 수식을 입력하여 계산된 열을 만듭니다. 열 이름은 테이블에 이미 존재하면 안 됩니다.</p>
 <p>이 수식에서는 날짜의 연도 값을 사용하지만 7월부터는 연도 값에 1을 더합니다. 이것은 Adventure Works의 회계 연도를 계산하는 방법입니다.</p>
 </li>
 <li><p>새 열이 추가되었는지 확인합니다.</p>
 <p><img alt="그림 12" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image20.png" /></p>
 </li>
-<li><p>코드 조각 파일 정의를 사용하여 <strong>Date</strong> 테이블에 대해 다음 두 개의 계산 열을 만들 수 있습니다.</p>
+<li><p>코드 조각 파일 정의를 사용하여 <strong>Date</strong> 테이블에 대해 다음 두 개의 계산된 열을 만듭니다.</p>
 <ul class="simple">
 <li><p>Quarter</p></li>
 <li><p>Month</p></li>
@@ -542,14 +543,14 @@ document.write(`
 <li><p><strong>Month</strong> 필드를 <strong>Year</strong> 필드 바로 아래 <strong>행</strong> 웰/영역으로 끌어갑니다.</p>
 <p><img alt="그림 18" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image25.png" /></p>
 </li>
-<li><p>행렬 시각적 개체의 오른쪽 위(또는 시각적 개체 위치에 따라 맨 아래)에서 이중으로 갈라진 화살표 아이콘(모든 연도를 한 수준 아래로 확장)을 클릭합니다.</p>
+<li><p>행렬 시각적 개체의 오른쪽 위(또는 시각적 개체 위치에 따라 맨 아래)에서 이중으로 갈라진 화살표 아이콘(이것은 모든 연도를 한 수준 아래로 확장하게 함)을 클릭합니다.</p>
 <p><img alt="그림 19" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image26.png" /></p>
 </li>
-<li><p>연도가 월로 확장되고 월은 시간순이 아닌 알파벳 순으로 정렬됩니다.</p>
+<li><p>연도가 월로 확장되고, 월은 시간순이 아닌 알파벳 순으로 정렬됩니다.</p>
 <p><img alt="그림 20" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image27.png" /></p>
 <p><em>기본적으로 텍스트 값은 알파벳 순으로 정렬되고 숫자는 가장 작은 값에서 가장 큰 값으로 정렬되며 날짜는 가장 빠른 날짜에서 가장 늦은 날짜로 정렬됩니다.</em></p>
 </li>
-<li><p><strong>Month</strong> 필드 정렬 순서를 사용자 지정하려면 데이터 뷰로 전환합니다.</p></li>
+<li><p><strong>Month</strong> 필드 정렬 순서를 사용자가 지정하려면 데이터 뷰로 전환합니다.</p></li>
 <li><p><strong>Date</strong> 테이블에 <strong>MonthKey</strong> 열을 추가합니다.</p>
 <p><strong>DAX</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MonthKey</span> <span class="o">=</span>
@@ -573,7 +574,7 @@ document.write(`
 </section>
 <section id="id6">
 <h3><strong>작업 5:</strong> <strong>날짜 테이블 완료</strong><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
-<p>이 작업에서는 열을 숨기고 계층 구조를 만들어서 <strong>Date</strong> 테이블의 디자인을 완료합니다. 그런 다음 <strong>Sales</strong> 열과 <strong>Targets</strong> 테이블 간의 관계를 만듭니다.</p>
+<p>이 작업에서는 열을 숨기고 계층 구조를 만들어서 <strong>Date</strong> 테이블의 디자인을 완료합니다. 그런 다음 <strong>Sales</strong> 테이블과 <strong>Targets</strong> 테이블로 향하는 관계를 만듭니다.</p>
 <ol class="arabic">
 <li><p>모델 뷰로 전환합니다.</p></li>
 <li><p><strong>Date</strong> 테이블에서 <strong>MonthKey</strong> 열을 숨깁니다(<strong>숨김</strong>을 <strong>예</strong>로 설정).</p></li>
@@ -609,15 +610,15 @@ document.write(`
 <li><p><strong>테이블 도구</strong> 상황별 리본의 <strong>달력</strong> 그룹에서 <strong>날짜 테이블로 표시</strong>를 클릭한 다음 <strong>날짜 테이블로 표시</strong>를 선택합니다.</p>
 <p><img alt="그림 8" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image32.png" /></p>
 </li>
-<li><p><strong>날짜 테이블로 표시</strong> 창의 <strong>날짜 열</strong> 드롭다운 목록에서 <strong>날짜</strong>를 선택합니다.</p>
+<li><p><strong>날짜 테이블로 표시</strong> 창의 <strong>날짜 열</strong> 드롭다운 목록에서 <strong>Date</strong>를 선택합니다.</p>
 <p><img alt="그림 37" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image33.png" /></p>
 </li>
 <li><p><strong>확인</strong>을 클릭합니다.</p>
 <p><img alt="그림 26" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image34.png" /></p>
 </li>
 <li><p>Power BI Desktop 파일을 저장합니다.</p>
-<p>Power BI Desktop은 이제 이 테이블이 날짜(시간)를 정의하고 있음을 이해합니다. 이는 시간 인텔리전스 계산을 사용할 때 중요합니다. <strong>Power BI Desktop에서 DAX 계산 만들기, 2부</strong> 랩에서 시간 인텔리전스 계산 작업을 합니다.</p>
-<p>데이터 원본에 날짜 테이블이 없을 때는 날짜 테이블에 대한 이 디자인 접근 방식이 적합합니다. 데이터 웨어하우스가 있는 경우 데이터 모델의 날짜 논리를 “재정의”하는 대신 날짜 차원 테이블에서 날짜 데이터를 로드하는 것이 좋습니다.</p>
+<p>Power BI Desktop은 이제 이 테이블이 날짜(시간)를 정의하고 있음을 이해하게 됩니다. 이는 시간 인텔리전스 계산을 사용하고자 할 때 중요합니다. 추후 <strong>Power BI Desktop에서 DAX 계산 만들기, 2부</strong> 랩에서 시간 인텔리전스 계산 작업을 할 예정입니다.</p>
+<p>데이터 원본에 날짜 테이블이 없을 때는 날짜 테이블에 대한 이러한 디자인 접근 방식이 적합합니다. 데이터 웨어하우스가 있는 경우 데이터 모델의 날짜 논리를 지금 처럼 “재정의”하는 대신 날짜 차원 테이블에서 날짜 데이터를 로드하는 것이 좋습니다.</p>
 </li>
 </ol>
 </section>
@@ -632,14 +633,14 @@ document.write(`
 <li><p>보고서 뷰에서, <strong>2페이지</strong>의 <strong>필드</strong> 창에서 <strong>Sales | Unit Price</strong> 필드를 행렬 시각적 개체로 끌어옵니다.</p>
 <p>랩에서는 약식 표기법을 사용하여 필드를 참조합니다. 다음과 같이 표시됩니다. <strong>Sales | Unit Price</strong>. 이 예에서 <strong>Sales</strong>는 테이블 이름이고 <strong>Unit Price</strong>는 필드 이름입니다.</p>
 <p><img alt="그림 27" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image35.png" /></p>
-<p><em><strong>Power BI Desktop에서 데이터 모델링</strong> 랩에서 확인했던 것처럼, <strong>Average</strong>를 기준으로 내용이 요약되도록 <strong>Unit Price</strong> 열을 설정합니다. 행렬 시각적 개체에 표시되는 결과는 월평균 단가(단가 값의 합을 단가 개수로 나눈 값)입니다.</em></p>
+<p><em>이전의 <strong>Power BI Desktop에서 데이터 모델링</strong> 랩에서 확인했던 것처럼, <strong>Average</strong>를 기준으로 내용이 요약되도록 <strong>Unit Price</strong> 열을 설정합니다. 행렬 시각적 개체에 표시되는 결과는 월평균 단가(단가 값의 합을 단가 개수로 나눈 값)입니다.</em></p>
 </li>
 <li><p>시각적 필드 창(<strong>시각화</strong> 창 아래에 있음)의 <strong>값</strong> 필드 웰/영역에 <strong>Unit Price</strong>가 나열됩니다.</p>
 <p><img alt="그림 28" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image36.png" /></p>
 </li>
 <li><p><strong>Unit Price</strong>의 아래쪽 화살표를 클릭한 다음 사용 가능한 메뉴 옵션을 확인합니다.</p>
 <p><img alt="그림 30" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image37.png" /></p>
-<p>시각적 숫자 열을 사용하면 보고서 작성자가 보고서 디자인 시 열 값이 요약되는(또는 요약되지 않는) 방식을 결정할 수 있습니다. 그러면 부적절한 보고가 발생할 수 있습니다. 그러나 일부 데이터 모델러는 운에 맡기는 것을 좋아하지 않아 이러한 열을 숨기고 대신 측정값에 의해 정의된 집계 논리를 노출하도록 선택합니다. 여러분이 이 랩에서 적용할 접근 방식입니다.</p>
+<p>시각적 숫자 열을 사용하면 보고서 작성자가 보고서 디자인 시 열 값이 요약되는(또는 요약되지 않는) 방식을 결정할 수 있습니다. 그러면 부적절한 보고가 발생할 수 있습니다. 그러나 일부 데이터 모델러는 운에 맡기는 것을 좋아하지 않아 이러한 열은 숨기고, 대신 측정값을 통해 정의된 집계된 값을 선택하게 됩니다. 이번 랩에서 이러한 접근 방식을 사용할 예정입니다.</p>
 </li>
 <li><p>측정값을 만들려면 <strong>필드</strong> 창에서 <strong>Sales</strong> 테이블을 마우스 오른쪽 단추로 클릭한 다음 <strong>새 측정값</strong>을 선택합니다.</p>
 <p><img alt="그림 31" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image38.png" /></p>
@@ -653,9 +654,9 @@ document.write(`
 </li>
 <li><p><strong>Avg Price</strong> 측정값을 행렬 시각적 개체에 추가합니다.</p></li>
 <li><p>그러면 <strong>Unit Price</strong> 열과 동일한 결과가 생성됩니다(그러나 서식 지정은 다름).</p></li>
-<li><p><strong>값</strong> 웰에서 <strong>Avg Price</strong> 필드의 상황에 맞는 메뉴를 열면 집계 기술을 변경할 수 없다는 것을 알 수 있습니다.</p>
+<li><p><strong>값</strong> 웰에서 <strong>Avg Price</strong> 필드의 메뉴를 열면 집계 방법을 변경할 수 없다는 것을 알 수 있습니다.</p>
 <p><img alt="그림 32" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image39.png" /></p>
-<p>측정값의 집계 동작을 수정할 수는 없습니다.</p>
+<p>측정값의 집계 방법을 수정할 수는 없습니다.</p>
 </li>
 <li><p>조각 파일 정의를 사용하여 <strong>Sales</strong> 테이블에 대해 다음 5개의 측정값을 만듭니다.</p>
 <ul class="simple">
@@ -665,8 +666,8 @@ document.write(`
 <li><p>Orders</p></li>
 <li><p>Order Lines</p></li>
 </ul>
-<p><strong>Orders</strong> 측정값에 사용되는 DISTINCTCOUNT() 함수는 주문을 한 번만 계수합니다(중복 항목은 무시함). <strong>Order Lines</strong> 측정값에 사용되는 COUNTROWS() 함수는 테이블만 계산합니다.</p>
-<p>이 경우 주문 수는 별개의 <strong>SalesOrderNumber</strong> 열 값을 계수하여 계산되고, 주문 줄 수는 단순히 테이블 행의 수입니다(각 행이 주문 한 줄임).</p>
+<p><strong>Orders</strong> 측정값에 사용되는 DISTINCTCOUNT() 함수는 주문을 한 번만 집계합니다(중복 항목은 무시함). <strong>Order Lines</strong> 측정값에 사용되는 COUNTROWS() 함수는 테이블에 있는 행을 계산합니다.</p>
+<p>이 경우 Orders는 <strong>SalesOrderNumber</strong> 열에 있는 상이값을 세어서 계산되고, Order Lines 수는 단순히 테이블에 있는 행의 수입니다 (각 행이 주문 한 줄임).</p>
 </li>
 <li><p>모델 뷰로 전환한 다음 4개의 가격 측정값을 다중 선택합니다. <strong>Avg Price</strong>, <strong>Max Price</strong>, <strong>Median Price</strong>, <strong>Min Price</strong>.</p></li>
 <li><p>측정값을 다중 선택하는 경우 다음 요구 사항을 구성합니다.</p>
@@ -677,7 +678,7 @@ document.write(`
 <p><img alt="그림 33" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image40.png" /></p>
 </li>
 <li><p><strong>Unit Price</strong> 열을 숨깁니다.</p>
-<p>이제 보고서 작성자가 <strong>단가</strong> 열을 사용할 수 없습니다. 보고서 작성자는 모델에 추가된 가격 측정값을 사용해야 합니다. 이 디자인 방법을 사용하면 보고서 작성자가 예를 들어 합계를 계산하는 등 가격을 잘못 집계하는 것이 방지됩니다.</p>
+<p>이제 보고서 작성자가 <strong>Unit Price</strong> 열을 사용할 수 없습니다. 보고서 작성자는 모델에 추가된 가격 측정값을 사용해야 합니다. 이러한 데이터 모델 디자인 방법을 사용하면 보고서 작성자가 예를 들어 단가의 합계를 계산하는 등의 의도하지 않은 형태로 가격을 잘못 집계하는 것을 방지할 수 있습니다.</p>
 </li>
 <li><p><strong>Order Lines</strong> 및 <strong>Orders</strong> 측정값을 다중 선택하고 다음 요구 사항을 구성합니다.</p>
 <ul class="simple">
@@ -719,7 +720,7 @@ document.write(`
 </li>
 <li><p><strong>Targets | Target</strong> 열의 이름을 <strong>Targets | TargetAmount</strong>로 바꿉니다.</p>
 <p><em>팁: 보고서 뷰에서 열의 이름을 바꾸는 방법은 여러 가지가 있습니다. <strong>필드</strong> 창에서 열을 마우스 오른쪽 단추로 클릭한 다음, <strong>이름 바꾸기</strong>를 선택합니다. 또는 열을 두 번 클릭하거나 <strong>F2</strong> 키를 누릅니다.</em></p>
-<p><strong>Target</strong>이라는 측정값을 만들려고 합니다. 동일한 테이블에 동일한 이름의 열과 측정값을 포함할 수는 없습니다.</p>
+<p><strong>Target</strong>이라는 측정값을 만들려고 합니다. 동일한 테이블에 동일한 이름의 열과 측정값이 포함될 수는 없습니다.</p>
 </li>
 <li><p><strong>Targets</strong> 테이블에 다음 측정값을 만듭니다.</p>
 <p><strong>DAX</strong></p>
@@ -734,7 +735,7 @@ document.write(`
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>HASONEVALUE() 함수는 <strong>Salesperson</strong> 열의 단일 값이 필터링되었는지 여부를 테스트합니다. True로 설정되면 식이 해당 판매 직원에 대해 목표 금액 합계를 반환합니다. False로 설정되면 빈 값이 반환됩니다.</p>
+<p>HASONEVALUE() 함수는 <strong>Salesperson</strong> 열에 단일 값이 필터링되었는지 여부를 테스트합니다. True로 설정되면 식이 해당 판매 직원에 대해 목표 금액 합계를 반환합니다. False로 설정되면 빈 값이 반환됩니다.</p>
 </li>
 <li><p><strong>Target</strong> 측정값의 서식을 소수점 이하 0자리로 지정합니다.</p>
 <p><em>팁: <strong>측정값 도구</strong> 상황별 리본을 사용할 수 있습니다.</em></p>
@@ -757,7 +758,7 @@ document.write(`
 <li><p><strong>Variance</strong> 및 <strong>Variance Margin</strong> 측정값을 테이블 시각적 개체에 추가합니다.</p></li>
 <li><p>모든 열과 행을 확인할 수 있도록 테이블 시각적 개체의 크기를 조정합니다.</p>
 <p><img alt="그림 44" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image48.png" /></p>
-<p>모든 영업 직원이 목표를 달성하지 못한 것처럼 보이는 이유는 테이블 시각적 개체를 아직 특정 기간별로 필터링하지 않았기 때문입니다. <strong>Power BI Desktop에서 보고서 디자인, 1부</strong> 랩에서 사용자가 선택한 기간을 기준으로 필터링하는 판매 성과 보고서를 생성합니다.</p>
+<p>모든 영업 직원이 목표를 달성하지 못한 것처럼 보이는 이유는 테이블 시각적 개체를 아직 특정 기간별로 필터링하지 않았기 때문입니다. 추후 <strong>Power BI Desktop에서 보고서 디자인, 1부</strong> 랩에서 사용자가 선택한 기간을 기준으로 필터링하는 판매 성과 보고서를 생성합니다.</p>
 </li>
 <li><p><strong>필드</strong> 창의 오른쪽 위 모서리에서 창을 축소했다가 확장하여 엽니다.</p>
 <p><img alt="그림 45" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image49.png" /></p>
@@ -765,7 +766,7 @@ document.write(`
 </li>
 <li><p>이제 <strong>Targets</strong> 테이블이 목록의 맨 위에 나타납니다.</p>
 <p><img alt="그림 46" src="../_images/05-create-dax-calculations-in-power-bi-desktop_image50.png" /></p>
-<p><em>표시되는 측정값으로만 구성된 테이블은 자동으로 목록의 맨 위에 나열됩니다.</em></p>
+<p><em>보여지는 측정값으로만 구성된 테이블은 자동으로 목록의 맨 위에 나열됩니다.</em></p>
 </li>
 </ol>
 </section>
@@ -775,7 +776,7 @@ document.write(`
 <ol class="arabic">
 <li><p>Power BI Desktop 파일을 저장합니다.</p></li>
 <li><p>다음 랩을 시작하려는 경우 Power BI Desktop을 열어 둡니다.</p>
-<p><strong>Power BI Desktop에서 DAX 계산 만들기, 2부</strong> 랩에서 DAX를 사용한 추가 고급 계산으로 데이터 모델을 향상합니다.</p>
+<p>다음 <strong>Power BI Desktop에서 DAX 계산 만들기, 2부</strong> 랩에서 DAX를 사용한 추가 고급 계산으로 데이터 모델을 향상합니다.</p>
 </li>
 </ol>
 </section>
