@@ -451,12 +451,12 @@ document.write(`
 </li>
 <li><p>테이블 시각적 개체를 만들려면 <strong>필드</strong> 창에서 <strong>Product</strong> 테이블의 <strong>Category</strong> 필드를 선택합니다.</p>
 <p><img alt="그림 329" src="../_images/03-configure-data-model-in-power-bi-desktop_image12.png" /></p>
-<p>랩에서는 약식 표기법을 사용하여 필드를 참조합니다. 다음과 같이 표시됩니다. <strong>Product | Category</strong>. 이 예에서 <strong>Product</strong>은 테이블 이름이고 <strong>Category</strong>는 필드 이름입니다.</p>
+<p>랩에서는 약식 표기법을 사용하여 필드를 참조합니다. 예를 들어 다음과 같이 표시됩니다. <strong>Product | Category</strong>. 이 예에서 <strong>Product</strong>은 테이블 이름이고 <strong>Category</strong>는 필드 이름입니다.</p>
 </li>
 <li><p>테이블에 열을 하나 더 추가하려면 <strong>필드</strong> 창에서 <strong>Sales | Sales</strong> 필드를 선택합니다.</p></li>
-<li><p>테이블 시각적 개체에 4개의 제품 범주가 나열되며 각 범주의 판매 금액이 동일하고 합계에의 금액도 동일한 것을 볼 수 있습니다.</p>
+<li><p>테이블 시각적 개체에 4개의 제품 범주가 나열되며 각 범주의 판매 금액이 동일하고 합계의 금액도 동일한 것을 볼 수 있습니다.</p>
 <p><img alt="그림 330" src="../_images/03-configure-data-model-in-power-bi-desktop_image13.png" /></p>
-<p>문제는 이 테이블이 서로 다른 테이블에서 가져온 필드를 기반으로 한다는 점입니다. 각 제품 범주에 해당 범주에 대한 판매량이 표시되어야 합니다. 그러나 이러한 테이블 간에는 모델 관계가 없기 때문에 <strong>Sales</strong> 테이블은 필터링되지 않습니다. 이제 관계를 추가하여 테이블 간에 필터를 전파합니다.</p>
+<p>이 테이블이 서로 다른 테이블에서 가져온 필드를 기반으로 하기 때문에 이러한 문제가 발생하고 있습니다. 각 제품 범주에는 해당 범주에 대한 판매 금액이 표시되어야 합니다. 그러나 현재 테이블 간에는 모델 관계가 없기 때문에 <strong>Sales</strong> 테이블이 필터링되고 있지 않습니다. 이제 관계를 추가하여 테이블 간에 필터를 전파합니다.</p>
 </li>
 <li><p><strong>모델링</strong> 리본 탭의 <strong>관계</strong> 그룹에서 <strong>관계 관리</strong>를 클릭합니다.</p>
 <p><img alt="그림 331" src="../_images/03-configure-data-model-in-power-bi-desktop_image14.png" /></p>
@@ -471,17 +471,18 @@ document.write(`
 <li><p>두 번째 드롭다운 목록(<strong>Product</strong> 테이블 그리드 아래)에서 <strong>Sales</strong> 테이블을 선택합니다.</p>
 <p><img alt="그림 334" src="../_images/03-configure-data-model-in-power-bi-desktop_image17.png" /></p>
 </li>
-<li><p>각 테이블에서 <strong>ProductKey</strong> 열이 자동으로 선택되었음을 확인합니다.</p>
-<p>열은 동일한 이름 및 데이터 형식을 공유하기 때문에 선택되었습니다.</p>
-</li>
+<li><p>각 테이블에서 <strong>ProductKey</strong> 열이 자동으로 선택되었음을 확인합니다.</p></li>
+</ol>
+<p><em>열은 동일한 이름 및 데이터 형식을 공유하기 때문에 선택되었습니다.</em></p>
+<ol class="arabic" start="14">
 <li><p><strong>카디널리티</strong> 드롭다운 목록에서 <strong>일대다(1:*)</strong> 가 선택되어 있는 것을 볼 수 있습니다.</p>
-<p>카디널리티는 자동으로 검색되었습니다. Power BI에서 <strong>Product</strong> 테이블의 <strong>ProductKey</strong> 열에 고유한 값이 포함된다는 것을 인식하기 때문입니다. 일대다 관계는 가장 일반적인 카디널리티이며, 이 랩에서 만드는 모든 관계가 이 유형입니다.</p>
+<p>카디널리티는 자동으로 검색되었습니다. Power BI에서 <strong>Product</strong> 테이블의 <strong>ProductKey</strong> 열에 고유한 값이 포함된다는 것을 인식하기 때문입니다. 일대다 관계는 가장 일반적인 카디널리티이며, 이 랩에서 만드는 모든 관계가 이 유형의 관계가 되겠습니다.</p>
 </li>
 <li><p><strong>교차 필터 방향</strong> 드롭다운 목록에서 <strong>단일</strong>이 선택되어 있는 것을 볼 수 있습니다.</p>
-<p>단일 필터 방향은 필터가 “한 쪽”에서 “많은 쪽”으로 전파됨을 의미합니다. 이 경우 <strong>Product</strong> 테이블에 적용된 필터가 <strong>Sales</strong> 테이블에 전파되지만 반대 방향으로는 전파되지 않음을 의미합니다.</p>
+<p>단일 필터 방향은 필터가 “일”에서 “다” 쪽으로 전파됨을 의미합니다. 이 경우 <strong>Product</strong> 테이블에 적용된 필터가 <strong>Sales</strong> 테이블에 전파되지만 반대 방향으로는 전파되지 않음을 의미합니다.</p>
 </li>
 <li><p><strong>Mark This Relationship Active</strong>가 선택되어 있습니다.</p>
-<p>활성 관계는 필터를 전파합니다. 필터가 전파되지 않도록 관계를 비활성으로 표시할 수 있습니다. 테이블 간에 여러 관계 경로가 있는 경우 비활성 관계가 있을 수 있습니다. 이 경우 모델 계산은 특수 함수를 사용하여 활성화할 수 있습니다.</p>
+<p>활성화된 관계는 필터를 전파합니다. 필터가 전파되지 않도록 관계를 비활성으로 표시할 수 있습니다. 테이블 간에 여러 관계 경로가 있는 경우 비활성 관계가 있을 수 있습니다. 이 경우 필터 전파는 특수 함수를 사용하여 활성화할 수 있습니다.</p>
 </li>
 <li><p><strong>확인</strong>을 클릭합니다.</p>
 <p><img alt="그림 335" src="../_images/03-configure-data-model-in-power-bi-desktop_image18.png" /></p>
@@ -497,7 +498,7 @@ document.write(`
 <p><img alt="그림 338" src="../_images/03-configure-data-model-in-power-bi-desktop_image21.png" /></p>
 </li>
 <li><p>다이어그램을 통해 <strong>1</strong> 및 * 지표로 표시되는 카디널리티를 쉽게 이해할 수 있습니다.</p>
-<p>필터 방향은 화살촉으로 표현됩니다. 실선은 활성 관계를 나타냅니다. 파선은 비활성 관계를 나타냅니다.</p>
+<p>필터 방향은 화살촉으로 표현됩니다. 실선은 활성 관계를 나타냅니다. 점선은 비활성 관계를 나타냅니다.</p>
 </li>
 <li><p>관계 위를 커서로 가리켜 관련 열을 강조 표시합니다.</p>
 <p>관계를 만드는 더 쉬운 방법이 있습니다. 모델 다이어그램에서 열을 끌어서 놓아 새 관계를 만들 수 있습니다.</p>
@@ -534,7 +535,7 @@ document.write(`
 <p><img alt="그림 344" src="../_images/03-configure-data-model-in-power-bi-desktop_image25.png" /></p>
 </li>
 <li><p>계층 구조에 두 번째 수준을 추가하려면 <strong>속성</strong> 창의 <strong>계층 구조</strong> 드롭다운 목록에서 <strong>Subcategory</strong>를 선택합니다(창 내에서 아래쪽으로 스크롤해야 할 수 있음).</p></li>
-<li><p>계층 구조에 두 번째 수준을 추가하려면 <strong>계층 구조</strong> 드롭다운 목록에서 <strong>Product</strong>를 선택합니다.</p></li>
+<li><p>계층 구조에 세 번째 수준을 추가하려면 <strong>계층 구조</strong> 드롭다운 목록에서 <strong>Product</strong>를 선택합니다.</p></li>
 <li><p>계층 구조 디자인을 완료하려면 <strong>수준 변경 내용 적용</strong>을 클릭합니다.</p>
 <p><img alt="그림 343" src="../_images/03-configure-data-model-in-power-bi-desktop_image26.png" /></p>
 <p><em>팁: <strong>수준 변경 적용</strong>을 클릭하는 것을 기억하도록 합니다. 이 단계를 간과해서 자주 실수가 발생합니다.</em></p>
@@ -615,7 +616,7 @@ document.write(`
 <li><p><strong>속성</strong> 창의 <strong>서식</strong> 섹션 내에서 <strong>소수 자릿수</strong> 속성을 <strong>2</strong>로 설정합니다.</p></li>
 <li><p><strong>고급</strong> 그룹(아래로 스크롤하여 찾아야 할 수도 있음)에 있는 <strong>요약 기준</strong> 드롭다운 목록에서 <strong>평균</strong>을 선택합니다.</p>
 <p><img alt="그림 354" src="../_images/03-configure-data-model-in-power-bi-desktop_image37.png" /></p>
-<p>기본적으로 숫자 열은 값을 합산하여 요약합니다. 이 기본 동작은 가격을 나타내는 <strong>단가</strong> 같은 열에 적합하지 않습니다. 기본 요약을 평균으로 설정하면 의미 있는 결과가 생성됩니다.</p>
+<p>기본적으로 숫자 열은 값을 합산하여 요약합니다. 이 기본 동작은 가격을 나타내는 <strong>Unit Price</strong> 같은 열에 적합하지 않습니다. 기본 요약을 평균으로 설정하면 의미 있는 결과가 생성됩니다.</p>
 </li>
 </ol>
 </section>
@@ -643,8 +644,7 @@ document.write(`
 </li>
 <li><p><strong>속성</strong> 창에서 <strong>숨김</strong> 속성을 <strong>켬</strong>으로 밉니다.</p>
 <p><img alt="그림 355" src="../_images/03-configure-data-model-in-power-bi-desktop_image38.png" /></p>
-<p>열은 관계에서 사용되거나 행 수준 보안 구성 또는 계산 논리에 사용되기 때문에 숨겨져 있습니다.</p>
-<p><strong>Power BI Desktop에서 DAX 계산 만들기, 1부</strong> 랩에서 계산에 <strong>SalesOrderNumber</strong>를 사용합니다.</p>
+<p>열은 관계를 만들기 위해 사용되거나 또는 추후 행 수준 보안 구성 또는 계산에 사용될 예정이기 때문에 숨기도록 하겠습니다. 예를 들어, 추후 <strong>Power BI Desktop에서 DAX 계산 만들기, 1부</strong> 랩에서 계산에 <strong>SalesOrderNumber</strong>를 사용할 예정입니다.</p>
 </li>
 <li><p>다음 세 개의 열을 다중 선택합니다.</p>
 <ul class="simple">
@@ -673,14 +673,14 @@ document.write(`
 <li><p>보고서 작성과 관련된 필드만 표시됩니다.</p></li>
 <li><p>모든 필드가 숨겨져 있기 때문에 <strong>SalespersonRegion</strong> 테이블이 표시되지 않습니다.</p></li>
 <li><p><strong>Region</strong> 테이블과 <strong>Reseller</strong> 테이블의 공간 필드에 공간 아이콘이 함께 표시됩니다.</p></li>
-<li><p>시그마 기호(Ʃ)로 표시된 필드는 기본적으로 요약됩니다.</p></li>
+<li><p>시그마 기호(Ʃ)로 표시된 필드는 기본적으로 요약되어 집니다.</p></li>
 <li><p><strong>Sales | Cost</strong> 필드 위로 커서를 가져가면 도구 설명이 나타납니다.</p></li>
 </ul>
 </li>
 <li><p><strong>Sales | OrderDate</strong> 필드를 확장하면 날짜 계층 구조가 표시되는 것을 볼 수 있습니다.</p>
 <p><img alt="그림 359" src="../_images/03-configure-data-model-in-power-bi-desktop_image40.png" /></p>
 <p><strong>Targets | TargetMonth</strong> 필드도 비슷한 계층 구조를 제공합니다. 이러한 계층 구조는 분석가가 직접 만든 것이 아니라 자동으로 생성된 것입니다. 그러나 문제가 있습니다. Adventure Works의 회계 연도는 매년 7월 1일에 시작되지만 그러나 이러한 자동 생성 날짜 계층 구조에서 날짜 계층 구조 연도는 매년 1월 1일에 시작됩니다.</p>
-<p>따라서 이 자동 동작을 비활성화하겠습니다. <strong>Power BI Desktop에서 DAX 계산 만들기, 1부</strong> 랩에서 DAX를 사용하여 날짜 테이블을 만든 다음, Adventure Works의 일정을 정의하도록 구성할 것입니다.</p>
+<p>따라서 이 자동 동작을 비활성화하겠습니다. 추후 <strong>Power BI Desktop에서 DAX 계산 만들기, 1부</strong> 랩에서 DAX를 사용하여 날짜 테이블을 만든 다음, Adventure Works의 일정을 정의하도록 구성할 것입니다.</p>
 </li>
 <li><p>자동 날짜/시간을 사용하지 않으려면 <strong>파일</strong> 리본 탭을 클릭하여 Backstage 뷰를 엽니다.</p></li>
 <li><p>왼쪽에서 <strong>옵션 및 설정</strong>을 선택한 다음, <strong>옵션</strong>을 선택합니다.</p>
@@ -721,7 +721,7 @@ document.write(`
 </li>
 <li><p><strong>확인</strong>을 클릭합니다.</p>
 <p><img alt="그림 369" src="../_images/03-configure-data-model-in-power-bi-desktop_image49.png" /></p>
-<p>빠른 측정값에서 계산 수식이 자동으로 작성됩니다. 간단하고 일반적인 계산을 쉽고 빠르게 만들 수 있습니다. <strong>Power BI Desktop에서 DAX 계산 만들기, 1부</strong> 랩에서 이 도구를 사용하지 않고 측정값을 만듭니다.</p>
+<p>빠른 측정값에서 계산 수식이 자동으로 작성됩니다. 간단하고 일반적인 계산을 쉽고 빠르게 만들 수 있습니다. 추후 <strong>Power BI Desktop에서 DAX 계산 만들기, 1부</strong> 랩에서 이 도구를 사용하지 않고 측정값을 만들 예정입니다.</p>
 </li>
 <li><p><strong>필드</strong> 창의 <strong>Sales</strong> 테이블에서 새 측정값을 알 수 있습니다.</p>
 <p><img alt="그림 370" src="../_images/03-configure-data-model-in-power-bi-desktop_image50.png" /></p>
@@ -766,10 +766,10 @@ document.write(`
 <li><p>Salesperson | Salesperson</p></li>
 <li><p>Sales | Sales</p></li>
 </ul>
-<p>랩에서는 약식 표기법을 사용하여 필드를 참조합니다. 다음과 같이 표시됩니다. <strong>Salesperson | Salesperson</strong> . 이 예에서 <strong>Salesperson</strong>은 테이블 이름이고 <strong>Salesperson</strong>은 필드 이름입니다.</p>
+<p>랩에서는 약식 표기법을 사용하여 필드를 참조합니다. 다음과 같이 표시됩니다. <strong>Salesperson | Salesperson</strong> 예에서 <strong>Salesperson</strong>은 테이블 이름이고 <strong>Salesperson</strong>은 필드 이름입니다.</p>
 <p><img alt="그림 1" src="../_images/04-configure-data-model-in-power-bi-desktop-advanced_image9.png" /></p>
-<p>테이블에는 각 판매원이 달성한 판매량이 표시됩니다. 그러나 영업 직원과 판매 간에는 또 다른 관계가 있습니다. 일부 판매원은 한 개, 두 개 또는 그 이상의 판매 지역에 속합니다. 또한 판매 지역에는 여러 판매원이 할당될 수 있습니다.</p>
-<p>성과 관리 측면에서 영업 직원의 판매량(할당된 지역을 기준으로 함)을 분석하고 판매 목표와 비교해야 합니다. 다음 연습에서 이 분석을 지원하는 관계를 만듭니다.</p>
+<p>테이블에는 각 판매원이 달성한 판매 금액이 표시됩니다. 그러나 영업 직원과 판매 간에는 또 다른 관계가 있습니다. 일부 판매원은 한 개, 두 개 또는 그 이상의 판매 지역에 속합니다. 또한 판매 지역에는 여러 판매원이 할당될 수 있습니다.</p>
+<p>성과 관리 측면에서 영업 직원의 판매 금액(할당된 지역을 기준으로 함)을 분석하고 판매 목표와 비교해야 합니다. 다음 연습에서 이 분석을 지원하는 관계를 만듭니다.</p>
 </li>
 <li><p>Michael Blythe의 판매 금액이 거의 900만 달러인 것을 확인합니다.</p></li>
 <li><p>모델 뷰로 전환합니다.</p>
@@ -800,7 +800,7 @@ document.write(`
 <p><img alt="그림 382" src="../_images/04-configure-data-model-in-power-bi-desktop-advanced_image14.png" /></p>
 </li>
 <li><p>보고서 뷰로 전환한 다음 판매 값이 아직 변경되지 않은 것을 확인합니다.</p>
-<p>이제 문제는 <strong>Salesperson</strong> 테이블과 <strong>Sales</strong> 테이블 간에 가능한 두 가지 필터 전파 경로가 있다는 사실과 관련이 있습니다. 이러한 모호성은 내부적으로 “최소 테이블 수” 평가를 기반으로 해결됩니다. 필터링을 명확하게 적용하려면 이러한 유형의 모호성이 있는 모델을 디자인해서는 안 됩니다. 이 문제는 이 랩의 뒷부분에서 <strong>Power BI Desktop에서 DAX 계산 만들기, 1부</strong> 랩을 완료하면 일부 해결됩니다.</p>
+<p>이제 문제는 <strong>Salesperson</strong> 테이블과 <strong>Sales</strong> 테이블 간에 가능한 두 가지 필터 전파 경로가 있다는 사실과 관련이 있습니다. 이러한 모호성은 내부적으로 “최소 테이블 수” 평가를 기반으로 해결됩니다. 필터링을 명확하게 적용하려면 이러한 유형의 모호성이 있는 모델을 디자인해서는 안 됩니다. 이 추후 <strong>Power BI Desktop에서 DAX 계산 만들기, 1부</strong> 랩을 완료하면 일부 해결됩니다.</p>
 </li>
 <li><p>모델 뷰로 전환합니다.</p></li>
 <li><p>브리징 테이블을 통해 필터 전파를 강제로 적용하려면 <strong>Salesperson</strong> 및 <strong>Sales</strong> 테이블 간의 관계를 편집(두 번 클릭)합니다.</p></li>
