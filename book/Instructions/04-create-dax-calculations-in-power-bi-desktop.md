@@ -71,7 +71,7 @@ lab:
 
     ![그림 47](Linked_image_Files/05-create-dax-calculations-in-power-bi-desktop_image4.png)
 
-1. **열기** 창에서 **D:\PL300\Labs\04-create-dax-calculations-in-power-bi-desktop\Starter** 폴더로 이동합니다.
+1. **열기** 창에서 **D:\Allfiles\Labs\04-create-dax-calculations-in-power-bi-desktop\Starter** 폴더로 이동합니다.
 
 1. **Sales Analysis** 파일을 선택합니다.
 
@@ -91,7 +91,7 @@ lab:
 
     ![그림 25](Linked_image_Files/05-create-dax-calculations-in-power-bi-desktop_image7.png)
 
-1. **다른 이름으로 저장** 창에서 **D:\PL300\MySolution** 폴더로 이동합니다.
+1. **다른 이름으로 저장** 창에서 **D:\Allfiles\MySolution** 폴더로 이동합니다.
 
 1. **저장**을 클릭합니다.
 
@@ -109,7 +109,7 @@ lab:
 
     ![그림 4](Linked_image_Files/05-create-dax-calculations-in-power-bi-desktop_image10.png)
 
-    편의상 이 랩의 모든 DAX 정의를 **D:\PL300\Labs\04-create-dax-calculations-in-power-bi-desktop\Assets\Snippets.txt**에 위치한 코드 조각 파일에서 복사할 수 있습니다.
+    편의상 이 랩의 모든 DAX 정의를 **D:\Allfiles\Labs\04-create-dax-calculations-in-power-bi-desktop\Assets\Snippets.txt**에 위치한 코드 조각 파일에서 복사할 수 있습니다.
 
     먼저 테이블 이름을 입력하고, 그 뒤에 등호 기호(=)를 입력한 다음, 테이블을 반환하는 DAX 수식을 입력하여 계산된 테이블을 만듭니다. 테이블 이름이 데이터 모델에 이미 존재하면 안 됩니다.
 
@@ -204,7 +204,7 @@ lab:
 
 이 작업에서는 다른 열을 추가하여 다른 시간 단위 별로 필터링 및 그룹화를 가능하게 합니다. 또한 다른 열의 정렬 순서를 제어하는 계산된 열을 만듭니다.
 
-편의상 이 랩의 모든 DAX 정의를 **D:\PL300\Labs\04-create-dax-calculations-in-power-bi-desktop\Assets\Snippets.txt**에 위치한 코드 조각 파일에서 복사할 수 있습니다.
+편의상 이 랩의 모든 DAX 정의를 **D:\Allfiles\Labs\04-create-dax-calculations-in-power-bi-desktop\Assets\Snippets.txt**에 위치한 코드 조각 파일에서 복사할 수 있습니다.
 
 1. **테이블 도구** 상황별 리본에서 **계산** 그룹 내에 있는 **새 열**을 클릭합니다.
 

@@ -107,7 +107,7 @@ lab:
 
     ![그림 6](Linked_image_Files/08-design-report-in-power-bi-desktop-enhanced_image8.png)
 
-8. **열기** 창에서 **D:\PL300\Labs\07-design-report-in-power-bi-desktop-enhanced\Starter** 폴더로 이동합니다.
+8. **열기** 창에서 **D:\Allfiles\Labs\07-design-report-in-power-bi-desktop-enhanced\Starter** 폴더로 이동합니다.
 
 9. **Sales Analysis** 파일을 선택합니다.
 
@@ -127,7 +127,7 @@ lab:
 
     ![그림 3](Linked_image_Files/08-design-report-in-power-bi-desktop-enhanced_image11.png)
 
-15. **다른 이름으로 저장** 창에서 **D:\PL300\MySolution** 폴더로 이동합니다.
+15. **다른 이름으로 저장** 창에서 **D:\Allfiles\MySolution** 폴더로 이동합니다.
 
 16. **저장**을 클릭합니다.
 

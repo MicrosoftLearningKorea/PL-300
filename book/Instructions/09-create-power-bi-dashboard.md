@@ -102,7 +102,7 @@ lab:
 
     ![그림 34](Linked_image_Files/09-create-power-bi-dashboard_image9.png)
 
-8. **열기** 창에서 **D:\PL300\Labs\09-create-power-bi-dashboard\Starter** 폴더로 이동합니다.
+8. **열기** 창에서 **D:\Allfiles\Labs\09-create-power-bi-dashboard\Starter** 폴더로 이동합니다.
 
 9. **Sales Analysis** 파일을 선택합니다.
 
@@ -122,7 +122,7 @@ lab:
 
     ![그림 10](Linked_image_Files/09-create-power-bi-dashboard_image12.png)
 
-15. **다른 이름으로 저장** 창에서 **D:\PL300\MySolution** 폴더로 이동합니다.
+15. **다른 이름으로 저장** 창에서 **D:\Allfiles\MySolution** 폴더로 이동합니다.
 
 16. **저장**을 클릭합니다.
 
@@ -135,7 +135,7 @@ lab:
 *중요: 이전 랩에서 보고서를 이미 게시했다면 다음 작업부터 진행하세요.*
 
 1. **내 작업 영역**에서 업로드 버튼을 클릭한 뒤, 찾아보기 버튼을 누릅니다. 
-2. **열기** 창에서 **D:\PL300\Labs\09-create-power-bi-dashboard\Starter** 폴더로 이동합니다.
+2. **열기** 창에서 **D:\Allfiles\Labs\09-create-power-bi-dashboard\Starter** 폴더로 이동합니다.
 3. **Sales Analysis.pbix** 파일을 선택한 다음 **열기**를 클릭합니다.
 4. 데이터 세트를 바꾸라는 메시지가 표시되면 **바꾸기**를 클릭합니다.
 
@@ -231,7 +231,7 @@ lab:
 
     ![그림 48](Linked_image_Files/09-create-power-bi-dashboard_image33.png)
 
-24. **이미지 타일 추가** 창의 **URL** 상자에 **D:\PL300\Resources\AdventureWorksLogo_DataURL.txt** 파일을 열면 나오는 전체 URL을 입력합니다.
+24. **이미지 타일 추가** 창의 **URL** 상자에 **D:\Allfiles\Resources\AdventureWorksLogo_DataURL.txt** 파일을 열면 나오는 전체 URL을 입력합니다.
 
     *URL을 사용하여 이미지를 추가하거나 콘텐츠 인라인을 포함하는 데이터 URL을 사용할 수 있습니다.*
 
@@ -289,7 +289,7 @@ lab:
 
 이 작업에서는 PowerShell 스크립트를 실행하여 **AdventureWorksDW2020** 데이터베이스의 데이터를 업데이트합니다.
 
-1. 파일 탐색기의 **D:\PL300\Setup** 폴더 내부에서 **UpdateDatabase-2-AddSales.ps1** 파일을 마우스 오른쪽 단추로 클릭한 다음, **PowerShell에서 실행**을 선택합니다.
+1. 파일 탐색기의 **D:\Allfiles\Setup** 폴더 내부에서 **UpdateDatabase-2-AddSales.ps1** 파일을 마우스 오른쪽 단추로 클릭한 다음, **PowerShell에서 실행**을 선택합니다.
 
     ![그림 28](Linked_image_Files/09-create-power-bi-dashboard_image46.png)
 

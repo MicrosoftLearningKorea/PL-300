@@ -132,7 +132,7 @@ lab:
 
     ![그림 30](Linked_image_Files/07-design-report-in-power-bi-desktop_image7.png)
 
-8. **열기** 창에서 **D:\PL300\Labs\06-design-report-in-power-bi-desktop\Starter** 폴더로 이동합니다.
+8. **열기** 창에서 **D:\Allfiles\Labs\06-design-report-in-power-bi-desktop\Starter** 폴더로 이동합니다.
 
 9. **Sales Analysis** 파일을 선택합니다.
 
@@ -152,7 +152,7 @@ lab:
 
     ![그림 5](Linked_image_Files/07-design-report-in-power-bi-desktop_image10.png)
 
-15. **다른 이름으로 저장** 창에서 **D:\PL300\MySolution** 폴더로 이동합니다.
+15. **다른 이름으로 저장** 창에서 **D:\Allfiles\MySolution** 폴더로 이동합니다.
 
 16. **저장**을 클릭합니다.
 
@@ -178,7 +178,7 @@ lab:
 
     ![그림 1](Linked_image_Files/07-design-report-in-power-bi-desktop_image15.png)
 
-4. **열기** 창에서 **D:\PL300\Resources** 폴더로 이동합니다.
+4. **열기** 창에서 **D:\Allfiles\Resources** 폴더로 이동합니다.
 
 5. **AdventureWorksLogo.jpg** 파일을 선택한 다음, **열기**를 클릭합니다.
 
