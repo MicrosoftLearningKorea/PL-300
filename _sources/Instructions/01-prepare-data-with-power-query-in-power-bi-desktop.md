@@ -68,7 +68,7 @@ lab:
 
     ![그림 4](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image3.png)
 
-1. **다른 이름으로 저장** 창에서 **D:\PL300\MySolution** 폴더로 이동합니다.
+1. **다른 이름으로 저장** 창에서 **D:\Allfiles\MySolution** 폴더로 이동합니다.
 
 1. **파일 이름** 상자에 **Sales Analysis**을 입력합니다.
 
@@ -281,7 +281,7 @@ lab:
 
     ![그림 70](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image35.png)
 
-2. **열기** 창에서 **D:\PL300\Resources** 폴더로 이동하고 **ResellerSalesTargets.csv** 파일을 선택합니다.
+2. **열기** 창에서 **D:\Allfiles\Resources** 폴더로 이동하고 **ResellerSalesTargets.csv** 파일을 선택합니다.
 
 3. **열기**를 클릭합니다.
 
@@ -314,7 +314,7 @@ lab:
 
 이 작업에서는 다른 CSV 파일을 기반으로 추가 쿼리를 만듭니다.
 
-1. 이전 작업의 단계를 사용하여 **D:\PL300\Resources\ColorFormats.csv** 파일을 기반으로 한 쿼리를 만듭니다.
+1. 이전 작업의 단계를 사용하여 **D:\Allfiles\Resources\ColorFormats.csv** 파일을 기반으로 한 쿼리를 만듭니다.
 
     ![그림 75](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image39.png)
 

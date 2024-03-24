@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Power BI Desktop에서 DAX 계산 만들기 2부 &#8212; PL-300 Lab Guide</title>
   
@@ -19,50 +18,47 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Instructions/05-create-dax-calculations-in-power-bi-desktop-advanced';</script>
-    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Power BI Desktop에서 보고서 디자인 1부" href="06-design-report-in-power-bi-desktop.html" />
@@ -76,7 +72,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -111,11 +115,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -130,9 +137,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -142,12 +151,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="PL-300 Lab Guide - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="PL-300 Lab Guide - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -168,7 +188,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="08-perform-data-analysis-in-power-bi-desktop.html">Power BI Desktop에서 데이터 분석 수행</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09-create-power-bi-dashboard.html">Power BI 대시보드 만들기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10-row-level-security.html">행 수준 보안 적용</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11-PL-300-exam-prep.html">PL-300 시험 및 중요한 사이트</a></li>
 </ul>
 
     </div>
@@ -290,20 +309,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -352,10 +373,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="power-bi-desktop-dax-2">
-<h1>Power BI Desktop에서 DAX 계산 만들기 2부<a class="headerlink" href="#power-bi-desktop-dax-2" title="Permalink to this heading">#</a></h1>
+<h1>Power BI Desktop에서 DAX 계산 만들기 2부<a class="headerlink" href="#power-bi-desktop-dax-2" title="Link to this heading">#</a></h1>
 <p><strong>이 랩의 예상 완료 시간은 45분입니다.</strong></p>
 <p>이 랩에서는 필터 컨텍스트 조작을 포함하는 DAX 식을 사용하여 측정값을 만듭니다.</p>
 <p>이 랩에서는 다음 작업을 수행하는 방법을 알아봅니다.</p>
@@ -364,7 +385,7 @@ document.write(`
 <li><p>시간 인텔리전스 함수를 사용</p></li>
 </ul>
 <section id="id1">
-<h2><strong>랩 사례</strong><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><strong>랩 사례</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>이 랩은 데이터 준비부터 보고서 및 대시보드로 게시에 이르기까지 배우기 위해 고안된 랩 시리즈 중 하나입니다. 어떤 순서로든 랩을 완료할 수 있습니다. 그러나 여러 랩을 진행하려는 경우 다음 순서를 따르는 것이 좋습니다.</p>
 <ol class="arabic simple">
 <li><p>Power BI Desktop에서 데이터 준비</p></li>
@@ -380,10 +401,10 @@ document.write(`
 </ol>
 </section>
 <section id="id2">
-<h2><strong>연습 1: 필터 컨텍스트 사용</strong><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><strong>연습 1: 필터 컨텍스트 사용</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>이 연습에서는 필터 컨텍스트 조작을 포함하는 DAX 식을 사용하여 측정값을 만듭니다.</p>
 <section id="id3">
-<h3><strong>작업 1: 시작하기</strong><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3><strong>작업 1: 시작하기</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>이 작업에서는 랩용 환경을 설정합니다.</p>
 <p><em>중요: 이전 랩에서 계속 진행해 온 경우(그리고 해당 랩을 성공적으로 완료한 경우) 이 작업을 완료하지 마세요. 대신, 다음 작업부터 진행하세요.</em></p>
 <ol class="arabic">
@@ -400,7 +421,7 @@ document.write(`
 <li><p><strong>보고서 찾아보기</strong>를 클릭합니다.</p>
 <p><img alt="그림 9" src="../_images/06-create-dax-calculations-in-power-bi-desktop-advanced_image4.png" /></p>
 </li>
-<li><p><strong>열기</strong> 창에서 <strong>D:\PL300\Labs\05-create-dax-calculations-in-power-bi-desktop-advanced\Starter</strong> 폴더로 이동합니다.</p></li>
+<li><p><strong>열기</strong> 창에서 <strong>D:\Allfiles\Labs\05-create-dax-calculations-in-power-bi-desktop-advanced\Starter</strong> 폴더로 이동합니다.</p></li>
 <li><p><strong>Sales Analysis</strong> 파일을 선택합니다.</p></li>
 <li><p><strong>열기</strong>를 클릭합니다.</p>
 <p><img alt="그림 8" src="../_images/06-create-dax-calculations-in-power-bi-desktop-advanced_image5.png" /></p>
@@ -413,14 +434,14 @@ document.write(`
 <li><p>변경 내용을 적용하라는 메시지가 표시되면 <strong>적용</strong>을 클릭합니다.</p>
 <p><img alt="그림 6" src="../_images/06-create-dax-calculations-in-power-bi-desktop-advanced_image7.png" /></p>
 </li>
-<li><p><strong>다른 이름으로 저장</strong> 창에서 <strong>D:\PL300\MySolution</strong> 폴더로 이동합니다.</p></li>
+<li><p><strong>다른 이름으로 저장</strong> 창에서 <strong>D:\Allfiles\MySolution</strong> 폴더로 이동합니다.</p></li>
 <li><p><strong>저장</strong>을 클릭합니다.</p>
 <p><img alt="그림 2" src="../_images/06-create-dax-calculations-in-power-bi-desktop-advanced_image8.png" /></p>
 </li>
 </ol>
 </section>
 <section id="id4">
-<h3><strong>작업 2: 행렬 시각적 개체 만들기</strong><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3><strong>작업 2: 행렬 시각적 개체 만들기</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>이 작업에서는 새 측정값 테스트를 지원할 행렬 시작적 개체를 만듭니다.</p>
 <ol class="arabic">
 <li><p>Power BI Desktop의 보고서 뷰에서 새 보고서 페이지를 만듭니다.</p>
@@ -453,11 +474,11 @@ document.write(`
 </ol>
 </section>
 <section id="id5">
-<h3><strong>작업 3: 필터 컨텍스트 조작</strong><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3><strong>작업 3: 필터 컨텍스트 조작</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>이 작업에서는 CALCULATE() 함수를 사용하여 필터 컨텍스트를 조작하는 DAX 식으로 여러 측정값을 만듭니다.</p>
 <ol class="arabic">
 <li><p>다음 식에 따라 <strong>Sales</strong> 테이블에 측정값을 추가합니다.</p>
-<p>편의상 이 랩의 모든 DAX 정의를 <strong>D:\PL300\Labs\05-create-dax-calculations-in-power-bi-desktop-advanced\Assets\Snippets.txt</strong> 파일에서 복사할 수 있습니다.</p>
+<p>편의상 이 랩의 모든 DAX 정의를 <strong>D:\Allfiles\Labs\05-create-dax-calculations-in-power-bi-desktop-advanced\Assets\Snippets.txt</strong> 파일에서 복사할 수 있습니다.</p>
 <p><strong>DAX</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sales</span> <span class="n">All</span> <span class="n">Region</span> <span class="o">=</span>
 
@@ -584,10 +605,10 @@ document.write(`
 </section>
 </section>
 <section id="id6">
-<h2><strong>연습 2: 시간 인텔리전스 사용</strong><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2><strong>연습 2: 시간 인텔리전스 사용</strong><a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>이 연습에서는 매출 YTD(연간 누계) 측정값과 매출 YoY(전년 대비) 성장률 측정값을 만듭니다.</p>
 <section id="ytd">
-<h3><strong>작업 1: YTD 측정값 만들기</strong><a class="headerlink" href="#ytd" title="Permalink to this heading">#</a></h3>
+<h3><strong>작업 1: YTD 측정값 만들기</strong><a class="headerlink" href="#ytd" title="Link to this heading">#</a></h3>
 <p>이 작업에서는 매출 YTD 측정값을 만듭니다.</p>
 <ol class="arabic">
 <li><p>보고서 뷰의 <strong>2페이지</strong>에서 행렬 시각적 개체에는 행에 연수와 개월이 그룹화된 다양한 측정값이 표시됩니다.</p></li>
@@ -609,7 +630,7 @@ document.write(`
 </ol>
 </section>
 <section id="yoy">
-<h3><strong>작업 2: YoY 증가율 측정값 만들기</strong><a class="headerlink" href="#yoy" title="Permalink to this heading">#</a></h3>
+<h3><strong>작업 2: YoY 증가율 측정값 만들기</strong><a class="headerlink" href="#yoy" title="Link to this heading">#</a></h3>
 <p>이 작업에서는 매출 YoY 성장률 측정값을 만듭니다.</p>
 <ol class="arabic">
 <li><p>다음 식을 기반으로 <strong>Sales</strong> 테이블에 측정값을 추가합니다.</p>
@@ -668,7 +689,7 @@ document.write(`
 </ol>
 </section>
 <section id="id7">
-<h3><strong>작업 3: 완료</strong><a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3><strong>작업 3: 완료</strong><a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>이 작업에서는 랩을 완료합니다.</p>
 <ol class="arabic">
 <li><p>보고서 개발용으로 준비한 솔루션을 정리하려면 왼쪽 하단에서 <strong>2페이지</strong> 탭을 마우스 오른쪽 단추로 클릭한 다음 <strong>페이지 삭제</strong>를 선택합니다.</p>
@@ -713,8 +734,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="04-create-dax-calculations-in-power-bi-desktop.html"
@@ -743,6 +766,7 @@ document.write(`
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -770,7 +794,7 @@ document.write(`
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -783,6 +807,7 @@ By Tony (Sungjin) Ahn
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023.
@@ -800,7 +825,7 @@ By Tony (Sungjin) Ahn
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -809,8 +834,8 @@ By Tony (Sungjin) Ahn
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

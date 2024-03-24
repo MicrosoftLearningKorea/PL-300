@@ -69,7 +69,7 @@ lab:
 
     ![그림 9](Linked_image_Files/06-create-dax-calculations-in-power-bi-desktop-advanced_image4.png)
 
-1. **열기** 창에서 **D:\PL300\Labs\05-create-dax-calculations-in-power-bi-desktop-advanced\Starter** 폴더로 이동합니다.
+1. **열기** 창에서 **D:\Allfiles\Labs\05-create-dax-calculations-in-power-bi-desktop-advanced\Starter** 폴더로 이동합니다.
 
 1. **Sales Analysis** 파일을 선택합니다.
 
@@ -89,7 +89,7 @@ lab:
 
     ![그림 6](Linked_image_Files/06-create-dax-calculations-in-power-bi-desktop-advanced_image7.png)
 
-1. **다른 이름으로 저장** 창에서 **D:\PL300\MySolution** 폴더로 이동합니다.
+1. **다른 이름으로 저장** 창에서 **D:\Allfiles\MySolution** 폴더로 이동합니다.
 
 1. **저장**을 클릭합니다.
 
@@ -145,7 +145,7 @@ lab:
 
 1. 다음 식에 따라 **Sales** 테이블에 측정값을 추가합니다.
 
-    편의상 이 랩의 모든 DAX 정의를 **D:\PL300\Labs\05-create-dax-calculations-in-power-bi-desktop-advanced\Assets\Snippets.txt** 파일에서 복사할 수 있습니다.
+    편의상 이 랩의 모든 DAX 정의를 **D:\Allfiles\Labs\05-create-dax-calculations-in-power-bi-desktop-advanced\Assets\Snippets.txt** 파일에서 복사할 수 있습니다.
 
 
     **DAX**

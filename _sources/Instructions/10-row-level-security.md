@@ -67,7 +67,7 @@ lab:
 
     ![그림 5](Linked_image_Files/04-configure-data-model-in-power-bi-desktop-advanced_image4.png)
 
-1. **열기** 창에서 **D:\PL300\Labs\10-row-level-security\Starter** 폴더로 이동합니다.
+1. **열기** 창에서 **D:\Allfiles\Labs\10-row-level-security\Starter** 폴더로 이동합니다.
 
 1. **Sales Analysis** 파일을 선택합니다.
 
@@ -87,7 +87,7 @@ lab:
 
     ![그림 15](Linked_image_Files/04-configure-data-model-in-power-bi-desktop-advanced_image7.png)
 
-1. **다른 이름으로 저장** 창에서 **D:\PL300\MySolution** 폴더로 이동합니다.
+1. **다른 이름으로 저장** 창에서 **D:\Allfiles\MySolution** 폴더로 이동합니다.
 
 1. **저장**을 클릭합니다.
 

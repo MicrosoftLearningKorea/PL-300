@@ -80,7 +80,7 @@ lab:
 
 1. **내 작업 영역**에서 업로드 버튼을 클릭한 뒤, 찾아보기 버튼을 누릅니다. 
 
-2. **D:\PL300\Labs\08-perform-data-analysis-in-power-bi-desktop\Starter** 폴더로 이동합니다.
+2. **D:\Allfiles\Labs\08-perform-data-analysis-in-power-bi-desktop\Starter** 폴더로 이동합니다.
 
 5. **Sales Analysis.pbix** 파일을 선택한 다음 **열기**를 클릭합니다.
 
@@ -112,7 +112,7 @@ lab:
 
     ![그림 12](Linked_image_Files/10-perform-data-analysis-in-power-bi-desktop_image10.png)
 
-7. **다른 이름으로 저장** 창에서 **D:\PL300\MySolution** 폴더로 이동합니다.
+7. **다른 이름으로 저장** 창에서 **D:\Allfiles\MySolution** 폴더로 이동합니다.
 
 8. **파일 이름** 상자에 **Sales Exploration**을 입력합니다.
 

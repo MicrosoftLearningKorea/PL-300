@@ -68,7 +68,7 @@ lab:
 
     ![그림 11](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image4.png)
 
-1. **열기** 창에서 **D:\PL300\Labs\02-load-data-with-power-query-in-power-bi-desktop\Starter** 폴더로 이동합니다.
+1. **열기** 창에서 **D:\Allfiles\Labs\02-load-data-with-power-query-in-power-bi-desktop\Starter** 폴더로 이동합니다.
 
 1. **Sales Analysis** 파일을 선택합니다.
 
@@ -96,7 +96,7 @@ lab:
 
     ![그림 22](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image8.png)
 
-1. **다른 이름으로 저장** 창에서 **D:\PL300\MySolution** 폴더로 이동합니다.
+1. **다른 이름으로 저장** 창에서 **D:\Allfiles\MySolution** 폴더로 이동합니다.
 
 1. **저장**을 클릭합니다.
 
@@ -462,7 +462,7 @@ lab:
 
 이 식은 **TotalProductCost** 값 누락 여부를 확인합니다. 누락된 경우 **OrderQuantity** 값을 **StandardCost** 값으로 곱하여 값을 생성하며 그렇지 않으면 기존 **TotalProductCost** 값을 사용합니다.
 
-편의상 **D:\PL300\Labs\02-load-data-with-power-query-in-power-bi-desktop\Assets\Snippets.txt** 파일에서 식을 복사할 수 있습니다.
+편의상 **D:\Allfiles\Labs\02-load-data-with-power-query-in-power-bi-desktop\Assets\Snippets.txt** 파일에서 식을 복사할 수 있습니다.
 
 8. **확인**을 클릭합니다.
 
